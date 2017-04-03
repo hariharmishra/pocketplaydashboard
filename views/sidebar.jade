@@ -1,0 +1,18 @@
+
+// This jade file dynamically assigns pp dashboard's sidebar to be loaded i.e {sidebarqa.jade or sidebarlive.jade}
+// - depending on the currnet server env type
+// SIDE_BAR_TYPE : is set in [app.js as app.locals.SIDE_BAR_TYPE]
+
+
+
+-var sideBarToLoad = DASHBOARD_SIDEPANEL_TO_LOAD
+
+    case sideBarToLoad
+        when 'QA'
+            include ../views/sidebarqa.jade
+        when 'LIVE'
+            include ../views/sidebarlive.jade
+        default
+            include ../views/sidebarqa.jade
+
+

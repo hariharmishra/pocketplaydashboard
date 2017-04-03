@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PocketPlay | User Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+	<link rel="shortcut icon" href="dist/img/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the pAge via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>P</b>Play</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>PocketPlay</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- MessAges: style can be found in dropdown.less-->
+              
+              <!-- Notifications: style can be found in dropdown.less -->
+             
+              <!-- Tasks: style can be found in dropdown.less -->
+              
+              <!-- User Account: style can be found in dropdown.less -->
+              <li>
+                <a href="index.html" title=LOGOUT>
+                  <i class="fa fa-sign-out fa-lg" ></i>
+                  <strong class="hidden-xs">Logout</strong>
+                </a>
+                
+              </li>
+              <!-- Control Sidebar Toggle Button -->
+              <li>
+                <a href="#" data-toggle="control-sidebar"></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+       <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="dist/img/ppmascot.png" class="img-circle" alt="User ImAge">
+            </div>
+            <div class="pull-left info">
+              <p>Admin Console</p>
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+          <!-- search form -->
+         
+          <!-- /.search form -->
+       <!-- import sidebar -->
+         <nav id="sidebarqa"> </nav>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains pAge content -->
+      <div class="content-wrapper">
+        <!-- Content Header (PAge header) -->
+       
+		<br>
+
+        <!-- Main content -->
+        <section class="content">
+         <div class="box-header">   <!--main cintainer start-->
+		<div class="row">   <!--main cintainer start-->
+		  <div class="panel panel-primary">
+													 <div class="panel-heading">
+                                    <h3 class="panel-title"> Overview
+	                                  
+													</h3>
+												   </div>
+ <section class="content">
+  <div class="col-md-6">
+           
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">World User Graph</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+                   <div id="country_wise" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+                </div><!-- /.box-body -->
+              </div>
+       
+
+            </div>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- AREA CHART -->
+             <!-- /.box -->
+
+              <!-- DONUT CHART -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Gender Wise Users</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+                  
+                <div id="gender_wise" style="width: 600px; height: 400px; margin: 0 auto"></div>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+
+            </div><!-- /.col (LEFT) -->
+           <!-- /.col (RIGHT) -->
+          </div><!-- /.row -->
+
+        </section>
+			 							
+                    </div>
+                            </div>		
+                            </div>		
+                            </div>
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2014-2015 <a href="http://pocketplay.com">Pocket Play (<i class="fa fa-trademark"></i>)</a>.</strong> All rights reserved.
+      </footer>
+
+      <!-- Control Sidebar -->
+     <!-- /.control-sidebar -->
+      <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+      <div class="control-sidebar-bg"></div>
+    </div><!-- ./wrapper -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- ChartJS 1.0.1 -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <!-- FastClick -->
+    <script src="plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- pAge script -->
+	<!-- Sidebar -->
+	<script src="dist/js/sidebar.js"></script>
+
+	<script>
+	$(function () {
+    // Create the chart
+    $('#country_wise').highcharts({
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Pocketplay Country Wise Users'
+        },
+        subtitle: {
+            text: 'Hover the slices to view country wise user.'
+        },
+        plotOptions: {
+             series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y:.0f}Users'
+                }
+            }
+        },
+credits: {
+    enabled: false
+  },
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.0f}</b> of total<br/>'
+        },
+        series: [{
+            name: 'Country',
+            colorByPoint: true,
+            data: [{
+                name: 'India',
+                y: 57333,
+                drilldown: 'india User'
+            }, {
+                name: 'china',
+                y: 24303,
+                drilldown: 'China user'
+            }, {
+                name: 'Australia',
+                y: 10238,
+                drilldown: 'australia User'
+            }, {
+                name: 'UK',
+                y: 4377,
+                drilldown: 'United Kingdom users'
+            }, {
+                name: 'UAE',
+                y: 10191,
+                drilldown: 'United Arab Estates'
+            }, {
+                name: 'Russia',
+                y: 8978,
+                drilldown: null
+            }]
+        }],
+		 chart: {
+            type: 'pie',
+            events: {
+            load: function(event) {
+              var total = 0;
+                for(var i=0, len=this.series[0].yData.length; i<len; i++){
+                    total += this.series[0].yData[i];
+                }
+              var text = this.renderer.text(
+                '<span style="font-size:15px;color:red;">Total user:</span>' + total,
+                this.plotLeft -9,
+                this.plotTop - 35
+            ).attr({
+                zIndex: 5
+            }).add()
+            }
+              }
+        },
+
+        drilldown: {
+            series: [{
+                name: 'India',
+                id: 'India',
+                data: [
+                    ['v11.0', 24.13],
+                    ['v8.0', 17.2],
+                    ['v9.0', 8.11],
+                    ['v10.0', 5.33],
+                    ['v6.0', 1.06],
+                    ['v7.0', 0.5]
+                ]
+            }, {
+                name: 'China',
+                id: 'China',
+                data: [
+                    ['v40.0', 5],
+                    ['v41.0', 4.32],
+                    ['v42.0', 3.68],
+                    ['v39.0', 2.96],
+                    ['v36.0', 2.53],
+                    ['v43.0', 1.45],
+                    ['v31.0', 1.24],
+                    ['v35.0', 0.85],
+                    ['v38.0', 0.6],
+                    ['v32.0', 0.55],
+                    ['v37.0', 0.38],
+                    ['v33.0', 0.19],
+                    ['v34.0', 0.14],
+                    ['v30.0', 0.14]
+                ]
+            }, {
+                name: 'Australia',
+                id: 'Australia',
+                data: [
+                    ['v35', 2.76],
+                    ['v36', 2.32],
+                    ['v37', 2.31],
+                    ['v34', 1.27],
+                    ['v38', 1.02],
+                    ['v31', 0.33],
+                    ['v33', 0.22],
+                    ['v32', 0.15]
+                ]
+            }, {
+                name: 'UK',
+                id: 'Safari',
+                data: [
+                    ['v8.0', 2.56],
+                    ['v7.1', 0.77],
+                    ['v5.1', 0.42],
+                    ['v5.0', 0.3],
+                    ['v6.1', 0.29],
+                    ['v7.0', 0.26],
+                    ['v6.2', 0.17]
+                ]
+            }, {
+                name: 'UAE',
+                id: 'Opera',
+                data: [
+                    ['v12.x', 0.34],
+                    ['v28', 0.24],
+                    ['v27', 0.17],
+                    ['v29', 0.16]
+                ]
+            }]
+        }
+		
+    });
+});
+	</script>
+	<script>
+	$(function () {
+
+    var colors = Highcharts.getOptions().colors,
+        categories = ['Male', 'Female'],
+        data = [{
+            y: 278654,
+            color: colors[2],
+            drilldown: {
+                name: 'Male Age groups Users',
+                categories: ['Age 18-25', 'Age 26-35', 'Age 36-45', 'Age 46-55', 'Age 56-65', 'Avove 66'],
+                data: [78654, 50000, 50000, 50000, 40000, 10000],
+                color: colors[2]
+            }
+        }, {
+            y: 123456,
+            color: colors[3],
+            drilldown: {
+                name: 'Female Age groups Users',
+                categories: ['Age 18-25', 'Age 26-35', 'Age 36-45', 'Age 46-55', 'Age 56-65', 'Avove 66'],
+                data: [23456, 25000, 25000, 20000, 18000, 12000],
+                color: colors[3]
+            }
+        }, ],
+        browserData = [],
+        versionsData = [],
+        i,
+        j,
+        dataLen = data.length,
+        drillDataLen,
+        brightness;
+
+
+    // Build the data arrays
+    for (i = 0; i < dataLen; i += 1) {
+
+        // add browser data
+        browserData.push({
+            name: categories[i],
+            y: data[i].y,
+            color: data[i].color
+        });
+
+        // add version data
+        drillDataLen = data[i].drilldown.data.length;
+        for (j = 0; j < drillDataLen; j += 1) {
+            brightness = 0.2 - (j / drillDataLen) / 5;
+            versionsData.push({
+                name: data[i].drilldown.categories[j],
+                y: data[i].drilldown.data[j],
+                color: Highcharts.Color(data[i].color).brighten(brightness).get()
+            });
+        }
+    }
+
+    // Create the chart
+    $('#gender_wise').highcharts({
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Pocketplay Users by Age Groups'
+        },
+        subtitle: {
+            text: 'Hover the slices to view Age groups users.'
+        },
+        yAxis: {
+            title: {
+                text: 'Total percent market share'
+            }
+        },
+        plotOptions: {
+            pie: {
+                shadow: false,
+                center: ['50%', '50%']
+            }
+        },
+         tooltip: {
+    pointFormat: "Users: {point.y:.0f}"
+},
+		credits: {
+    enabled: false
+  },
+        series: [{
+            name: 'genders',
+            data: browserData,
+            size: '60%',
+            dataLabels: {
+                formatter: function () {
+                    return this.y > 5 ? this.point.name : null;
+                },
+                color: '#ffffff',
+                distance: -30
+            }
+        },
+		
+		{
+            name: 'Age groups',
+            data: versionsData,
+            size: '80%',
+            innerSize: '60%',
+	
+            dataLabels: {
+                formatter: function () {
+                    // display only if larger than 1
+                    return this.y > 1 ? '<b>' + this.point.name + ':</b> ' + this.y + 'users' : null;
+                }
+            }
+        }]
+    });
+}
+
+);
+	</script>
+		<script>
+		$(document).ready(function () {
+			var fe_id = 'analytics' + '_fe';
+			$('#' + fe_id).addClass('active');
+			var fe_id2 = 'analytics_oview' + '_fe';
+			$('#' + fe_id2).addClass('active');
+		});
+	</script>
+  </body>
+</html>

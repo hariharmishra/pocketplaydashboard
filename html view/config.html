@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PocketPlay | User Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="bootstrap/css/custom.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	<link rel="shortcut icon" href="dist/img/favicon.ico">
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>P</b>Play</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>PocketPlay</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              
+              <!-- Notifications: style can be found in dropdown.less -->
+             
+              <!-- Tasks: style can be found in dropdown.less -->
+              
+              <!-- User Account: style can be found in dropdown.less -->
+              <li>
+                <a href="index.html" title=LOGOUT>
+                  <i class="fa fa-sign-out fa-lg" ></i>
+                  <strong class="hidden-xs">Logout</strong>
+                </a>
+                
+              </li>
+              <!-- Control Sidebar Toggle Button -->
+              <li>
+                <a href="#" data-toggle="control-sidebar"></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+       <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="dist/img/ppmascot.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p>Admin Console</p>
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+          <!-- search form -->
+         
+          <!-- /.search form -->
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="treeview">
+              <a href="all_games.html">
+                <i class="fa fa-gamepad"></i> <span>Games</span> </i>
+              </a>
+            </li>
+			 <li class="treeview">
+              <a href="">
+                <i class="fa fa-bar-chart"></i> <span>Analytics</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+			  <ul class="treeview-menu">
+                <li><a href="comingsoon.html"><i class="fa fa-circle-o"></i> Overview</a></li>
+                <li><a href="comingsoon.html"><i class="fa fa-circle-o"></i> Installs</a></li>
+				<li><a href="comingsoon.html"><i class="fa fa-circle-o"></i> Sessions</a></li>
+				<li><a href="comingsoon.html"><i class="fa fa-circle-o"></i> Game</a></li>
+				<li><a href="comingsoon.html"><i class="fa fa-circle-o"></i> User Analytics</a></li>
+              </ul>
+            </li>
+			<li class="treeview">
+               <a href="in_app.html">
+                <i class="fa fa-cart-plus"></i> <span> IN-App</span> </i>
+              </a>
+            </li>
+			<li class="treeview">
+               <a href="">
+                <i class="fa fa-trophy"></i> <span>Promotions</span><i class="fa fa-angle-left pull-right"> </i>
+              </a>
+			  <ul class="treeview-menu">
+             <!--   <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Promotions</a></li> -->
+                <li><a href="promo_dd_calview.html"><i class="fa fa-circle-o"></i> Daily Deals</a></li>
+				<li><a href="promo_aod_calview.html"><i class="fa fa-circle-o"></i> App of the day</a></li>
+				<li><a href="promo_ginfo_calview.html"><i class="fa fa-circle-o"></i> General Info</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+               <a href="test_user.html">
+                <i class="fa fa-user-secret"></i> <span>Test User</span> </i>
+              </a>
+            </li>
+			<li class="treeview active">
+                 <a href="config.html">
+                <i class="fa fa-cogs"></i> <span>Configuration</span> </i>
+              </a>
+            </li>
+			<li class="treeview">
+               <a href="">
+                <i class="fa fa-adn"></i> <span>Ads Configuration</span><i class="fa fa-angle-left pull-right"> </i>
+              </a>
+			  <ul class="treeview-menu">
+             <!--   <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Promotions</a></li> -->
+                <li><a href="ads_config_ios.html"><i class="fa fa-circle-o"></i>ios</a></li>
+				<li><a href="ads_config_android.html"><i class="fa fa-circle-o"></i>Android</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+       
+		<br>
+
+        <!-- Main content -->
+        <section class="content">
+         <div class="box-header">   <!--main cintainer start-->
+		<div class="row">   <!--main cintainer start-->
+		  <div class="panel panel-primary">
+													 <div class="panel-heading">
+                                    <h3 class="panel-title">Configuration
+									<div class="btn-group pull-right">
+                              <a href="#" class="btn btn-success btn-sm" style="margin-top: -6px;"><i class="fa fa-save"></i> Save</a>
+													</div>
+	                                  
+													</h3>
+												   </div>
+                                 <div class="panel-body">	
+									  <div class="panel panel-default">
+										 <div class="panel-heading">
+											  <h3 class="panel-title">Game Version:-<b style="color:#FE801C;"> 258</b>
+											
+											</h3>
+										   </div>							   
+												   <form  class="form-horizontal">							
+                          <div class="panel-body">	
+									  <div class="panel panel-info">
+										 <div class="panel-heading">
+											  <h3 class="panel-title">Coins
+											
+											</h3>
+										   </div>
+										   &nbsp
+										
+                                        <div class="form-group">
+										  <label class="control-label col-sm-2" style="color:#0000FF;" for="default_coins">Default Coins (Register)</label>  
+										  <div class="col-md-3">
+										  <input id="default_coins" name="default-coins" placeholder="" class="form-control input-sm"  type="text">											
+										  </div>
+										</div>
+										<div class="form-group">
+										  <label class="control-label col-sm-2" style="color:#0000FF;" for="default_coins">Default Coins (Guest)</label>  
+										  <div class="col-md-3">
+										  <input id="default_coins" name="default-coins" placeholder="" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+										<div class="form-group">
+										  <label class="control-label col-sm-2" style="color:#0000FF;" for="default_coins">Referral Bonus</label>  
+										  <div class="col-md-3">
+										  <input id="default_coins" name="default-coins" placeholder="" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+										<div class="form-group">
+										  <label class="control-label col-sm-2" style="color:#0000FF;" for="default_coins">Facebook Like</label>  
+										  <div class="col-md-3">
+										  <input id="default_coins" name="default-coins" placeholder="" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+										<div class="form-group">
+										  <label class="control-label col-sm-2" style="color:#0000FF;" for="default_coins">Min Recharge Bal</label>  
+										  <div class="col-md-3">
+										  <input id="min_recharge_bal" name="min_recharge_bal" placeholder="" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>										
+										   </div>
+										  
+												
+
+									  <div class="panel panel-info">
+										 <div class="panel-heading">
+											  <h3 class="panel-title">Paytm
+											
+											</h3>
+										   </div>
+										   &nbsp
+									
+                                        <div class="form-group">
+										  <label class="control-label col-sm-2" style="color:#0000FF;" for="default_coins">Default Balance(Register)</label>  
+										  <div class="col-md-3">
+										  <input id="default_coins" name="default-coins" placeholder="" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+										<div class="form-group">
+										  <label class="control-label col-sm-2" style="color:#0000FF;" for="default_coins">Default Balance(Guest)</label>  
+										  <div class="col-md-3">
+										  <input id="default_coins" name="default-coins" placeholder="" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+										 <div class="form-group">
+										  <label class="control-label col-sm-2" style="color:#0000FF;" for="default_coins">Bonus/Refer</label>  
+										  <div class="col-md-3">
+										  <input id="default_coins" name="default-coins" placeholder="" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+									
+										   </div>
+									
+																				 
+											
+
+										   <div class="panel panel-info">
+										 <div class="panel-heading">
+											  <h3 class="panel-title">Register Mode
+											
+											</h3>
+										   </div>
+										  
+										
+										   &nbsp&nbsp&nbsp
+										   <div class="form-group">
+								  <label class="control-label col-sm-2" style="color:#0000FF;" for="game_config_orientation">Default Login As</label>
+								  <div class="col-md-3"> 
+									<label class="radio-inline" for="game_config_orientation-0">
+									  <input name="game_config_orientation" id="game_config_orientation-0" value="Portrait" checked="checked" type="radio">
+									  Register
+									</label> 
+									<label class="radio-inline" for="game_config_orientation-1">
+									  <input name="game_config_orientation" id="game_config_orientation-1" value="Landscape" type="radio">
+									 Guest
+									</label>
+								  </div>
+								</div>
+								 </form>
+								 </div>
+								  </div>
+										   </div>
+																				 
+											
+
+											   </div>
+											   
+                                                     </div>
+
+             </div>
+			 			</section>				
+                    </div>
+                            </div>		
+                            </div>		
+                       
+
+<!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2014-2015 <a href="http://pocketplay.com">Pocket Play (<i class="fa fa-trademark"></i>)</a>.</strong> All rights reserved.
+      </footer>
+
+      <!-- Control Sidebar -->
+     <!-- /.control-sidebar -->
+      <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+      <div class="control-sidebar-bg"></div>
+    </div><!-- ./wrapper -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+	<script>
+	$(document).ready(function(){
+    $('[id^=index]').keypress(validateNumber);
+	$('[id^=coinsamount]').keypress(validateNumber);
+	$('[id^=price]').keypress(validateNumber);
+});
+
+function validateNumber(event) {
+    var key = window.event ? event.keyCode : event.which;
+
+    if (event.keyCode === 8 || event.keyCode === 46
+        || event.keyCode === 37 || event.keyCode === 39) {
+        return true;
+    }
+    else if ( key < 48 || key > 57 ) {
+        return false;
+    }
+    else return true;
+};
+	</script>
+  </body>
+</html>

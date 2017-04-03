@@ -1,0 +1,169 @@
+doctype html
+
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | User Dashboard
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    meta(name='author', content='harihar mishra, harihar@dinzylabs.com')
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    link(rel='stylesheet', href='plugins/iCheck/flat/blue.css')
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='index2.html')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              li
+                a(href='/logout', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+           // import sidebar
+          include ../sidebar
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              // main cintainer start
+              .panel.panel-primary
+                .panel-heading
+                  strong(style='color:#fff;') All Games
+                  a(href='edit_game_details/newgame', style='color:#90EE90;')
+                .panel-body
+                  .panel.panel-default
+                    .panel-heading
+                      h3.panel-title
+                        | Game Version:-
+                        b(style='color:#FE801C;')  #{gameV.Version}
+                    table.table.table-bordered
+                      thead
+                        tr
+                          th App Name
+                          th Version
+                          th Last Updated
+                          th IsTest
+                          th IsActive
+                          th(style='width:100px;', th='') Action
+                          -var games = gamedetails;
+                          -if( games == undefined)
+                                games = [];
+                          each game in games
+                                tbody
+                                    tr
+                                      td
+
+                                        -if(game.qa_status == 'Test' )
+                                          img.img-thumbnail(src='/games/'+ game._id+'/temp/GameIcon.png', onError="this.src = '../dist/img/pplogo.png'" ,style='height:35px; width:35px;' , alt='Responsive image')
+
+                                        -else if(game.qa_status == 'Ready')
+                                          img.img-thumbnail(src='/games/' + game._id + '/GameIcon.png', onError="this.src = '../dist/img/pplogo.png'" ,style='height:35px; width:35px;' , alt='Responsive image')
+
+                                        -else
+                                          img.img-thumbnail(src='/games/' + game._id + '/GameIcon.png', onError="this.src = '../dist/img/pplogo.png'" ,style='height:35px; width:35px;' , alt='Responsive image')
+
+                                        -if(game.qa_status == 'Ready' )
+                                          a(title="The game is on Published mode" href="/game_details_live/"+ game._id)| #{game.display_name}
+                                        -else
+                                          a(title="The game is on Save mode") #{game.display_name}
+                                      td
+                                          a(onmouseover="" style="cursor: pointer;" data-toggle="tooltip" title="1. ZIP  2.LUA-ALL 3.Banner 4.Icon 5.Square Icon 6.Text Fields")| #{game.version}
+
+                                      td
+                                        -var updatedOn = moment(game.updated_at).format('DD.MM.YYYY HH:mm:ss')
+                                        | #{updatedOn}
+
+                                      td
+                                          | #{game.is_test}
+                                      td
+                                          | #{game.is_active}
+                                      td(style='text-align:center;')
+                                          a(href='edit_game_details_live/'+ game._id, style='color:#00BB00;')
+                                            -if(game.qa_status == 'Ready' && game.is_test == false)
+                                                a.btn.btn-info.disabled(style='visibility:hidden')
+                                                  i.fa.fa-pencil
+                                                  |  Edit
+                                            -else
+                                                button.btn.button(style='visibility:visible')
+                                                  i.fa.fa-pencil
+                                                  |  Unpublished
+                                            
+
+
+        // /.content
+      // /.content-wrapper
+      footer.main-footer
+        .pull-right.hidden-xs
+          b Version
+          |  1.0.0
+        strong
+          | Copyright © 2014-2015 
+          a(href='http://pocketplay.com')
+            | Pocket Play (
+            i.fa.fa-trademark
+            | )
+          | .
+        |  All rights reserved.
+    // ./wrapper
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // jQuery UI 1.11.4
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+    // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+    script.
+      $.widget.bridge('uibutton', $.ui.button);
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // Sparkline
+    script(src='plugins/sparkline/jquery.sparkline.min.js')
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    script.
+      function addnewgame(){
+        window.location = '../edit_game_details/'+ game._id;
+      }
+    script.
+        $(document).ready(function () {
+          var fe_id = 'all_games_live' + '_fe';
+          $('#' + fe_id).addClass('active');
+        });

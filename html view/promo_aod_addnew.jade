@@ -1,0 +1,461 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | Dashboard
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    // Bootstrap 3.3.5
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    // Ionicons
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // daterange picker
+    link(rel='stylesheet', href='plugins/daterangepicker/daterangepicker-bs3.css')
+    // iCheck for checkboxes and radio inputs
+    link(rel='stylesheet', href='plugins/iCheck/all.css')
+    // Bootstrap Color Picker
+    link(rel='stylesheet', href='plugins/colorpicker/bootstrap-colorpicker.min.css')
+    // Bootstrap time Picker
+    link(rel='stylesheet', href='plugins/timepicker/bootstrap-timepicker.min.css')
+    // Select2
+    link(rel='stylesheet', href='plugins/select2/select2.min.css')
+    // Theme style
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    //
+      AdminLTE Skins. Choose a skin from the css/skins
+      folder instead of downloading all of them to reduce the load.
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    link(rel='stylesheet', href='bootstrap/css/custom.css')
+    // custom
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='#')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              // Messages: style can be found in dropdown.less
+              // Notifications: style can be found in dropdown.less
+              // Tasks: style can be found in dropdown.less
+              // User Account: style can be found in dropdown.less
+              li
+                a(href='index.html', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+          // search form
+          // /.search form
+          // sidebar menu: : style can be found in sidebar.less
+          ul.sidebar-menu
+            li.header MAIN NAVIGATION
+            li.treeview
+              a(href='all_games.html')
+                i.fa.fa-gamepad
+                span Games
+            li.treeview
+              a(href='')
+                i.fa.fa-bar-chart
+                span Analytics
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Overview
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Installs
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Sessions
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Game
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  User Analytics
+            li.treeview
+              a(href='in_app.html')
+                i.fa.fa-cart-plus
+                span  IN-App
+            li.active.treeview
+              a(href='')
+                i.fa.fa-trophy
+                span Promotions
+                i.fa.fa-angle-left.pull-right  
+              ul.treeview-menu
+                // <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Promotions</a></li>
+                li
+                  a(href='promo_dd_calview.html')
+                    i.fa.fa-circle-o
+                    |  Daily Deals
+                li.active
+                  a(href='promo_aod_calview.html')
+                    i.fa.fa-circle-o
+                    |  App of the day
+                li
+                  a(href='promo_ginfo_calview.html')
+                    i.fa.fa-circle-o
+                    |  General Info
+            li.treeview
+              a(href='test_user.html')
+                i.fa.fa-user-secret
+                span Test User
+            li.treeview
+              a(href='config.html')
+                i.fa.fa-cogs
+                span Configuration
+        // /.sidebar
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              // main cintainer start
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    | Add New App of the Day
+                .panel-body
+                  .panel.panel-info
+                    .panel-heading
+                      h3.panel-title
+                        | Details
+                        .btn-group.pull-right(style='padding: 2px;')
+                          button.btn.btn-success.btn-sm(href='#', style='margin-top: -8px;', title='Click to upload resources')
+                            i.fa.fa-floppy-o
+                            |  Save
+                        .btn-group.pull-right(style='padding: 2px;')
+                          button.btn.btn-info.btn-sm(href='#', style='margin-top: -8px;', title='Click to upload resources')
+                            i.fa.fa-floppy-o
+                            |  Publish
+                        .btn-group.pull-right(style='padding: 2px;')
+                          button.btn.btn-danger.btn-sm(href='#', style='margin-top: -8px;')
+                            i.fa.fa-trash
+                            |  Delete
+                    .panel-body
+                      .row-fluid-5
+                        .row
+                          .col-md-6
+                            .box.box-primary
+                              br
+                              .row(style='text-align:center;')
+                                .col-md-6
+                                  form#aod_banner-form(action='#', method='post', enctype='multipart/form-data', title='Click to Select File')
+                                    label(for='aod_banner')
+                                      img#aod_banner_preview.img-thumbnail(src='dist/img/promo1.png', style='height:350px; width:250px;', alt='Responsive image')
+                                      i(style='visibility: hidden;')
+                                        input#aod_banner(type='file', accept='.png, .jpeg, .jpg', onchange="showMyImage(this, 'aod_banner_preview')", name='gameicon')
+                                      input.btn.btn-success(type='submit', name='submit', value='Upload', disabled='')
+                                .col-md-6(style='margin-top: 200px;')
+                                  form#aod_banner2-form(action='#', method='post', enctype='multipart/form-data')
+                                    label(for='aod_banner2')
+                                      img#aod_banner2_preview.img-thumbnail(src='dist/img/promo2.png', style='height:150px; width:250px;', alt='Responsive image')
+                                      i(style='visibility: hidden;')
+                                        input#aod_banner2(type='file', accept='.png, .jpg, .jpeg', onchange="showMyImage(this, 'aod_banner2_preview')", name='squareicon')
+                                      input.btn.btn-success(type='submit', name='submit', value='Upload', disabled='')
+                          .col-md-6
+                            .box.box-primary
+                              .box-body
+                                // Date range
+                                form
+                                  .form-group
+                                    label.control-label(for='Lua File Name') Operating System
+                                    div
+                                      input#url.form-control.input-md(name='operating system', placeholder='', required='', type='text')
+                                  .form-group
+                                    label.control-label(for='Lua File Name') URL
+                                    div
+                                      input#url.form-control.input-md(name='promotionalurl', placeholder='Enter promotional URL', required='', type='text')
+                                  .form-group
+                                    label.control-label(for='Lua File Name') Coin
+                                    div
+                                      input#coins.form-control.input-md(name='prmo_coin', placeholder='Enter Coins', type='text')
+                                  // Date and time range
+                                  .form-group
+                                    label Date and time range:
+                                    .input-group
+                                      .input-group-addon
+                                        i.fa.fa-clock-o
+                                      input#reservationtime.form-control.pull-right(type='text')
+                                    // /.input group
+                                  // /.form group
+                                  .form-group
+                                    label Select Countries
+                                    br
+                                    select#MasterSelectBox(multiple='', size='9', style='min-width: 250px;float:left;')
+                                      option(value='AF') Afghanistan
+                                      option(value='AU') Australia
+                                      option(value='BD') Bangladesh
+                                      option(value='BT') Bhutan
+                                      option(value='BW') Botswana
+                                      option(value='BR') Brazil
+                                      option(value='CN') China
+                                      option(value='CY') Cyprus
+                                      option(value='CZ') Czech Republic
+                                      option(value='DK') Denmark
+                                      option(value='DJ') Djibouti
+                                      option(value='DM') Dominica
+                                      option(value='DO') Dominican Republic
+                                      option(value='EC') Ecuador
+                                      option(value='EG') Egypt
+                                      option(value='SV') El Salvador
+                                      option(value='GQ') Equatorial Guinea
+                                      option(value='ER') Eritrea
+                                      option(value='EE') Estonia
+                                      option(value='ET') Ethiopia
+                                      option(value='FJ') Fiji
+                                      option(value='FI') Finland
+                                      option(value='FR') France
+                                      option(value='GF') French Guiana
+                                      option(value='PF') French Polynesia
+                                      option(value='TF') French Southern Territories
+                                      option(value='GA') Gabon
+                                      option(value='GM') Gambia
+                                      option(value='GE') Georgia
+                                      option(value='DE') Germany
+                                      option(value='GH') Ghana
+                                      option(value='GI') Gibraltar
+                                      option(value='GR') Greece
+                                      option(value='HK') Hong Kong
+                                      option(value='HU') Hungary
+                                      option(value='IS') Iceland
+                                      option(value='IN') India
+                                      option(value='ID') Indonesia
+                                      option(value='IR') Iran, Islamic Republic of
+                                      option(value='IQ') Iraq
+                                      option(value='IE') Ireland
+                                      option(value='IM') Isle of Man
+                                      option(value='IL') Israel
+                                      option(value='IT') Italy
+                                      option(value='JM') Jamaica
+                                      option(value='JP') Japan
+                                      option(value='JE') Jersey
+                                      option(value='JO') Jordan
+                                      option(value='KZ') Kazakhstan
+                                      option(value='KE') Kenya
+                                      option(value='KP') Korea, Democratic People's Republic of
+                                      option(value='KR') Korea, Republic of
+                                      option(value='MO') Macao
+                                      option(value='MY') Malaysia
+                                      option(value='MV') Maldives
+                                      option(value='MU') Mauritius
+                                      option(value='YT') Mayotte
+                                      option(value='MX') Mexico
+                                      option(value='NP') Nepal
+                                      option(value='NZ') New Zealand
+                                      option(value='NO') Norway
+                                      option(value='OM') Oman
+                                      option(value='PK') Pakistan
+                                      option(value='PH') Philippines
+                                      option(value='PL') Poland
+                                      option(value='PT') Portugal
+                                      option(value='QA') Qatar
+                                      option(value='RE') Réunion
+                                      option(value='RO') Romania
+                                      option(value='SG') Singapore
+                                      option(value='ES') Spain
+                                      option(value='LK') Sri Lanka
+                                      option(value='SD') Sudan
+                                      option(value='SE') Sweden
+                                      option(value='CH') Switzerland
+                                      option(value='TZ') Tanzania, United Republic of
+                                      option(value='TH') Thailand
+                                      option(value='TR') Turkey
+                                      option(value='UG') Uganda
+                                      option(value='UA') Ukraine
+                                      option(value='AE') United Arab Emirates
+                                      option(value='GB') United Kingdom
+                                      option(value='US') United States
+                                      option(value='ZW') Zimbabwe
+                                    div(style='float:left;margin:10px;')
+                                      i#btnAdd.btn.btn-success.btn-sm
+                                        i.fa.fa-plus-circle.fa-2x
+                                      br
+                                      i#btnRemove.btn.btn-danger.btn-sm(style='margin-top: 1px;')
+                                        i.fa.fa-minus-circle.fa-2x
+                                    select#PairedSelectBox(multiple='', size='9', style='min-width: 250px;float:left;')
+                              // /.box-body
+                            // /.box
+                      #result
+                  // Accordion with four forms end
+      // /.content
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015 
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    // Control Sidebar
+    // /.control-sidebar
+    //
+      Add the sidebar's background. This div must be placed
+      immediately after the control sidebar
+    .control-sidebar-bg
+    // ./wrapper
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // Select2
+    script(src='plugins/select2/select2.full.min.js')
+    // InputMask
+    script(src='plugins/input-mask/jquery.inputmask.js')
+    script(src='plugins/input-mask/jquery.inputmask.date.extensions.js')
+    script(src='plugins/input-mask/jquery.inputmask.extensions.js')
+    // date-range-picker
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js')
+    script(src='plugins/daterangepicker/daterangepicker.js')
+    // bootstrap color picker
+    script(src='plugins/colorpicker/bootstrap-colorpicker.min.js')
+    // bootstrap time picker
+    script(src='plugins/timepicker/bootstrap-timepicker.min.js')
+    // SlimScroll 1.3.0
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // iCheck 1.0.1
+    script(src='plugins/iCheck/icheck.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    // AdminLTE for demo purposes
+    script(src='dist/js/demo.js')
+    script(src='plugins/pairselect/pair-select.min.js')
+    script(src='plugins/pairselect/main.js')
+    // Page script
+    script.
+      $(function () {
+      //Initialize Select2 Elements
+      $(".select2").select2();
+      //Datemask dd/mm/yyyy
+      $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+      //Datemask2 mm/dd/yyyy
+      $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+      //Money Euro
+      $("[data-mask]").inputmask();
+      //Date range picker
+      $('#reservation').daterangepicker();
+      //Date range picker with time picker
+      $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+      //Date range as a button
+      $('#daterange-btn').daterangepicker(
+      {
+      ranges: {
+      'Today': [moment(), moment()],
+      'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+      'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+      'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+      'This Month': [moment().startOf('month'), moment().endOf('month')],
+      'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+      },
+      startDate: moment().subtract(29, 'days'),
+      endDate: moment()
+      },
+      function (start, end) {
+      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+      );
+      //iCheck for checkbox and radio inputs
+      $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass: 'iradio_minimal-blue'
+      });
+      //Red color scheme for iCheck
+      $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass: 'iradio_minimal-red'
+      });
+      //Flat red color scheme for iCheck
+      $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+      });
+      //Colorpicker
+      $(".my-colorpicker1").colorpicker();
+      //color picker with addon
+      $(".my-colorpicker2").colorpicker();
+      //Timepicker
+      $(".timepicker").timepicker({
+      showInputs: false
+      });
+      });
+    script.
+      function showMyImage(fileInput, imageId) {
+      var files = fileInput.files;
+      for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+      var imageType = /image.*/;
+      if (!file.type.match(imageType)) {
+      continue;
+      }
+      var img=document.getElementById(imageId);
+      img.file = file;
+      var reader = new FileReader();
+      reader.onload = (function(aImg) {
+      return function(e) {
+      aImg.src = e.target.result;
+      };
+      })(img);
+      reader.readAsDataURL(file);
+      }
+      }
+    script.
+      $(document).ready(
+      function(){
+      $('input:file').change(
+      function(){
+      if ($('#aod_banner').val()) {
+      $('#aod_banner-form input:submit').attr('disabled',false);
+      }
+      if ($('#aod_banner2').val()) {
+      $('#aod_banner2-form input:submit').attr('disabled',false);
+      }
+      }
+      );
+      });

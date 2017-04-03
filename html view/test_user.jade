@@ -1,0 +1,369 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | Dashboard
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    // Bootstrap 3.3.5
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    // Ionicons
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // Theme style
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    //
+      AdminLTE Skins. Choose a skin from the css/skins
+      folder instead of downloading all of them to reduce the load.
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    // iCheck
+    link(rel='stylesheet', href='plugins/iCheck/flat/blue.css')
+    // custom
+    link(rel='stylesheet', href='bootstrap/css/custom.css')
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='index2.html')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              li
+                a(href='index.html', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+          // search form
+          // /.search form
+          // sidebar menu: : style can be found in sidebar.less
+          ul.sidebar-menu
+            li.header MAIN NAVIGATION
+            li.treeview
+              a(href='all_games.html')
+                i.fa.fa-gamepad
+                span Games
+            li.treeview
+              a(href='')
+                i.fa.fa-bar-chart
+                span Analytics
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Overview
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Installs
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Sessions
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Game
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  User Analytics
+            li.treeview
+              a(href='in_app.html')
+                i.fa.fa-cart-plus
+                span  IN-App
+            li.treeview
+              a(href='')
+                i.fa.fa-trophy
+                span Promotions
+                i.fa.fa-angle-left.pull-right  
+              ul.treeview-menu
+                // <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Promotions</a></li>
+                li
+                  a(href='promo_dd_calview.html')
+                    i.fa.fa-circle-o
+                    |  Daily Deals
+                li
+                  a(href='promo_aod_calview.html')
+                    i.fa.fa-circle-o
+                    |  App of the day
+                li
+                  a(href='promo_ginfo_calview.html')
+                    i.fa.fa-circle-o
+                    |  General Info
+            li.active.treeview
+              a(href='test_user.html')
+                i.fa.fa-user-secret
+                span Test User
+            li.treeview
+              a(href='config.html')
+                i.fa.fa-cogs
+                span Configuration
+        // /.sidebar
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              // main cintainer start
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    | Test Users
+                .panel-body
+                  .panel.panel-info
+                    .panel-heading
+                      h3.panel-title
+                        | Add New User
+                        .btn-group.pull-right
+                    .panel-body
+                      #accordion.panel-group(role='tablist', aria-multiselectable='true')
+                        // Accordion one start
+                        .panel.panel-default
+                          .panel-body
+                            form.form-horizontal
+                              fieldset
+                                // Text input
+                                .form-group
+                                  label.col-md-4.control-label(for='new_user_name') Name
+                                  .col-md-4
+                                    input#new_user_name.form-control.input-md(name='new_user_name', placeholder='Enter New User Name', required='', type='text')
+                                // Select Basic
+                                .form-group
+                                  label.col-md-4.control-label(for='selectbasic') Operating System
+                                  .col-md-4
+                                    select#selectbasic.form-control(name='selectbasic')
+                                      option(value='Select') Select
+                                      option(value='iOS') iOS
+                                      option(value='Android') Android
+                                // Text input
+                                .form-group
+                                  label.col-md-4.control-label(for='device_id') Device ID
+                                  .col-md-4
+                                    input#device_id.form-control.input-md(name='device_id', placeholder='Device ID', required='', type='text')
+                                // Button
+                                .form-group
+                                  label.col-md-4.control-label(for='singlebutton')
+                                  .col-md-4
+                                    button#singlebutton.btn.btn-success(name='singlebutton') Add New User
+                        i(style='text-align: center;')
+                          h4
+                            strong(style='margin-left:-60px;') TEST USERS
+                      // <div class="custom-scroll table-responsive" style="height:350px; overflow-y: scroll;">  -
+                      table.table.table-bordered(style='background-color:#E1E1E1;')
+                        thead(style='background-color:#D9EDF7;')
+                          tr
+                            th(style='text-align:center;') OS
+                            th(style='text-align:center;') Name
+                            th(style='text-align:center;') Device Id
+                            th(style='width:150px;text-align:center;') Enable
+                            th(style='width:150px; text-align:center;') Action 
+                        tbody
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+                          tr
+                            td
+                              br
+                            td
+                            td
+                            td(style='text-align:center;')
+                              label
+                                input.checkbox(type='checkbox', name='checkbox')
+                            td(style='text-align:center;')
+                              a(style='color:#E60000;', href='')
+                                button.btn.button
+                                  i.fa.fa-trash-o(style='color:#E60000;')
+                                  |  Delete
+    // /.content
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015 
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // jQuery UI 1.11.4
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+    // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+    script.
+      $.widget.bridge('uibutton', $.ui.button);
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // Slimscroll
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    // AdminLTE dashboard demo (This is only for demo purposes)
+    // AdminLTE for demo purposes
+    script(src='dist/js/demo.js')

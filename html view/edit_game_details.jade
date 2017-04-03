@@ -1,0 +1,547 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | Dashboard
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    // Bootstrap 3.3.5
+    link(rel='stylesheet', href='../bootstrap/css/bootstrap.min.css')
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    // Ionicons
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // Theme style
+    link(rel='stylesheet', href='../dist/css/AdminLTE.min.css')
+    //
+      AdminLTE Skins. Choose a skin from the css/skins
+      folder instead of downloading all of them to reduce the load.
+    link(rel='stylesheet', href='../dist/css/skins/_all-skins.min.css')
+    // iCheck
+    link(rel='stylesheet', href='../plugins/iCheck/flat/blue.css')
+    // custom
+    link(rel='stylesheet', href='../bootstrap/css/custom.css')
+    link(rel='shortcut icon', href='../dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='index2.html')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              li
+                a(href='index.html', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+          // search form
+          // /.search form
+          // sidebar menu: : style can be found in sidebar.less
+          ul.sidebar-menu
+            li.header MAIN NAVIGATION
+            li.active.treeview
+              a(href='all_games.html')
+                i.fa.fa-gamepad
+                span Games
+            li.treeview
+              a(href='')
+                i.fa.fa-bar-chart
+                span Analytics
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Overview
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Installs
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Sessions
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Game
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  User Analytics
+            li.treeview
+              a(href='in_app.html')
+                i.fa.fa-cart-plus
+                span  IN-App
+            li.treeview
+              a(href='')
+                i.fa.fa-trophy
+                span Promotions
+                i.fa.fa-angle-left.pull-right  
+              ul.treeview-menu
+                // <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Promotions</a></li>
+                li
+                  a(href='promo_dd_calview.html')
+                    i.fa.fa-circle-o
+                    |  Daily Deals
+                li
+                  a(href='promo_aod_calview.html')
+                    i.fa.fa-circle-o
+                    |  App of the day
+                li
+                  a(href='promo_ginfo_calview.html')
+                    i.fa.fa-circle-o
+                    |  General Info
+            li.treeview
+              a(href='test_user.html')
+                i.fa.fa-user-secret
+                span Test User
+            li.treeview
+              a(href='config.html')
+                i.fa.fa-cogs
+                span Configuration
+        // /.sidebar
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    | Edit Game details
+                    .btn-group.pull-right
+                      a.btn.btn-success.btn-sm(href='#', style='margin-top: -6px;')
+                        i.fa.fa-rocket
+                        |  Publish
+                .panel-body
+                  .panel.panel-info
+                    .panel-heading
+                      h3.panel-title
+                        | Resources
+                    .panel-body
+                      .row-fluid-5
+                        .span2(style='text-align:center;')
+                          h3 GameIcon
+                          form#gameicon-form(action='/upload_resources', method='post', enctype='multipart/form-data', title='Click to Select File')
+                            label(for='gameicon')
+                              img#gameiconpreview.img-thumbnail(src='../../games/' + game_details._id + '/GameIcon.png', style='height:150px; width:150px;', alt='Responsive image')
+                              i(style='visibility: hidden;')
+                                input#gameicon(type='file',name='fileToUpload', accept='.png, .jpeg, .jpg', onchange="showMyImage(this, 'gameiconpreview')")
+                              input(id='file_name_game_icon',type='hidden',value='GameIcon.png',name='file_name' )
+                              input(id='game_id_game_icon',type='hidden',value='#{game_details._id}',name='game_id' )
+                              input.btn.btn-success(type='submit',onclick='return validateUploadForm(gameicon-form)', name='submit', value='Upload', disabled='')
+                        .span2(style='text-align:center;')
+                          h3 Square Icon
+                          form#squareicon-form(action='/upload_resources', method='post', enctype='multipart/form-data')
+                            label(for='squareicon')
+                              img#squareiconpreview.img-thumbnail(src='../../games/' + game_details._id + '/GameIcon_Square.png', style='height:150px; width:150px;', alt='Responsive image')
+                              i(style='visibility: hidden;')
+                                input#squareicon(type='file', accept='.png, .jpg, .jpeg', onchange="showMyImage(this, 'squareiconpreview')", name='squareicon')
+                              input(id='file_name_square_icon',type='hidden',value='GameIcon_Square.png',name='file_name' )
+                              input(id='game_id_square_icon',type='hidden',value='#{game_details._id}',name='game_id' )
+                              input.btn.btn-success(type='submit',onclick='return validateUploadForm(squareicon-form)', name='submit', value='Upload', disabled='')
+                        .span2(style='text-align: center')
+                          h3 GameBanner
+                          form#gamebanner-form(action='/upload_resources', method='post', enctype='multipart/form-data')
+                            label(for='gamebanner')
+                              img#gamebannerpreview.img-thumbnail(src='../../games/' + game_details._id + '/GameBanner.jpg', style='height:150px; width:250px;', alt='Responsive image')
+                              i(style='visibility: hidden;')
+                                input#gamebanner(type='file', accept='.png, .jpg, .jpeg', onchange="showMyImage(this, 'gamebannerpreview')", name='gamebannerpreview')
+                              input(id='file_name_game_banner',type='hidden',value='GameBanner.jpg',name='file_name' )
+                              input(id='game_id_game_banner',type='hidden',value='#{game_details._id}',name='game_id' )
+                              input.btn.btn-success(type='submit',onclick='return validateUploadForm(gamebanner-form)', name='submit', value='Upload', disabled='')
+                        .span2(style='text-align: center')
+                          h3 Assets & Script
+                          form#assetsscript-form(action='/upload_resources', method='post', enctype='multipart/form-data')
+                            label
+                              img#game_assets_script.img-thumbnail(src='../dist/img/fileexist.png', style='height:150px; width:150px;', alt='Responsive image')
+                              i(style='visibility: hidden;')
+                                input#assetsscript(type='file', accept='.zip, .rar', name='assetsscript')
+                              input(id='game_id_game_resources_all',type='hidden',value='#{game_details._id}',name='game_id' )
+                              input(id='file_name_game_resources_all',type='hidden',value='GameResourcesAll.zip',name='file_name' )
+                              input.btn.btn-success(type='submit',onclick='return validateUploadForm(assetsscript-form)', name='submit', value='Upload', disabled='')
+                        .span2(style='text-align: center')
+                          h3 Only Script
+                          form#onlyassets-form(action='/upload_resources', method='post', enctype='multipart/form-data')
+                            label(for='onlyassets')
+                              img#game_script.img-thumbnail(src='../dist/img/fileexist.png', style='height:150px; width:150px;', alt='Responsive image')
+                              i(style='visibility: hidden;')
+                                input#onlyassets(type='file', accept='.zip, .rar', name='onlyassets')
+                              input(id="file_name_game_resources",type='hidden',value='GameResources.zip',name='file_name' )
+                              input(id='game_id_game_resources',type='hidden',value='#{game_details._id}',name='game_id' )
+                              input.btn.btn-success(type='submit',onclick='return validateUploadForm(onlyassets-form)', name='submit', value='Upload', disabled='')
+                    // Accordion with four forms
+                  form.form-horizontal(id='gamedetails' ,name = 'gamedetails' , action ='/save_game_details' ,method ='post' ,enctype='multipart/form-data')
+                    .panel.panel-primary
+                      .panel-heading
+                        h3.panel-title
+                          | Game Settings
+                          .btn-group.pull-right
+                            a.btn.btn-success.btn-sm(onclick='return submitGameDetails();', style='margin-top: -6px;', title='Click to upload resources')
+                              i.fa.fa-floppy-o
+                              |  Save
+                      .panel-body
+                        // Accordion with four forms
+                        #accordion.panel-group(role='tablist', aria-multiselectable='true')
+                          // Accordion one start
+                          .panel.panel-default
+                            #headingOne.panel-heading(style='background-color:#D9EDF7;', role='tab', data-toggle='collapse', data-parent='accordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                              h4.panel-title
+                                a(role='button', data-toggle='collapse', data-parent='#accordion', href='collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                                  | Game Details
+                            #collapseOne.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingOne')
+                              .panel-body
+                                fieldset
+                                  // Text input
+                                  .form-group
+                                    label.col-md-4.control-label(for='Display Name') Display Name
+                                    .col-md-3
+                                      input.form-control.input-md(id='Display Name', name='display_name',value=game_details.DisplayName, placeholder='Enter Game Display Name', required='', type='text')
+                                  // Text input
+                                  .form-group
+                                    label.col-md-4.control-label(for='Lua File Name') Lua File Name
+                                    .col-md-3
+                                      input.form-control.input-md(id='Lua File Name', name='lua_file_name',value=game_details.LuaFileName, placeholder='Enter Lua File Name', required='', type='text')
+                                  // Select Basic
+                                  .form-group
+                                    label.col-md-4.control-label(for='min_player') Min Player
+                                    .col-md-2
+                                      select#min_player.form-control(name='min_player')
+                                        option(value='select') Select
+                                          for item in [1,2,3,4,5]
+                                            option(selected=game_details.MinPlayers == item) #{item}
+                                  // Select Basic
+                                  .form-group
+                                    label.col-md-4.control-label(for='max_player') Max Player
+                                    .col-md-2
+                                      select#max_player.form-control(name='max_player')
+                                        option(value='select') Select
+                                          for item in [1,2,3,4,5]
+                                            option(selected=game_details.MaxPlayers == item) #{item}
+                          // Accordion one end
+                          // Accordion two start
+                          .panel.panel-default
+                            // Accordion two end
+                            // Accordion three start
+                            #headingTwo.panel-heading(style='background-color:#D9EDF7;', role='tab', data-toggle='collapse', data-parent='accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo', data-trigger='hover')
+                              h4.panel-title
+                                a.collapsed(role='button', data-toggle='collapse', data-parent='accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+                                  | Game Configuration
+                            #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
+                              .panel-body
+                                fieldset
+                                  // Multiple Radios (inline)
+                                  .form-group
+                                    label.col-md-4.control-label Orientation #{game_details.GameConfigParameter.Landscape}
+                                    .col-md-4
+                                      label.radio-inline(for='game_config_orientation-0')
+                                        input#game_config_orientation-0(name='game_config_orientation', value='Portrait', checked=game_details.GameConfigParameter.Landscape == false, type='radio')
+                                        |                                      Portrait
+                                      label.radio-inline(for='game_config_orientation-1')
+                                        input#game_config_orientation-1(name='game_config_orientation', value='Landscape',checked=game_details.GameConfigParameter.Landscape == true, type='radio')
+                                        |                                      Landscape
+                                  // Multiple Checkboxes (inline)
+                                  .form-group
+                                    label.col-md-4.control-label Games Mode
+                                    .col-md-4
+                                      label.checkbox-inline(for='Game_config_mode-0')
+                                        input#Game_config_mode-0(name='Game_config_mode', value='Friends', type='checkbox',checked=game_details.GameConfigParameter.GameMode.Friends == true)
+                                        |                                      Friends
+                                      label.checkbox-inline(for='Game_config_mode-1')
+                                        input#Game_config_mode-1(name='Game_config_mode', value='Random', type='checkbox' ,checked=game_details.GameConfigParameter.GameMode.Random == true)
+                                        |                                      Random
+                                      label.checkbox-inline(for='Game_config_mode-2')
+                                        input#Game_config_mode-2(name='Game_config_mode', value='Pass & Play', type='checkbox' ,checked=game_details.GameConfigParameter.GameMode.PassAndPlay == true)
+                                        |                                      Pass & Play
+                                      label.checkbox-inline(for='Game_config_mode-3')
+                                        input#Game_config_mode-3(name='Game_config_mode', value='Bot', type='checkbox' ,checked=game_details.GameConfigParameter.GameMode.Bot == true)
+                                        |                                      Bot
+                                  // Multiple Checkboxes (inline)
+                                  .form-group
+                                    label.col-md-4.control-label Difficulty Mode
+                                    .col-md-4
+                                      label.checkbox-inline(for='game_config_label-0')
+                                        input#game_config_label-0(name='game_config_label', value='Easy', type='checkbox' , checked=game_details.GameConfigParameter.DifficultyMode.obj.Easy == true)
+                                        |                                      Easy
+                                      label.checkbox-inline(for='game_config_label-1')
+                                        input#game_config_label-1(name='game_config_label', value='Medium', type='checkbox' , checked=game_details.GameConfigParameter.DifficultyMode.obj.Moderate == true)
+                                        |                                      Medium
+                                      label.checkbox-inline(for='game_config_label-2')
+                                        input#game_config_label-2(name='game_config_label', value='Hard', type='checkbox' , checked=game_details.GameConfigParameter.DifficultyMode.obj.Hard == true)
+                                        |                                      Hard
+                                  .form-group
+                                    label.col-md-4.control-label Game Category
+                                    .col-md-2
+                                      select#gamecategory.form-control(name='gamecategory')
+                                        option(value='select') Select
+                                          each val, index in ['None', 'Turn Based', 'Challenge Based' ,'Casual Mode']
+                                            option(selected=game_details.ToUnlock == index) #{val}
+                                  // Select Basic
+                                  .form-group
+                                    label.col-md-4.control-label(for='bet_amount') Bet Amount
+                                    .col-md-2
+                                      input#bet_amount.form-control.input-md(name='bet_amount', placeholder='Enter Bet Amount', required='', type='input', size='50', maxlength='50', title='Enter Comma Seperated Value')
+                                  // Select Basic
+                                  .form-group
+                                    label.col-md-4.control-label(for='random_turn_time') Random Turn Time
+                                    .col-md-2
+                                      input#random_turn_time.form-control.input-md(name='random_turn_time', placeholder='Enter Time in Seconds', required='', type='input', size='10', maxlength='10', title='Enter Time in Seconds')
+                                  // Select Basic
+                                  .form-group
+                                    label.col-md-4.control-label(for='friendly_table_time') Friendly Table Time
+                                    .col-md-2
+                                      input#friendly_table_time.form-control.input-md(name='friendly_table_time', placeholder='Enter Time in Seconds', required='', type='input', size='10', maxlength='10', title='Enter Time in Seconds')
+                                  // Select Basic
+                                  .form-group
+                                    label.col-md-4.control-label(for='friendly_bonus_table_time') Friendly Bonus Table Time
+                                    .col-md-2
+                                      input#friendly_bonus_table_time.form-control.input-md(name='friendly_bonus_table_time', placeholder='Enter Time in Seconds', required='', type='input', size='10', maxlength='10', title='Enter Time in Seconds')
+                          // Accordion three end
+                          // Accordion four start
+                          .panel.panel-default
+                            #headingFour.panel-heading(style='background-color:#D9EDF7;', role='tab', data-toggle='collapse', data-parent='accordion', href='#collapseFour', aria-expanded='false', aria-controls='collapseFour')
+                              h4.panel-title
+                                a.collapsed(role='button', data-toggle='collapse', data-parent='accordion', href='#collapseFour', aria-expanded='false', aria-controls='collapseFour')
+                                  | Advance Settings
+                            #collapseFour.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFour')
+                              .panel-body
+                                fieldset
+                                  // Select Basic
+                                  .form-group
+                                    label.col-md-4.control-label(for='coins_to_unlock') Coins to Unlock
+                                    .col-md-2
+                                      input#coins_to_unlock.form-control.input-md(name='coins_to_unlock', placeholder='Enter Coins', required='', type='input', size='10', maxlength='10')
+                                  // Select Basic
+                                  // Multiple Checkboxes (inline)
+                                  .form-group
+                                    label.col-md-4.control-label(for='is_active') Is Active
+                                    .col-md-4
+                                      label.checkbox-inline(for='is_active-0')
+                                        input#is_active-0(name='is_active', value='Easy', type='checkbox', style='margin-top: -4px; margin-left: -18px;')
+                                .text-right
+                                  a.btn.btn-danger(href='delete_game/'+ game_details._id)
+                                    i.fa.fa-trash
+                                    |  Delete
+                          br
+                        // Accordion four end
+                  // Accordion with four forms end
+      // /.content
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015 
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    // jQuery 2.1.4
+    script(src='../plugins/jQuery/jQuery-2.1.4.min.js')
+    // jQuery UI 1.11.4
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+    // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+    script.
+      $.widget.bridge('uibutton', $.ui.button);
+    // Bootstrap 3.3.5
+    script(src='../bootstrap/js/bootstrap.min.js')
+    // Slimscroll
+    script(src='../plugins/slimScroll/jquery.slimscroll.min.js')
+    // FastClick
+    script(src='../plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='../dist/js/app.min.js')
+    // AdminLTE dashboard demo (This is only for demo purposes)
+    // AdminLTE for demo purposes
+  script(src='../dist/js/demo.js')
+    script.
+      $(document).ready(function () {
+        $('[id^=bet_amount]').keypress(validateNumber);
+        $('[id^=friendly_bonus_table_time]').keypress(validateNumber);
+        $('[id^=friendly_table_time]').keypress(validateNumber);
+        $('[id^=random_turn_time]').keypress(validateNumber);
+        $('[id^=coins_to_unlock]').keypress(validateNumber);
+      });
+      function validateNumber(event) {
+        var key = window.event ? event.keyCode : event.which;
+        if (event.keyCode === 8 || event.keyCode === 46
+                || event.keyCode === 37 || event.keyCode === 39) {
+          return true;
+        }
+        else if (key < 48 || key > 57) {
+          return false;
+        }
+        else return true;
+      };
+    script.
+      function showMyImage(fileInput, imageId) {
+        var files = fileInput.files;
+        for (var i = 0; i < files.length; i++) {
+          var file = files[i];
+          var imageType = /image.*/;
+          if (!file.type.match(imageType)) {
+            continue;
+          }
+          var img = document.getElementById(imageId);
+          img.file = file;
+          var reader = new FileReader();
+          reader.onload = (function (aImg) {
+            return function (e) {
+              aImg.src = e.target.result;
+            };
+          })(img);
+          reader.readAsDataURL(file);
+        }
+      }
+    script.
+      $(document).ready(
+              function () {
+                $('input:file').change(
+                        function () {
+                          if ($('#gameicon').val()) {
+                            $('#gameicon-form input:submit').attr('disabled', false);
+                          }
+                          if ($('#squareicon').val()) {
+                            $('#squareicon-form input:submit').attr('disabled', false);
+                          }
+                          if ($('#gamebanner').val()) {
+                            $('#gamebanner-form input:submit').attr('disabled', false);
+                          }
+                          if ($('#assetsscript').val()) {
+                            $('#assetsscript-form input:submit').attr('disabled', false);
+                          }
+                          if ($('#onlyassets').val()) {
+                            $('#onlyassets-form input:submit').attr('disabled', false);
+                          }
+                        }
+                );
+
+                var gameid = '#{game_details._id}';
+
+                if (doesFileExist('../games/' + gameid + '/temp/GameResources.zip') == true) {
+                  document.getElementById('game_assets_script').src = '../dist/img/fileexist.png';
+                }
+                else {
+                  document.getElementById('game_assets_script').src = '../dist/img/404.png';
+                }
+
+                if (doesFileExist('../games/' + gameid + '/temp/GameResourcesAll.zip')) {
+                  document.getElementById('game_script').src = '../dist/img/fileexist.png';
+                }
+                else {
+                  document.getElementById('game_script').src = '../dist/img/404.png';
+                }
+
+                if (doesFileExist('../games/' + gameid + '/temp/GameIcon.png') == true) {
+                  document.getElementById('gameiconpreview').src = '../games/' + gameid + '/temp/GameIcon.png';
+                }
+                else {
+                  document.getElementById('gameiconpreview').src = '../dist/img/404.png';
+                }
+
+                if (doesFileExist('../games/' + gameid + '/temp/GameIcon_square.png') == true) {
+                  document.getElementById('squareiconpreview').src = '../games/' + gameid + '/temp/GameIcon_square.png';
+                }
+                else {
+                  document.getElementById('squareiconpreview').src = '../dist/img/404.png';
+                }
+
+                if (doesFileExist('../games/' + gameid + '/temp/GameBanner.jpg') == true) {
+                  document.getElementById('gamebannerpreview').src = '../games/' + gameid + '/temp/GameBanner.jpg';
+                }
+                else {
+                  document.getElementById('gamebannerpreview').src = '../dist/img/404.png';
+                }
+                onload();
+
+              });
+
+      function doesFileExist(urlToFile) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('HEAD', urlToFile, false);
+        xhr.send();
+
+        if (xhr.status == "404") {
+          return false;
+        } else {
+          return true;
+        }
+      }
+
+      function validateUploadForm(formid) {
+        var gameId = window.location.href.split("/").pop();
+
+        if (gameId == 'newgame') {
+          var gameName = document.getElementById('Display Name').value;
+          if (gameName == '' || gameName == undefined || gameName == null) {
+            document.getElementById('Display Name').value = "Test Game";
+          }
+          document.getElementById(formid).submit();
+          return true;
+        }
+        else if (gameId != 'newgame' && gameId != '') {
+          document.getElementById(formid).submit();
+          return true;
+        }
+
+      }
+
+      function submitGameDetails() {
+        document.getElementById('gamedetails').submit();
+      }
+
+      function onload() {
+        var error = getParamValuesByName('error');
+        var success = getParamValuesByName('success');
+        if (error)alert(error);
+        if (success)alert(success);
+      }
+
+      function getParamValuesByName(querystring) {
+        name = querystring.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(window.location.search);
+        if (results == null) {
+          return "";
+        }
+        else {
+          return decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+      }

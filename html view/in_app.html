@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PocketPlay | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+	   <!-- custom -->
+    <link rel="stylesheet" href="bootstrap/css/custom.css">
+	<link rel="shortcut icon" href="dist/img/favicon.ico">
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>P</b>Play</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>PocketPlay</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+           
+              <li>
+                <a href="index.html" title=LOGOUT>
+                  <i class="fa fa-sign-out fa-lg" ></i>
+                  <strong class="hidden-xs">Logout</strong>
+                </a>
+                
+              </li>
+              <!-- Control Sidebar Toggle Button -->
+              <li>
+                <a href="#" data-toggle="control-sidebar"></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+         <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="dist/img/ppmascot.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p>Admin Console</p>
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+		  <!-- import sidebar -->
+           <nav id="sidebarqa"> </nav>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+       
+		<br>
+
+        <!-- Main content -->
+        <section class="content">
+         <div class="box-header">   <!--main cintainer start-->
+		<div class="row">   <!--main cintainer start-->
+		  <div class="panel panel-primary">
+													 <div class="panel-heading">
+                                    <h3 class="panel-title">In App 
+	                                  
+													</h3>
+												   </div>
+												  <div class="panel-body">	
+									  <div class="panel panel-default">
+										 <div class="panel-heading">
+											  <h3 class="panel-title" >Configuration Version:-<b style="color:#FE801C;"> 5.0</b>
+											
+											</h3>
+										   </div>	
+													
+<div class="panel-body">
+<div class="panel panel-info">
+   <div class="panel-heading">
+      <h3 class="panel-title">Add New In App Pack
+	<div class="btn-group pull-right">
+        
+    </div>
+	</h3>
+   </div>
+   
+   <div class = "panel-body">
+  <div class="panel panel-default">
+      <div class="panel-body">
+	  <form class="form-horizontal">
+	  <div class="col-md-3">
+	 
+				<div class="row" style="text-align:center;">
+	
+													<label >
+														<img id="promo_ginfo_addnew" src="dist/img/Coming-soon2.png" style="height:250px; width:200px;" class="img-thumbnail" alt="Responsive image"/>
+															<i style="visibility: hidden;" ><input type="file" accept=".png, .jpeg, .jpg" onchange="showMyImage(this, 'promo_ginfo_addnew')" name="promo_ginfo_addnew"  ></i>
+																<!--<input type="submit"  name="submit" value="Upload" class="btn btn-success " disabled /> -->
+																</label>								
+                               </div>					
+     </div>	
+<div class="col-md-9">
+									
+										<fieldset>	
+	                                  <!-- Text input-->
+											<div class="form-group">
+										  <label class="col-md-3 control-label" for="index">Index</label>  
+										  <div class="col-md-6">						
+										  <input id="index" name="index" placeholder="Enter Serial Number For Priority" class="form-control input-md" required=""  type="input"   size="5" maxlength="5" />
+											
+										  </div>
+										</div>										
+										<!-- Text input-->
+										<div class="form-group">
+										  <label class="col-md-3 control-label" for="Name">Name</label>  
+										  <div class="col-md-6">
+										  <input id="Name" name="Name" placeholder="Enter Product Name" class="form-control input-md" required="" type="text">
+											
+										  </div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+										  <label class="col-md-3 control-label" for="Productid">Product Id</label>  
+										  <div class="col-md-6">
+										  <input id="Product Id" name="Product Id" placeholder="Enter Product Id" class="form-control input-md" required="" type="text">
+											
+										  </div>
+										</div>
+
+										<!-- Select Basic -->
+										<div class="form-group">
+										  <label class="col-md-3 control-label" for="coinsamount">Coin Amount</label>  
+										  <div class="col-md-6">
+										  <input id="coinsamount" name="Coin Amount" placeholder="Enter Coin Amount" class="form-control input-md" required="" type="input"   size="5" maxlength="5" />
+											
+										  </div>
+										</div>
+
+										<!-- Text input-->
+										<div class="form-group">
+										  <label class="col-md-3 control-label" for="Price">Price</label>  
+										  <div class="col-md-6">
+										  <label class="sr-only" for="Price">Amount (in dollars)</label>
+															<div class="input-group">
+															  <div class="input-group-addon" style="font-size: 130%;">$</div>
+															  <input type="text" class="form-control" id="price" placeholder="Amount" type="input"   size="2" maxlength="2">
+															</div>
+											
+										  </div>
+										</div>
+										<!-- Text input-->
+										<div class="form-group">
+										  <label class="col-md-3 control-label" for="device_id">Percentage</label>  
+										  <div class="col-md-6">
+										  <label class="sr-only" for="percentage">Percentage</label>
+															<div class="input-group">
+															  <div class="input-group-addon" style="font-size: 130%;">%</div>
+															  <input type="text" class="form-control" id="percentage" placeholder="Percentage" type="input"   size="2" maxlength="2">
+															  
+															</div>
+											
+										  </div>
+										</div>
+										
+										<!-- Multiple Radios (inline) -->
+								<div class="form-group">
+								  <label class="col-md-3 control-label" for="game_config_orientation">Type</label>
+								  <div class="col-md-4"> 
+									<label class="radio-inline" for="game_config_orientation-0">
+									  <input name="game_config_orientation" id="game_config_orientation-0" value="Portrait" checked="checked" type="radio">
+									  Normal
+									</label> 
+									<label class="radio-inline" for="game_config_orientation-1">
+									  <input name="game_config_orientation" id="game_config_orientation-1" value="Landscape" type="radio">
+									  Special
+									</label>
+								  </div>
+								</div>
+
+										<!-- Button -->
+										<div class="form-group">
+										  <label class="col-md-3 control-label" for="singlebutton"></label>
+										  <div class="col-md-6">
+											<button id="singlebutton" name="singlebutton" class="btn btn-success"><i class="fa fa-floppy-o"></i> Save</button>
+										  </div>
+										</div>
+
+										</fieldset>
+                                      </form>	
+</div>										  
+      </div>	  
+  
+</div>
+<br>
+  <div class="panel panel-default" >
+  
+    <div style="background-color:#D9EDF7;cursor:n-resize;" class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"  >
+      <h4 class="panel-title"style="text-align:center;">
+        
+         In App List
+        </a>
+      </h4>
+	  
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" >
+      <div class="panel-body">
+												<!--<div class="custom-scroll table-responsive" style="height:350px; overflow-y: scroll;"> --->
+											
+				
+											<table class="table table-bordered" style="background-color:#E1E1E1;"  >
+												
+												<thead style="background-color:#C6C8CC;" >
+													<tr  style=" ">
+														<th style="text-align:center; width:5%;">Index</th>
+														<th style="text-align:center;">Name</th>
+														<th style="text-align:center;">Product ID</th>
+														<th style="text-align:center;">Coin Amount</th>
+														<th style="text-align:center;">Price</th>
+														<th style="text-align:center; font-size: 130%;"> % </th>
+														<th style="text-align:center;" title="Consumeable/Non consumeable">Type</th>
+														<th scope="col" colspan="2" style="width:150px; text-align:center;width:5%;">Action </th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+													    <td style="text-align:center;">1.</td>
+														<td ><a href="game_details _disable.html"><img src="dist/img/disableicon.png" class="img-thumbnail" alt="Responsive image" />Connect 4 </a> </td>
+														<td></td>
+														<td></td>
+ 														<td></td>
+                                                        <td></td>														
+														<td style="text-align:center;"><a style="color:#00BB00;"href=""> <button class="btn button"> <i class="fa fa-pencil" style="color:#00BB00;"></i> Edit</button> </a></td>
+													    <td style="text-align:center;"><a style="color:#E60000;"href=""> <button class="btn button"> <i class="fa fa-trash-o" style="color:#E60000;"></i> Delete</button> </a></td>
+											
+													</tr>
+												
+                                                   
+												</tbody>
+											</table>
+										
+										
+   </div>
+										
+
+      </div>
+    </div>
+</div>
+
+
+             </div>
+			 							
+                    </div>
+					</div>
+					
+                            </div>		
+                                </div>		
+                                      </div>
+
+        </section><!-- /.content -->
+      </div>
+	  </div>	
+										</div>	
+										<!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2014-2015 <a href="http://pocketplay.com">Pocket Play (<i class="fa fa-trademark"></i>)</a>.</strong> All rights reserved.
+      </footer>
+<!-- jQuery 2.1.4 -->
+    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	 <!-- Sidebar -->
+	<script src="dist/js/sidebar.js"></script>
+    <!-- FastClick -->
+    <script src="plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+	<script>
+	 function showMyImage(fileInput, imageId) {
+        var files = fileInput.files;
+        for (var i = 0; i < files.length; i++) {           
+            var file = files[i];
+            var imageType = /image.*/;     
+            if (!file.type.match(imageType)) {
+                continue;
+            }           
+            var img=document.getElementById(imageId);            
+            img.file = file;    
+            var reader = new FileReader();
+            reader.onload = (function(aImg) { 
+                return function(e) { 
+                    aImg.src = e.target.result; 
+                }; 
+            })(img);
+            reader.readAsDataURL(file);
+        }    
+    }
+	</script>
+	<script>
+	$(document).ready(function(){
+    $('[id^=index]').keypress(validateNumber);
+	$('[id^=coinsamount]').keypress(validateNumber);
+	$('[id^=price]').keypress(validateNumber);
+	$('[id^=percentage]').keypress(validateNumber);
+});
+
+function validateNumber(event) {
+    var key = window.event ? event.keyCode : event.which;
+
+    if (event.keyCode === 8 || event.keyCode === 46
+        || event.keyCode === 37 || event.keyCode === 39) {
+        return true;
+    }
+    else if ( key < 48 || key > 57 ) {
+        return false;
+    }
+    else return true;
+};
+	</script>
+	<script>
+		$(document).ready(function () {
+			var fe_id = 'in_app' + '_fe';
+			$('#' + fe_id).addClass('active');
+		});
+	</script>
+  </body>
+</html>

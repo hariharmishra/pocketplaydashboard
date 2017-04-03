@@ -1,0 +1,416 @@
+//
+   Created by harihar on 27-Apr-16.
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        title PocketPlay | Dashboard
+        meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+        meta(name='author', content='harihar mishra, harihar@dinzylabs.com')
+        meta(name='google', content='pocketplay dashboard')
+        link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet', href='bootstrap/css/custom.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+        link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+        link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+        link(rel='shortcut icon', href='dist/img/favicon.ico')
+    body.hold-transition.skin-blue.sidebar-mini
+        .wrapper
+            header.main-header
+                // Logo
+                a.logo(href='/all_games')
+                    // mini logo for sidebar mini 50x50 pixels
+                    span.logo-mini
+                        b P
+                        | Play
+                    // logo for regular state and mobile devices
+                    span.logo-lg
+                        b PocketPlay
+                // Header Navbar: style can be found in header.less
+                nav.navbar.navbar-static-top(role='navigation')
+                    // Sidebar toggle button
+                    a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+                        span.sr-only Toggle navigation
+                    .navbar-custom-menu
+                        ul.nav.navbar-nav
+                            li
+                                a(href='/logout', title='LOGOUT')
+                                    i.fa.fa-sign-out.fa-lg
+                                    strong.hidden-xs Logout
+                            // Control Sidebar Toggle Button
+                            li
+                                a(href='#', data-toggle='control-sidebar')
+            // Left side column. contains the logo and sidebar
+            aside.main-sidebar
+                // sidebar: style can be found in sidebar.less
+                section.sidebar
+                    // Sidebar user panel
+                    .user-panel
+                        .pull-left.image
+                            img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+                        .pull-left.info
+                            p Admin Console
+                            a(href='#')
+                                i.fa.fa-circle.text-success
+                                |  Online
+                    //import sidebar
+                    include ../sidebar
+
+            -var adData = addata;
+                // /.sidebar
+            // Content Wrapper. Contains page content
+            .content-wrapper
+                // Content Header (Page header)
+                br
+                // Main content
+                section.content
+                    .box-header
+                        // main cintainer start
+                        .row
+                            // main cintainer start
+                            .panel.panel-primary
+                                .panel-heading
+                                    h3.panel-title
+                                        img(src='dist/img/apple.png', alt='error', height='30', width='30')
+                                        |&nbsp Advertisement Configuration
+                                        .btn-group.pull-right(style='margin-top: 6px;')
+                                            a.btn.btn-info.btn-sm.openall(style='margin-top: -6px; margin-right: 3px;')
+                                                i.fa.fa-edit
+                                                | Edit
+                                            a.btn.btn-success.btn-sm(onclick='return submitForm();', style='margin-top: -6px;')
+                                                i.fa.fa-save
+                                                | Save
+                                form.form-horizontal(name ='ad_config_form' id='ad_config_form' action='save_ad_configs' method='post' enctype='multipart/form-data')
+                                    .panel-body
+                                        .col-md-6
+                                            input(type='hidden' name='os_type' value='ios' )
+                                            input(type='hidden' name='admob_interstitial' ,value='true' )
+                                            input(type='hidden' name='admob_banner' ,value='true' )
+                                            input(type='hidden' name='chartboost_interstitial' ,value='true' )
+                                            input(type='hidden' name='chartboost_video' ,value='true' )
+                                            input(type='hidden' name='unityAds_interstitial' ,value='true' )
+                                            input(type='hidden' name='unityAds_video' ,value='true' )
+
+                                            input(type='hidden' name='unityAds_video_gameid' ,value=adData.unityAdsInterstitialObj != undefined ? adData.unityAdsInterstitialObj.app_key : '' )
+                                            input(type='hidden' name='unityAds_video_integrationid' ,value='rewardedVideo' )
+                                            input(type='hidden' name='unityAds_video_priority' ,value=adData.unityAdsInterstitialObj != undefined ? adData.unityAdsInterstitialObj.ad_network_priority : '' )
+                                            input(type='hidden' name='is_unityAds_video_enabled' ,value ='true' )
+
+
+                                            input(type='hidden' name='chartboost_video_secret_key' ,value=adData.chartBoostInterstitialObj != undefined ? adData.chartBoostInterstitialObj.secret_key : '' )
+                                            input(type='hidden' name='chartboost_video_app_key' ,value=adData.chartBoostInterstitialObj != undefined ? adData.chartBoostInterstitialObj.app_key : '' )
+                                            input(type='hidden' name='chartboost_video_priority' ,value=adData.chartBoostInterstitialObj != undefined ? adData.chartBoostInterstitialObj.ad_network_priority : '' )
+                                            input(type='hidden' name='is_chartboost_video_enabled' ,value ='true'  )
+
+
+
+                                            #accordion.panel-group(role='tablist', aria-multiselectable='true')
+
+                                                // accordion one start
+                                                .panel.panel-default
+                                                    #headingSix.panel-heading(style='background-color:#D9EDF7;cursor:grab;',data-toggle='collapse', href='#collapseSix')
+                                                        h4.panel-title
+                                                            img(src='dist/img/unity_logo.png', alt='Smiley face', height='30', width='30')
+                                                            | &nbsp Unity
+                                                    #collapseSix.panel-collapse.collapse
+                                                        .panel-body
+                                                            .form-group
+                                                                label.control-label.col-sm-3(style='color:#0000FF;') Game ID
+                                                                .col-md-6
+                                                                    input#unityAds_interstitial_gameid.form-control.input-sm(name='unityAds_interstitial_gameid',value=adData.unityAdsInterstitialObj != undefined ? adData.unityAdsInterstitialObj.app_key : '', placeholder='Enter UnityAds Game ID ', type='text')
+                                                            .form-group
+                                                                label.control-label.col-sm-3(style='color:#0000FF;') Integration ID
+                                                                .col-md-6
+                                                                    input#unityAds_interstitial_integrationid.form-control.input-sm(name='unityAds_interstitial_integrationid',value=adData.unityAdsInterstitialObj != undefined ? adData.unityAdsInterstitialObj.secret_key : '', placeholder='Enter UnityAds Integration Key', type='text')
+                                                            .form-group
+                                                                label.control-label.col-sm-3(style='color:#0000FF;') Priority
+                                                                .col-md-6
+                                                                    input#unityAds_interstitial_priority.form-control.input-sm(name='unityAds_interstitial_priority',value=adData.unityAdsInterstitialObj != undefined ? adData.unityAdsInterstitialObj.ad_network_priority : '' , placeholder='Enter show Ads priority', type='text')
+
+                                                            .form-group
+                                                                label.col-md-3.control-label(style='color:#0000FF;') Status
+                                                                .col-md-9
+                                                                    label.checkbox-inline
+                                                                        input#is_unityAds_interstitial_enabled(name='is_unityAds_interstitial_enabled', checked=adData.unityAdsInterstitialObj != undefined ? adData.unityAdsInterstitialObj.enable : false, type='checkbox')
+                                                                        |                                      Enable
+
+                                                // accordion one end
+                                                // Accordion one start
+                                                .panel.panel-default
+                                                    #headingOne.panel-heading(style='background-color:#D9EDF7;cursor:grab;',data-toggle='collapse',  href='#collapseOne')
+                                                        h4.panel-title
+                                                            img(src='dist/img/admob.png', alt='error', height='30', width='30')
+                                                            | &nbsp Admob Interstitial
+                                                    #collapseOne.panel-collapse.collapse
+                                                        .panel-body
+                                                            .form-group
+                                                                label.control-label.col-sm-3(style='color:#0000FF;') Ad Key
+                                                                .col-md-6
+                                                                    input#admob_interstitial_key.form-control.input-sm(name='admob_interstitial_key',value=adData!= undefined ?adData.adMobInterstitialObj.app_key:'' , placeholder='Enter AdMob Interstitial key', type='text')
+                                                            .form-group
+                                                                label.control-label.col-sm-3(style='color:#0000FF;') Priority
+                                                                .col-md-6
+                                                                    input#admob_interstitial_priority.form-control.input-sm(name='admob_interstitial_priority', value=adData!=undefined ? adData.adMobInterstitialObj.ad_network_priority:'' , placeholder='Enter show Ads priority', type='text')
+                                                            .form-group
+                                                                label.col-md-3.control-label(style='color:#0000FF;') Status
+                                                                .col-md-9
+                                                                    label.checkbox-inline
+                                                                        input#is_admob_interstitial_enabled(name='is_admob_interstitial_enabled', checked=adData != undefined ? adData.adMobInterstitialObj.enable : false, type='checkbox')
+                                                                        |                                      Enable
+                                                // accordion one end
+                                                // accordion two start
+                                                .panel.panel-default
+                                                    #headingTwo.panel-heading(style='background-color:#D9EDF7;cursor:grab;',data-toggle='collapse', href='#collapseTwo')
+                                                        h4.panel-title
+                                                            img(src='dist/img/admob.png', alt='error', height='30', width='30')
+                                                            | &nbsp Admob Banner
+                                                    #collapseTwo.panel-collapse.collapse
+                                                        .panel-body
+                                                            .form-group
+                                                                label.control-label.col-sm-3(style='color:#0000FF;') Ad Key
+                                                                .col-md-6
+                                                                    input#admob_banner_key.form-control.input-sm(name='admob_banner_key',value=adData!=undefined? adData.adMobBannerObj.app_key:'' ,placeholder='Enter AdMob Banner key', type='text')
+                                                            .form-group
+                                                                label.col-md-3.control-label(style='color:#0000FF;') Status
+                                                                .col-md-9
+                                                                    label.checkbox-inline
+                                                                        input#is_admob_banner_enabled(name='is_admob_banner_enabled', checked=adData != undefined ? adData.adMobBannerObj.enable : false, type='checkbox')
+                                                                        |                                      Enable
+                                                // Accordion two end
+                                                    // accordion five start
+                                                .panel.panel-default
+                                                    #headingfive.panel-heading(style='background-color:#D9EDF7;cursor:grab;', role='tab', data-toggle='collapse', data-parent='accordion', href='#collapsefive', aria-expanded='true', aria-controls='collapsefive')
+                                                        h4.panel-title
+                                                          img(src='dist/img/settings.png', alt='Smiley face', height='30', width='30')
+                                                          | &nbsp Other Settings
+                                                    #collapsefive.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingtwo')
+                                                        .panel-body
+                                                          .form-group
+                                                            label.control-label.col-sm-4(style='color:#0000FF;') Interstitial time Interval
+                                                            .col-md-6
+                                                              input#interstitial_time_interval.form-control.input-sm(name='interstitial_time_interval', placeholder='Enter time in seconds', value=adData!=undefined?adData.interstitial_time_interval:'' ,type='text', size='6', maxlength='6')
+                                                          .form-group
+                                                            label.control-label.col-sm-4(style='color:#0000FF;') Rewarded Video-Ad Time Interval
+                                                            .col-md-6
+                                                              input#videoAd_time_interval.form-control.input-sm(name='videoAd_time_interval', placeholder='Enter time in seconds', value=adData != undefined ? adData.videoAd_time_interval : '' ,type='text', size='6', maxlength='6')
+                                                          .form-group
+                                                            label.control-label.col-sm-4(style='color:#0000FF;') Minimum Bootup For Ads
+                                                            .col-md-6
+                                                              input#minimum_bootup_for_ads.form-control.input-sm(name='minimum_bootup_for_ads', placeholder='Enter time in seconds', value=adData != undefined ? adData.minimum_bootup_for_ads : '' ,type='text', size='6', maxlength='6')
+
+
+                                                // Accordion five end
+                                        .col-md-6
+                                            // Accordion four start
+                                            .panel.panel-default
+                                                #headingFour.panel-heading(style='background-color:#D9EDF7;cursor:grab;',data-toggle='collapse', href='#collapseThree')
+                                                    h4.panel-title
+                                                        img(src='dist/img/adslocation.png', alt='error', height='30', width='30')
+                                                        | &nbsp Ad Location
+                                                #collapseThree.panel-collapse.collapse
+                                                    .panel-body
+                                                        // Multiple Checkboxes (inline)
+                                                        .form-group
+                                                          label.col-md-3.control-label(style='color:#0000FF;') Interstitial
+                                                          .col-md-9
+                                                              label.checkbox-inline
+                                                                  input#show_interstitialAd_on_bootup(name='show_interstitialAd_on_bootup', checked=adData != undefined ? adData.show_interstitialAd_on_bootup : false, type='checkbox')
+                                                                  |                                      Bootup
+                                                              label.checkbox-inline
+                                                                  input#show_interstitialAd_on_game_finished(name='show_interstitialAd_on_game_finished', checked=adData != undefined ? adData.show_interstitialAd_on_game_finished : false, type='checkbox')
+                                                                  |                                      Game Finished
+                                                              label.checkbox-inline
+                                                                  input#show_interstitialAd_on_back_from_game(name='show_interstitialAd_on_back_from_game', checked=adData != undefined ? adData.show_interstitialAd_on_back_from_game : false, type='checkbox')
+                                                                  |                                      Back from Game
+                                                              br
+                                                              label.checkbox-inline
+                                                                  input#show_interstitialAd_on_back_from_user_profile(name='show_interstitialAd_on_back_from_user_profile', checked=adData != undefined ? adData.show_interstitialAd_on_back_from_user_profile : false, type='checkbox')
+                                                                  |                                      Back from user profile
+                                                        // Multiple Checkboxes (inline)
+                                                        .form-group
+                                                          label.col-md-3.control-label(style='color:#0000FF;') Banner
+                                                          .col-md-9
+                                                              label.checkbox-inline
+                                                                  input#show_bannerAd_on_games(name='show_bannerAd_on_games', checked=adData != undefined ? adData.show_bannerAd_on_games : false, type='checkbox')
+                                                                  |                                      Matches
+                                                              label.checkbox-inline
+                                                                  input#show_bannerAd_on_matches(name='show_bannerAd_on_matches', checked=adData != undefined ? adData.show_bannerAd_on_matches : false, type='checkbox')
+                                                                  |                                      Games
+                                                              label.checkbox-inline
+                                                                  input#show_bannerAd_in_game(name='show_bannerAd_on_ingame', checked=adData != undefined ? adData.show_bannerAd_on_ingame : false, type='checkbox')
+                                                                  |                                      In-Game
+                                                              label.checkbox-inline
+                                                                  input#show_bannerAd_on_chat(name='show_bannerAd_on_chat', checked=adData != undefined ? adData.show_bannerAd_on_chat : false, type='checkbox')
+                                                                  |                                      Chat
+                                                              br
+                                                              label.checkbox-inline
+                                                                  input#show_bannerAd_on_profile(name='show_bannerAd_on_profile',checked=adData != undefined ? adData.show_bannerAd_on_profile : false, type='checkbox')
+                                                                  |                                      Profile
+                                            // Accordion four end
+                                            // Accordion three start
+                                            .panel.panel-default(style='margin-top: -15px;')
+                                                #headingThree.panel-heading(style='background-color:#D9EDF7;cursor:grab;',data-toggle='collapse', href='#collapseFour')
+                                                    h4.panel-title
+                                                        img(src='dist/img/chartboost.png', alt='Smiley face', height='30', width='30')
+                                                        | &nbsp Chartboost
+                                                #collapseFour.panel-collapse.collapse
+                                                    .panel-body
+                                                        .form-group
+                                                            label.control-label.col-sm-3(style='color:#0000FF;') Secret Key
+                                                            .col-md-6
+                                                                input#chartboost_Interstitial_secret_key.form-control.input-sm(name='chartboost_interstitial_secret_key',value=adData !=undefined ?adData.chartBoostInterstitialObj.secret_key :'', placeholder='Enter ChartBoost secret key ', type='text')
+                                                        .form-group
+                                                            label.control-label.col-sm-3(style='color:#0000FF;') App Key
+                                                            .col-md-6
+                                                                input#chartboost_Interstitial_app_key.form-control.input-sm(name='chartboost_interstitial_app_key',value=adData !=undefined?adData.chartBoostInterstitialObj.app_key :'', placeholder='Enter ChartBoost App key', type='text')
+                                                        .form-group
+                                                            label.control-label.col-sm-3(style='color:#0000FF;') Priority
+                                                            .col-md-6
+                                                                input#chartboost_Interstitial_priority.form-control.input-sm(name='chartboost_interstitial_priority',value=adData!=undefined? adData.chartBoostInterstitialObj.ad_network_priority:'' , placeholder='Enter show Ads priority', type='text')
+
+                                                        .form-group
+                                                            label.col-md-3.control-label(style='color:#0000FF;') Status
+                                                            .col-md-9
+                                                                label.checkbox-inline
+                                                                    input#is_chartboost_Interstitial_enabled(name='is_chartboost_interstitial_enabled', checked=adData != undefined ? adData.chartBoostInterstitialObj.enable : false, type='checkbox')
+                                                                    |                                      Enable
+                                            // Accordion three end
+                // /.content
+            // /.content-wrapper
+            footer.main-footer
+                .pull-right.hidden-xs
+                    b Version
+                    |  1.0.0
+                strong
+                    | Copyright © 2014-2015
+                    a(href='http://pocketplay.com')
+                        | Pocket Play (
+                        i.fa.fa-trademark
+                        | )
+                    | .
+                |  All rights reserved.
+        // ./wrapper
+        // jQuery 2.1.4
+        script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+        // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+        script.
+            $.widget.bridge('uibutton', $.ui.button);
+        // Bootstrap 3.3.5
+        script(src='bootstrap/js/bootstrap.min.js')
+
+        // jvectormap
+        script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+        // FastClick
+        script(src='plugins/fastclick/fastclick.min.js')
+        // AdminLTE App
+        script(src='dist/js/app.min.js')
+        script.
+            $(document).ready(function(){
+                        $('input:file').change(
+                                function(){
+                                    if ($(this).val()) {
+                                        $('input:submit').attr('disabled',false);
+                                        // or, as has been pointed out elsewhere:
+                                        // $('input:submit').removeAttr('disabled');
+                                    }
+                                }
+                        );
+
+                        $('[id^=admob_interstitial_priority]').keypress(validateNumber);
+                        $('[id^=admob_banner_priority]').keypress(validateNumber);
+                        $('[id^=chartboost_priority]').keypress(validateNumber);
+                    });
+
+                        function validateNumber(event) {
+                            var key = window.event ? event.keyCode : event.which;
+                            if (event.keyCode === 8 || event.keyCode === 46
+                                    || event.keyCode === 37 || event.keyCode === 39) {
+                                return true;
+                            }
+                            else if (key < 48 || key > 57) {
+                                return false;
+                            }
+                            else return true;
+                        };
+        script.
+            $('.closeall').click(function(){
+                $('.panel-collapse.in')
+                        .collapse('hide');
+            });
+            $('.openall').click(function(){
+                $('.panel-collapse:not(".in")')
+                        .collapse('show');
+            });
+        script.
+            function submitForm() {
+                var allEmpty = true;
+                $('input[type="text"]').each(function () {
+                    if ($.trim($(this).val()) != '') {
+                        //$(this).css({
+                        //    "border": "1px solid red",
+                        //    "background": "#FFCECE"
+                        //});
+                        allEmpty = false ;
+                        return false;
+                    }
+                    else {
+                        $(this).css({
+                            "border": "",
+                            "background": ""
+                        });
+                        allEmpty = true;
+                    }
+                });
+
+                if(allEmpty){
+                    alert('Please fill out some fields to proceed ');
+                    return false ;
+                }
+
+
+                //check for the adNetwork priority DUPLICACY
+                //var admobInterstitialPriority = document.getElementById('admob_interstitial_priority').value;
+                //var chartBoostInterstitialPriority = document.getElementById('chartboost_priority').value;
+
+                //if ((admobInterstitialPriority != '' && chartBoostInterstitialPriority != '') && ( admobInterstitialPriority == chartBoostInterstitialPriority)) {
+                //    alert("Duplicate priority found in adNetworks. Change to proceed !!!");
+                //    return false;
+                //}
+
+
+                document.getElementById('ad_config_form').submit();
+            }
+
+
+        script.
+            $(document).ready(function () {
+                var fe_id = 'adsconfiguration' + '_fe';
+                $('#' + fe_id).addClass('active');
+                var fe_id2 = 'ads_config_ios' + '_fe';
+                $('#' + fe_id2).addClass('active');
+            });
+        script.
+            $(document).ready(function () {
+                $('[id^=interstitial_time_interval]').keypress(validateNumber);
+                $('[id^=rewarded_video_coins]').keypress(validateNumber);
+                $('[id^=admob_interstitial_priority]').keypress(validateNumber);
+                $('[id^=admob_banner_priority]').keypress(validateNumber);
+                $('[id^=chartboost_priority]').keypress(validateNumber); 
+            });
+
+            function validateNumber(event) {
+                var key = window.event ? event.keyCode : event.which;
+
+                if (event.keyCode === 8 || event.keyCode === 46
+                        || event.keyCode === 37 || event.keyCode === 39) {
+                    return true;
+                }
+                else if (key < 48 || key > 57) {
+                    return false;
+                }
+                else return true;
+            };
+
+

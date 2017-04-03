@@ -1,0 +1,390 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        title PocketPlay | Dashboard
+        meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+        link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+        link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+        link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+        link(rel='stylesheet', href='plugins/iCheck/flat/blue.css')
+        link(rel='stylesheet', href='bootstrap/css/custom.css')
+        link(rel='shortcut icon', href='dist/img/favicon.ico')
+    body.hold-transition.skin-blue.sidebar-mini
+        .wrapper
+            header.main-header
+                // Logo
+                a.logo(href='/all_games')
+                    // mini logo for sidebar mini 50x50 pixels
+                    span.logo-mini
+                        b P
+                        | Play
+                    // logo for regular state and mobile devices
+                    span.logo-lg
+                        b PocketPlay
+                // Header Navbar: style can be found in header.less
+                nav.navbar.navbar-static-top(role='navigation')
+                    // Sidebar toggle button
+                    a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+                        span.sr-only Toggle navigation
+                    .navbar-custom-menu
+                        ul.nav.navbar-nav
+                            li
+                                a(href='/logout', title='LOGOUT')
+                                    i.fa.fa-sign-out.fa-lg
+                                    strong.hidden-xs Logout
+                            // Control Sidebar Toggle Button
+                            li
+                                a(href='#', data-toggle='control-sidebar')
+            // Left side column. contains the logo and sidebar
+            aside.main-sidebar
+                // sidebar: style can be found in sidebar.less
+                section.sidebar
+                    // Sidebar user panel
+                    .user-panel
+                        .pull-left.image
+                            img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+                        .pull-left.info
+                            p Admin Console
+                            a(href='#')
+                                i.fa.fa-circle.text-success
+                                |  Online
+                    include ../sidebar
+            .content-wrapper
+                // Content Header (Page header)
+                br
+                // Main content
+                section.content
+                    .box-header
+                        // main cintainer start
+                        .row
+                            // main cintainer start
+                            .panel.panel-primary
+                                -var inApps = inAppList;
+                                .panel-heading
+                                    h3.panel-title
+                                        | In App
+                                .panel-body
+                                    .panel.panel-default
+                                        .panel-heading
+                                            h3.panel-title
+                                                | In App Version:-
+                                                b(style='color:#FE801C;')  #{inAppVersion}
+                                        .panel-body
+                                            .panel.panel-info
+                                                .panel-heading
+                                                    h3.panel-title
+                                                        | Add New In App Pack
+                                                .panel-body
+                                                    .panel.panel-default
+                                                        .panel-body
+                                                            form.form-horizontal(id='inAppForm' , name='inAppForm', action='createinapp' , method='post' ,enctype='multipart/form-data')
+                                                                .col-md-3
+                                                                    .row(style='text-align:center;')
+                                                                        label
+                                                                            img.img-thumbnail(id='inappimage',src='dist/img/Coming-soon2.png', style='height:250px; width:200px;', alt='Responsive image' title='inApp Image')
+                                                                            i(style='visibility: hidden;')
+                                                                                input(type='file', accept='.png', onchange="showMyImage(this, 'inappimage')", name='inappimage')
+                                                                .col-md-9
+                                                                    fieldset
+                                                                        // Text input
+                                                                        .form-group
+                                                                            label.col-md-3.control-label Index
+                                                                            .col-md-6
+                                                                                input.form-control.input-md(id='iAPIndex' ,name='iAPIndex', placeholder='Enter Serial Number For Priority', required='', type='input', size='5', maxlength='5')
+                                                                        // Text input
+                                                                        .form-group
+                                                                            label.col-md-3.control-label Name
+                                                                            .col-md-6
+                                                                                input.form-control.input-md(id='iAPName' ,name='iAPName', placeholder='Enter Product Name', required='', type='text')
+                                                                        // Text input
+                                                                        .form-group
+                                                                            label.col-md-3.control-label Product Id
+                                                                            .col-md-6
+                                                                                input.form-control.input-md(id='iAPId', name='iAPId', placeholder='Enter Product Id', required='', type='text')
+                                                                        // Select Basic
+                                                                        .form-group
+                                                                            label.col-md-3.control-label Coin Amount
+                                                                            .col-md-6
+                                                                                input.form-control.input-md(id='iAPAmount' ,name='iAPAmount', placeholder='Enter Coin Amount', required='', type='input')
+                                                                        // Text input
+                                                                        .form-group
+                                                                            label.col-md-3.control-label Price
+                                                                            .col-md-6
+                                                                                label.sr-only Amount (in dollars)
+                                                                                .input-group
+                                                                                    .input-group-addon(style='font-size: 130%;') $
+                                                                                    input.form-control(id='iAPPrice' ,name='iAPPrice', type='text', placeholder='Amount', size='5', maxlength='5')
+                                                                        .form-group
+                                                                            label.col-md-3.control-label Percentage
+                                                                            .col-md-6
+                                                                                label.sr-only percentage
+                                                                                .input-group
+                                                                                    .input-group-addon(style='font-size: 130%;') %
+                                                                                    input.form-control(id='iAPPercentage' ,name='iAPPercentage', type='text', placeholder='Percentage', size='2', maxlength='2')
+                                                                        // Multiple Radios (inline)
+                                                                        .form-group
+                                                                            label.col-md-3.control-label Type
+                                                                            .col-md-4
+                                                                                label.radio-inline
+                                                                                    input(id='iAPType-0' ,name='iAPType', value='0', checked='checked', type='radio')
+                                                                                    | 									  Normal
+                                                                                label.radio-inline
+                                                                                    input(id='iAPType-1' ,name='iAPType', value='1', type='radio')
+                                                                                    | 									  Special
+
+                                                                        .form-group
+                                                                            label.col-md-3.control-label Most Popular
+                                                                            .col-md-4
+                                                                                label.checkbox-inline
+                                                                                    input(id='mostpopular',name='mostpopular' ,value='yes', type='checkbox', checked=false)
+                                                                                    br
+
+                                                                        // Button
+                                                                        .form-group
+                                                                            label.col-md-3.control-label(for='saveBtn')
+                                                                            .col-md-6
+                                                                                button.btn.btn-success(name='singlebutton',value='Create' ,onclick='return submitForm()', id='saveBtn' title='Create New inApp' )
+                                                                                    i.fa.fa-floppy-o
+                                                                                    |  Create
+
+                                                    .panel.panel-default
+                                                        #headingOne.panel-heading.accordion-toggle(style='background-color:#D9EDF7;cursor:pointer;', data-toggle='collapse', data-parent='#accordion', href='#collapseOne')
+                                                            h4.panel-title(style='text-align:center;')
+                                                                    | In App List
+                                                        #collapseOne.panel-collapse.collapse.in
+                                                            .panel-body
+                                                                // <div class="custom-scroll table-responsive" style="height:350px; overflow-y: scroll;"> -
+                                                                table.table.table-bordered(style='background-color:#E1E1E1;')
+                                                                    thead(style='background-color:#C6C8CC;')
+                                                                        tr(style=' ')
+                                                                            th(style='text-align:center; width:5%;') Index
+                                                                            th(style='text-align:center;') Most Popular
+                                                                            th(style='text-align:center;') Name
+                                                                            th(style='text-align:center;') Product ID
+                                                                            th(style='text-align:center;') Coin Amount
+                                                                            th(style='text-align:center;') Price
+                                                                            th(style='text-align:center; font-size: 130%;') %
+                                                                            th(style='text-align:center;', title='Special/Normal') Type
+                                                                            th(scope='col', colspan='2', style='width:150px; text-align:center;width:5%;') Action
+                                                                    -var inApps = inAppList;
+                                                                    -var counter = 0;
+                                                                    each inApp in inApps
+                                                                        tbody
+                                                                            tr
+                                                                                td(style='text-align:center;')
+                                                                                    | #{inApp.priority}
+                                                                                td
+                                                                                    | #{inApp.most_popular ? 'Yes' : 'No'}
+                                                                                td
+                                                                                    img.img-thumbnail(src='/inapp/' + inApp._id + '.png',style='height:35px; width:35px;' , alt='Error')
+                                                                                    | #{inApp.reference_name}
+                                                                                td
+                                                                                    | #{inApp.reference_inappid}
+                                                                                td
+                                                                                    | #{inApp.rewarded_amount}
+                                                                                td
+                                                                                    | #{inApp.price}
+                                                                                td
+                                                                                    | #{inApp.percentage}
+                                                                                td
+                                                                                    | #{inApp.type == 0 ? 'Normal' : 'Special'}
+                                                                                td(style='text-align:center;')
+                                                                                    a(style='color:#00BB00;', id=counter++ ,onclick="editInApp(this.id)" title='Click and edit on avobe form')
+                                                                                        button.btn.button
+                                                                                            i.fa.fa-pencil(style='color:#00BB00;')
+                                                                                            |  Edit
+                                                                                td(style='text-align:center;')
+                                                                                    a(style='color:#E60000;', id=inApp._id ,onclick="deleteInApp(this.id)" title='Delete This inApp')
+                                                                                        button.btn.button
+                                                                                            i.fa.fa-trash-o(style='color:#E60000;')
+                                                                                            |  Delete
+
+        // /.content-wrapper
+        footer.main-footer
+            .pull-right.hidden-xs
+                b Version
+                |  1.0.0
+            strong
+                | Copyright © 2014-2015
+                a(href='http://pocketplay.com')
+                    | Pocket Play (
+                    i.fa.fa-trademark
+                    | )
+                | .
+            |  All rights reserved.
+        // jQuery 2.1.4
+        script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+        // jQuery UI 1.11.4
+        script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+        // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+        script.
+            $.widget.bridge('uibutton', $.ui.button);
+        // Bootstrap 3.3.5
+        script(src='bootstrap/js/bootstrap.min.js')
+        // Slimscroll
+        script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+        // FastClick
+        script(src='plugins/fastclick/fastclick.min.js')
+        // AdminLTE App
+        script(src='dist/js/app.min.js')
+        script(src='dist/js/demo.js')
+        script.
+            function showMyImage(fileInput, imageId) {
+
+                var files = fileInput.files;
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    var imageType = /image.*/;
+                    if (!file.type.match(imageType)) {
+                        continue;
+                    }
+                    var img=document.getElementById(imageId);
+                    img.file = file;
+                    var reader = new FileReader();
+                    reader.onload = (function(aImg) {
+                        return function(e) {
+                            aImg.src = e.target.result;
+                        };
+                    })(img);
+                    reader.readAsDataURL(file);
+
+                }
+
+                isImageChanged = 'true';
+            }
+        script.
+            var local_data,prevIndex ,isImageChanged ='false' ;
+            $(document).ready(function(){
+                document.getElementById('saveBtn').disabled = false;
+                document.getElementById('saveBtn').innerHTML = 'Create';
+                $('[id^=iAPIndex]').keypress(validateNumber);
+                //$('[id^=iAPAmount]').keypress(validateNumber);
+                $('[id^=iAPPrice]').keypress(validateNumber);
+                $('[id^=iAPPercentage]').keypress(validateNumber);
+
+                local_data =!{JSON.stringify(inApps)}
+
+            });
+            function validateNumber(event) {
+                var key = window.event ? event.keyCode : event.which;
+                if (event.keyCode === 8 || event.keyCode === 46
+                        || event.keyCode === 37 || event.keyCode === 39) {
+                    return true;
+                }
+                else if ( key < 48 || key > 57 ) {
+                    return false;
+                }
+                else return true;
+            };
+
+            function submitForm() {
+
+
+                var currentSetIndex = document.getElementById('iAPIndex').value;
+
+                if (document.getElementById('saveBtn').innerHTML == 'Create') {
+                    document.getElementById('inAppForm').action = 'createinapp';
+                    for (var i in local_data) {
+                        if (local_data[i].priority == currentSetIndex) {
+                            alert("Error : Duplicate priority !!!\nTry giving another index value");
+                            return false;
+                        }
+                    }
+                }
+                else {
+
+                    document.getElementById('inAppForm').action = 'updateinapp';
+
+                    for (var i in local_data) {
+                        if (local_data[i].priority == currentSetIndex  && currentSetIndex!= prevIndex) {
+                            alert("Error : Duplicate priority !!!\nTry giving another index value");
+                            return false;
+                        }
+                    }
+                }
+
+                var domElements =[];
+                domElements = document.forms["inAppForm"].getElementsByTagName("input");
+
+                for(var i=0;i<domElements.length;i++){
+                    if(domElements[i].value == null || domElements[i].value == ''  ) {
+
+                        if(isImageChanged == 'false' && document.getElementById('saveBtn').innerHTML == 'Save' ) {
+                            continue;
+                        }
+                        alert(domElements[i].name + ' cannot be empty');
+                        return false;
+                    }
+
+                }
+                var imgFlag = document.createElement('input');
+                imgFlag.type = 'hidden';
+                imgFlag.name = 'isImgSet';
+                imgFlag.id = 'isImgSet';
+                imgFlag.value = isImageChanged;
+                document.getElementById('inAppForm').appendChild(imgFlag);
+                document.getElementById('inAppForm').submit();
+                document.getElementById('saveBtn').disabled =true;
+            }
+
+            function deleteInApp(inappid) {
+                if(confirm("Are you sure you want to delete this inApp ?")){
+                    $.ajax({
+                        type: 'POST',
+                        url: '/deleteinapp',
+                        data: JSON.stringify ({inappid: inappid}),
+                        success: function (data) {
+                            alert('InApp deleted Successfully !!!')
+                            location.reload();
+                        },
+                        error: function (jqxhr) {
+                            alert('error: ' + jqxhr.responseText);
+                        },
+                        contentType: "application/json",
+                        dataType: 'json'
+                    });
+                }
+
+
+            }
+
+            function editInApp(inappid) {
+
+                document.getElementById('saveBtn').innerHTML = 'Save';
+                var selectedInApp = local_data[inappid];
+                document.getElementById('iAPIndex').value = selectedInApp.priority;
+                document.getElementById('iAPName').value = selectedInApp.reference_name;
+                document.getElementById('iAPId').value = selectedInApp.reference_inappid;
+                document.getElementById('iAPAmount').value = selectedInApp.rewarded_amount;
+                document.getElementById('iAPPrice').value = selectedInApp.price;
+                document.getElementById('iAPPercentage').value = selectedInApp.percentage;
+                document.getElementById('mostpopular').checked = selectedInApp.most_popular;
+                prevIndex = document.getElementById('iAPIndex').value;
+                if (selectedInApp.type == 0) {
+                    document.getElementById('iAPType-0').checked = 'checked';
+                    document.getElementById('iAPType-1').checked = '';
+                }
+                else {
+                    document.getElementById('iAPType-1').checked = 'checked';
+                    document.getElementById('iAPType-0').checked = '';
+                }
+                document.getElementById('inappimage').src = '/inapp/'+ selectedInApp._id+'.png'
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'inappid';
+                input.id ='inappid';
+                input.value = selectedInApp._id;
+                document.getElementById('inAppForm').appendChild(input);
+
+            }
+
+        script.
+            $(document).ready(function () {
+                var fe_id = 'in_app' + '_fe';
+                $('#' + fe_id).addClass('active');
+            });
+

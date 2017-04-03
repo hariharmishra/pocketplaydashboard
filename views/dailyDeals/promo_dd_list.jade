@@ -1,0 +1,263 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | Dashboard
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    // Bootstrap 3.3.5
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    // Theme style
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    //
+      AdminLTE Skins. Choose a skin from the css/skins
+      folder instead of downloading all of them to reduce the load.
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    // Custom
+    link(rel='stylesheet', href='bootstrap/css/custom.css')
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='#')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              // Messages: style can be found in dropdown.less
+              // Notifications: style can be found in dropdown.less
+              // Tasks: style can be found in dropdown.less
+              // User Account: style can be found in dropdown.less
+              li
+                a(href='index.html', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+          //import sidebar
+          include ../sidebar
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.Content.Contains.page.content(class='<!-- /.sidebar --> </aside> <!-- Wrapper. --> <div class=')
+          // popup
+          #element_to_pop_up(style='background-color:#fff; border-radius:15px;\
+          color:#000;\
+          display:none; \
+          padding:20px;\
+          min-width:350px;\
+          min-height: 80px;')
+            a.b-close(style='    cursor:pointer;\
+            position:absolute;\
+            right:10px;\
+            top:10px;')
+              i.fa.fa-times
+              a.btn.btn-info.btn-lg(href='promo_dd_addnew.html', title='Click to upload resources')
+                i.fa.fa-apple
+                |  iOS
+              a.btn.btn-info.btn-lg(href='promo_dd_addnew.html', title='Click to upload resources')
+                i.fa.fa-android
+                |  Android
+              a.btn.btn-info.btn-lg(href='promo_dd_addnew.html', title='Click to upload resources')
+                i.fa.fa-apple
+                i.fa.fa-android
+                | Both
+          // popup
+          // Main content
+          section.content
+            .box-header
+              // main cintainer start
+              .row
+                // main cintainer start
+                .panel.panel-default
+                  .panel-heading.custom_class(style='background-color:#00C0EF;')
+                    // Element to pop up
+                    strong(style='color:#fff;') Date Selected:-
+                    i#my-button.pull-right.btn.btn-info(style='color:#008548; margin-top: -8px;')
+                      strong
+                        i.fa.fa-plus
+                        |  Add New Daily Deal
+                  form.form-horizontal
+                    .panel-body
+                      .box.box-primary
+                        br
+                        .row(style='text-align:center;')
+                          .col-md-3
+                            img.img-thumbnail(src='dist/img/Placeholder.png', style='height:300px; width:250px;', alt='Responsive image')
+                            br
+                            br
+                          .col-md-9
+                            fieldset
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='operating_system') OS:
+                                .col-md-6
+                                  input#os.form-control.input-md(name='operating system', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') Date:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') Coins:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') Countries:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') URL:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') Status:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              .col-md-9.control-label(style='margin-left: 7px;')
+                                a.btn.btn-danger(href='add_new_promotion.html')
+                                  i.fa.fa-pencil
+                                  |  Edit
+                              br
+                              br
+                              br
+                  form.form-horizontal
+                    .panel-body
+                      .box.box-primary
+                        br
+                        .row(style='text-align:center;')
+                          .col-md-3
+                            img.img-thumbnail(src='dist/img/Placeholder.png', style='height:300px; width:250px;', alt='Responsive image')
+                            br
+                            br
+                          .col-md-9
+                            fieldset
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='operating_system') OS:
+                                .col-md-6
+                                  input#os.form-control.input-md(name='operating system', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') Date:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') Coins:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') Countries:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') URL:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-3.control-label(for='') Status:
+                                .col-md-6
+                                  input.form-control.input-md(id='', name='', placeholder='', required='', type='text', disabled='disabled')
+                              .col-md-9.control-label(style='margin-left: 7px;')
+                                a.btn.btn-danger(href='add_new_promotion.html')
+                                  i.fa.fa-pencil
+                                  |  Edit
+                              br
+                              br
+                              br
+      // /.content
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015 
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    // Control Sidebar
+    // /.control-sidebar
+    //
+      Add the sidebar's background. This div must be placed
+      immediately after the control sidebar
+    .control-sidebar-bg
+    // ./wrapper
+    // popup
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // date-range-picker
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    // AdminLTE for demo purposes
+    script(src='dist/js/demo.js')
+    script(src='bootstrap/js/jquery.bpopup.js')
+    script(src='bootstrap/js/jquery.bpopup.min.js')
+    // Page script
+    script.
+      ;(function($) {
+      // DOM Ready
+      $(function() {
+      // Binding a click event
+      // From jQuery v.1.7.0 use .on() instead of .bind()
+      $('#my-button').bind('click', function(e) {
+      // Prevents the default action to be triggered.
+      e.preventDefault();
+      // Triggering bPopup when click event is fired
+      $('#element_to_pop_up').bPopup();
+      });
+      });
+      })(jQuery);
+    script.
+      $(document).ready(function () {
+        var fe_id = 'promotions' + '_fe';
+        $('#' + fe_id).addClass('active');
+        var fe_id2 = 'dailydeals' + '_fe';
+        $('#' + fe_id2).addClass('active');
+      });

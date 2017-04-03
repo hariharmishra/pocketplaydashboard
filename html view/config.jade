@@ -1,0 +1,263 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | User Dashboard
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    // Bootstrap 3.3.5
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='bootstrap/css/custom.css')
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    // Ionicons
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // Theme style
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    //
+      AdminLTE Skins. Choose a skin from the css/skins
+      folder instead of downloading all of them to reduce the load.
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    // iCheck
+    link(rel='stylesheet', href='plugins/iCheck/flat/blue.css')
+    link(rel='stylesheet', href='plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='index2.html')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              // Messages: style can be found in dropdown.less
+              // Notifications: style can be found in dropdown.less
+              // Tasks: style can be found in dropdown.less
+              // User Account: style can be found in dropdown.less
+              li
+                a(href='index.html', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+          // search form
+          // /.search form
+          // sidebar menu: : style can be found in sidebar.less
+          ul.sidebar-menu
+            li.header MAIN NAVIGATION
+            li.treeview
+              a(href='all_games.html')
+                i.fa.fa-gamepad
+                span Games
+            li.treeview
+              a(href='')
+                i.fa.fa-bar-chart
+                span Analytics
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Overview
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Installs
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Sessions
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Game
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  User Analytics
+            li.treeview
+              a(href='in_app.html')
+                i.fa.fa-cart-plus
+                span  IN-App
+            li.treeview
+              a(href='')
+                i.fa.fa-trophy
+                span Promotions
+                i.fa.fa-angle-left.pull-right  
+              ul.treeview-menu
+                // <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Promotions</a></li>
+                li
+                  a(href='promo_dd_calview.html')
+                    i.fa.fa-circle-o
+                    |  Daily Deals
+                li
+                  a(href='promo_aod_calview.html')
+                    i.fa.fa-circle-o
+                    |  App of the day
+                li
+                  a(href='promo_ginfo_calview.html')
+                    i.fa.fa-circle-o
+                    |  General Info
+            li.treeview
+              a(href='test_user.html')
+                i.fa.fa-user-secret
+                span Test User
+            li.treeview.active
+              a(href='config.html')
+                i.fa.fa-cogs
+                span Configuration
+        // /.sidebar
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              // main cintainer start
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    | Configuration
+                    .btn-group.pull-right
+                br
+                .btn-group.pull-right(style='margin-top: -4px;')
+                  a.btn.btn-success.btn-sm(href='#', style='margin-top: -6px;', title='Click to upload resources')
+                    i.fa.fa-floppy-o
+                    |  Save
+                  | 	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                form.form-horizontal
+                  .panel-body
+                    .panel.panel-info
+                      .panel-heading
+                        h3.panel-title
+                          | Coins
+                      | 										   &nbsp
+                      .form-group
+                        label.control-label.col-sm-2(style='color:#0000FF;', for='default_coins') Default Coins
+                        .col-md-3
+                          input#default_coins.form-control.input-sm(name='default-coins', placeholder='', type='text')
+                      .form-group
+                        label.control-label.col-sm-2(style='color:#0000FF;', for='default_coins') Default Coins (Guest)
+                        .col-md-3
+                          input#default_coins.form-control.input-sm(name='default-coins', placeholder='', type='text')
+                      .form-group
+                        label.control-label.col-sm-2(style='color:#0000FF;', for='default_coins') Refer Bonus
+                        .col-md-3
+                          input#default_coins.form-control.input-sm(name='default-coins', placeholder='', type='text')
+                      .form-group
+                        label.control-label.col-sm-2(style='color:#0000FF;', for='default_coins') Facebook Like
+                        .col-md-3
+                          input#default_coins.form-control.input-sm(name='default-coins', placeholder='', type='text')
+                    .panel.panel-info
+                      .panel-heading
+                        h3.panel-title
+                          | Paytm
+                      | 										   &nbsp
+                      .form-group
+                        label.control-label.col-sm-2(style='color:#0000FF;', for='default_coins') Register
+                        .col-md-3
+                          input#default_coins.form-control.input-sm(name='default-coins', placeholder='', type='text')
+                      .form-group
+                        label.control-label.col-sm-2(style='color:#0000FF;', for='default_coins') Bonus/Refer
+                        .col-md-3
+                          input#default_coins.form-control.input-sm(name='default-coins', placeholder='', type='text')
+                    .panel.panel-info
+                      .panel-heading
+                        h3.panel-title
+                          | Register Mode
+                      | 										   &nbsp&nbsp&nbsp
+                      .form-group
+                        label.control-label.col-sm-2(style='color:#0000FF;', for='game_config_orientation') Default Login As
+                        .col-md-3
+                          label.radio-inline(for='game_config_orientation-0')
+                            input#game_config_orientation-0(name='game_config_orientation', value='Portrait', checked='checked', type='radio')
+                            | 									  Register
+                          label.radio-inline(for='game_config_orientation-1')
+                            input#game_config_orientation-1(name='game_config_orientation', value='Landscape', type='radio')
+                            | 									 Guest
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015 
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    // Control Sidebar
+    // /.control-sidebar
+    //
+      Add the sidebar's background. This div must be placed
+      immediately after the control sidebar
+    .control-sidebar-bg
+    // ./wrapper
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // jQuery UI 1.11.4
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+    // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+    script.
+      $.widget.bridge('uibutton', $.ui.button);
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // Bootstrap WYSIHTML5
+    script(src='plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')
+    // Slimscroll
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    // AdminLTE dashboard demo (This is only for demo purposes)
+    // AdminLTE for demo purposes
+    script(src='dist/js/demo.js')
+    script.
+      $(document).ready(function(){
+      $('[id^=index]').keypress(validateNumber);
+      $('[id^=coinsamount]').keypress(validateNumber);
+      $('[id^=price]').keypress(validateNumber);
+      });
+      function validateNumber(event) {
+      var key = window.event ? event.keyCode : event.which;
+      if (event.keyCode === 8 || event.keyCode === 46
+      || event.keyCode === 37 || event.keyCode === 39) {
+      return true;
+      }
+      else if ( key < 48 || key > 57 ) {
+      return false;
+      }
+      else return true;
+      };

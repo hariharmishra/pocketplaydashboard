@@ -1,0 +1,344 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | Dashboard
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    // Bootstrap 3.3.5
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    // Ionicons
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // Theme style
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    //
+      AdminLTE Skins. Choose a skin from the css/skins
+      folder instead of downloading all of them to reduce the load.
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    // iCheck
+    link(rel='stylesheet', href='plugins/iCheck/flat/blue.css')
+    // custom
+    link(rel='stylesheet', href='bootstrap/css/custom.css')
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='index2.html')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              li
+                a(href='index.html', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+          // search form
+          // /.search form
+          // sidebar menu: : style can be found in sidebar.less
+          ul.sidebar-menu
+            li.header MAIN NAVIGATION
+            li.treeview
+              a(href='all_games.html')
+                i.fa.fa-gamepad
+                span Games
+            li.treeview
+              a(href='')
+                i.fa.fa-bar-chart
+                span Analytics
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Overview
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Installs
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Sessions
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Game
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  User Analytics
+            li.treeview
+              a(href='in_app.html')
+                i.fa.fa-cart-plus
+                span  IN-App
+            li.treeview
+              a(href='')
+                i.fa.fa-trophy
+                span Promotions
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                // <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Promotions</a></li>
+                li
+                  a(href='promo_dd_calview.html')
+                    i.fa.fa-circle-o
+                    |  Daily Deals
+                li
+                  a(href='promo_aod_calview.html')
+                    i.fa.fa-circle-o
+                    |  App of the day
+                li
+                  a(href='promo_ginfo_calview.html')
+                    i.fa.fa-circle-o
+                    |  General Info
+            li.active.treeview
+              a(href='test_user.html')
+                i.fa.fa-user-secret
+                span Test User
+            li.treeview
+              a(href='config.html')
+                i.fa.fa-cogs
+                span Configuration
+        // /.sidebar
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              // main cintainer start
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    | In App
+                .panel-body
+                  .panel.panel-default
+                    .panel-heading
+                      h3.panel-title
+                        | Configuration Version:-
+                        a(style='color:#FE801C;')  Hello
+                    .panel-body
+                      .panel.panel-info
+                        .panel-heading
+                          h3.panel-title
+                            | Add New In App Pack
+                            .btn-group.pull-right
+                        .panel-body
+                          .panel.panel-default
+                            .panel-body
+                              form.form-horizontal
+                                .col-md-3
+                                  .row(style='text-align:center;')
+                                    label
+                                      img#promo_ginfo_addnew.img-thumbnail(src='dist/img/Coming-soon2.png', style='height:250px; width:200px;', alt='Responsive image')
+                                      i(style='visibility: hidden;')
+                                        input(type='file', accept='.png, .jpeg, .jpg', onchange="showMyImage(this, 'promo_ginfo_addnew')", name='promo_ginfo_addnew')
+                                      // <input type="submit"  name="submit" value="Upload" class="btn btn-success " disabled />
+                                .col-md-9
+                                  fieldset
+                                    // Text input
+                                    .form-group
+                                      label.col-md-3.control-label(for='new_user_name') Index
+                                      .col-md-6
+                                        input#index.form-control.input-md(name='index', placeholder='Enter Serial Number For Priority', required='', type='input', size='5', maxlength='5')
+                                    // Text input
+                                    .form-group
+                                      label.col-md-3.control-label(for='new_user_name') Name
+                                      .col-md-6
+                                        input#Name.form-control.input-md(name='Name', placeholder='Enter Product Name', required='', type='text')
+                                    // Text input
+                                    .form-group
+                                      label.col-md-3.control-label(for='new_user_name') Product Id
+                                      .col-md-6
+                                        input.form-control.input-md(id='Product Id', name='Product Id', placeholder='Enter Product Id', required='', type='text')
+                                    // Select Basic
+                                    .form-group
+                                      label.col-md-3.control-label(for='new_user_name') Coin Amount
+                                      .col-md-6
+                                        input#coinsamount.form-control.input-md(name='Coin Amount', placeholder='Enter Coin Amount', required='', type='input', size='5', maxlength='5')
+                                    // Text input
+                                    .form-group
+                                      label.col-md-3.control-label(for='device_id') Price
+                                      .col-md-6
+                                        label.sr-only(for='Price') Amount (in dollars)
+                                        .input-group
+                                          .input-group-addon $
+                                          input#price.form-control(type='text', placeholder='Amount', size='2', maxlength='2')
+                                    // Multiple Radios (inline)
+                                    .form-group
+                                      label.col-md-3.control-label(for='game_config_orientation') Type
+                                      .col-md-4
+                                        label.radio-inline(for='game_config_orientation-0')
+                                          input#game_config_orientation-0(name='game_config_orientation', value='Portrait', checked='checked', type='radio')
+                                          | 									  Normal
+                                        label.radio-inline(for='game_config_orientation-1')
+                                          input#game_config_orientation-1(name='game_config_orientation', value='Landscape', type='radio')
+                                          | 									  Special
+                                    // Button
+                                    .form-group
+                                      label.col-md-3.control-label(for='singlebutton')
+                                      .col-md-6
+                                        button#singlebutton.btn.btn-success(name='singlebutton')
+                                          i.fa.fa-floppy-o
+                                          |  Save
+                        br
+                              .panel.panel-default
+                                #headingOne.panel-heading(style='background-color:#D9EDF7;cursor:n-resize;', role='tab', data-toggle='collapse', data-parent='accordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                                  h4.panel-title(style='text-align:center;')
+                                    a(role='button', data-toggle='collapse', data-parent='#accordion', href='collapseOne', aria-expanded='true', aria-controls='collapseOne', style='text-align:center;')
+                                      | In App List
+                          #collapseOne.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingOne')
+                            .panel-body
+                              // <div class="custom-scroll table-responsive" style="height:350px; overflow-y: scroll;"> -
+                              table.table.table-bordered(style='background-color:#E1E1E1;')
+                                thead(style='background-color:#C6C8CC;')
+                                  tr(style=' ')
+                                    th(style='text-align:center; width:5%;') Index
+                                    th(style='text-align:center;') Name
+                                    th(style='text-align:center;') Product ID
+                                    th(style='text-align:center;') Coin Amount
+                                    th(style='text-align:center;') Price
+                                    th(style='text-align:center;', title='Consumeable/Non consumeable') Type
+                                    th(scope='col', colspan='2', style='width:150px; text-align:center;width:5%;') Action
+                                tbody
+                                  tr
+                                    td(style='text-align:center;') 1.
+                                    td
+                                      a(href='game_details _disable.html')
+                                        img.img-thumbnail(src='dist/img/disableicon.png', alt='Responsive image')
+                                        | Connect 4
+                                    td
+                                    td
+                                    td
+                                    td
+                                    td(style='text-align:center;')
+                                      a(style='color:#00BB00;', href='')
+                                        button.btn.button
+                                          i.fa.fa-pencil(style='color:#00BB00;')
+                                          |  Edit
+                                    td(style='text-align:center;')
+                                      a(style='color:#E60000;', href='')
+                                        button.btn.button
+                                          i.fa.fa-trash-o(style='color:#E60000;')
+                                          |  Delete
+                                  tr
+                                    td(style='text-align:center;') 2.
+                                    td
+                                      a(href='game_details _disable.html')
+                                        img.img-thumbnail(src='dist/img/disableicon.png', alt='Responsive image')
+                                        | Connect 4
+                                    td
+                                    td
+                                    td
+                                    td
+                                    td(style='text-align:center;')
+                                      a(style='color:#00BB00;', href='')
+                                        button.btn.button
+                                          i.fa.fa-pencil(style='color:#00BB00;')
+                                          |  Edit
+                                    td(style='text-align:center;')
+                                      a(style='color:#E60000;', href='')
+                                        button.btn.button
+                                          i.fa.fa-trash-o(style='color:#E60000;')
+                                          |  Delete
+      // /.content
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // jQuery UI 1.11.4
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+    // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+    script.
+      $.widget.bridge('uibutton', $.ui.button);
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // Slimscroll
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    // AdminLTE dashboard demo (This is only for demo purposes)
+    // AdminLTE for demo purposes
+    script(src='dist/js/demo.js')
+    script.
+      function showMyImage(fileInput, imageId) {
+        var files = fileInput.files;
+        for (var i = 0; i < files.length; i++) {
+          var file = files[i];
+          var imageType = /image.*/;
+          if (!file.type.match(imageType)) {
+            continue;
+          }
+          var img=document.getElementById(imageId);
+          img.file = file;
+          var reader = new FileReader();
+          reader.onload = (function(aImg) {
+            return function(e) {
+              aImg.src = e.target.result;
+            };
+          })(img);
+          reader.readAsDataURL(file);
+        }
+      }
+    script.
+      $(document).ready(function(){
+        $('[id^=index]').keypress(validateNumber);
+        $('[id^=coinsamount]').keypress(validateNumber);
+        $('[id^=price]').keypress(validateNumber);
+      });
+      function validateNumber(event) {
+        var key = window.event ? event.keyCode : event.which;
+        if (event.keyCode === 8 || event.keyCode === 46
+                || event.keyCode === 37 || event.keyCode === 39) {
+          return true;
+        }
+        else if ( key < 48 || key > 57 ) {
+          return false;
+        }
+        else return true;
+      };

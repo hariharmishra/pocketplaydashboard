@@ -1,0 +1,367 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | Dashboard
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    // Bootstrap 3.3.5
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    // Ionicons
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // Theme style
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    //
+      AdminLTE Skins. Choose a skin from the css/skins
+      folder instead of downloading all of them to reduce the load.
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    // iCheck
+    link(rel='stylesheet', href='plugins/iCheck/flat/blue.css')
+    // custom
+    link(rel='stylesheet', href='bootstrap/css/custom.css')
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='index2.html')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              // Messages: style can be found in dropdown.less
+              // Notifications: style can be found in dropdown.less
+              // Tasks: style can be found in dropdown.less
+              // User Account: style can be found in dropdown.less
+              li
+                a(href='index.html', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+          // search form
+          // /.search form
+          // sidebar menu: : style can be found in sidebar.less
+          ul.sidebar-menu
+            li.header MAIN NAVIGATION
+            li.active.treeview
+              a(href='all_games.html')
+                i.fa.fa-gamepad
+                span Games
+            li.treeview
+              a(href='')
+                i.fa.fa-bar-chart
+                span Analytics
+                i.fa.fa-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Overview
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Installs
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Sessions
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  Game
+                li
+                  a(href='comingsoon.html')
+                    i.fa.fa-circle-o
+                    |  User Analytics
+            li.treeview
+              a(href='in_app.html')
+                i.fa.fa-cart-plus
+                span  IN-App
+            li.treeview
+              a(href='')
+                i.fa.fa-trophy
+                span Promotions
+                i.fa.fa-angle-left.pull-right  
+              ul.treeview-menu
+                // <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Promotions</a></li>
+                li
+                  a(href='promo_dd_calview.html')
+                    i.fa.fa-circle-o
+                    |  Daily Deals
+                li
+                  a(href='promo_aod_calview.html')
+                    i.fa.fa-circle-o
+                    |  App of the day
+                li
+                  a(href='promo_ginfo_calview.html')
+                    i.fa.fa-circle-o
+                    |  General Info
+            li.treeview
+              a(href='test_user.html')
+                i.fa.fa-user-secret
+                span Test User
+            li.treeview
+              a(href='config.html')
+                i.fa.fa-cogs
+                span Configuration
+        // /.sidebar
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              // main cintainer start
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    | View Game Details
+                    .btn-group.pull-right
+                .panel-body
+                  .panel.panel-info
+                    .panel-heading(style='background-color:#AAAAAA;')
+                      h4.panel-title
+                        | Resources    
+                        .btn-group.pull-right
+                          a.btn.btn-success.btn-sm(href='edit_game_details.html', style='margin-top: -6px;', title='Click to upload resources')
+                            i.fa.fa-pencil
+                            |  Edit
+                    .panel-body
+                      .row-fluid-5
+                        .span2(style='text-align:center;')
+                          h3 GameIcon
+                          img.img-thumbnail(src='dist/img/icon.jpg', style='height:150px; width:150px;', alt='Responsive image')
+                        .span2(style='text-align:center;')
+                          h3 Square Icon
+                          img.img-thumbnail(src='dist/img/placeholder.jpg', style='height:150px; width:150px;', alt='Responsive image')
+                        .span2(style='text-align: center')
+                          h3 GameBanner
+                          img.img-thumbnail(src='dist/img/banner.jpg', style='height:150px; width:300px;', alt='Responsive image')
+                        .span2(style='text-align: center')
+                          h3 Assets & Script 
+                          img.img-thumbnail(src='dist/img/fileexist.png', style='height:150px; width:150px;', alt='Responsive image')
+                        .span2(style='text-align: center')
+                          h3 Only Script
+                          img.img-thumbnail(src='dist/img/fileexist.png', style='height:150px; width:150px;', alt='Responsive image')
+                      #result
+                  // Accordion with four forms
+                  #accordion.panel-group(role='tablist', aria-multiselectable='true')
+                    // Accordion one start
+                    .panel.panel-default
+                      #headingOne.panel-heading(style='background-color:#AAAAAA;', role='tab', data-toggle='collapse', data-parent='accordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                        h4.panel-title
+                          a(role='button', data-toggle='collapse', data-parent='#accordion', href='collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                            | Game Details
+                      #collapseOne.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingOne')
+                        .panel-body
+                          form.form-horizontal
+                            fieldset
+                              // Text input
+                              .form-group
+                                label.col-md-4.control-label(for='Display Name') Display Name
+                                .col-md-5
+                                  input.form-control.input-md(id='Display Name', name='Display Name', placeholder='Enter Game Display Name', required='', type='text', disabled='disabled')
+                              // Text input
+                              .form-group
+                                label.col-md-4.control-label(for='Lua File Name') Lua File Name
+                                .col-md-5
+                                  input.form-control.input-md(id='Lua File Name', name='Lua File Name', placeholder='Enter Lua File Name', required='', type='text', disabled='disabled')
+                              // Select Basic
+                              .form-group
+                                label.col-md-4.control-label(for='min_player') Min Player
+                                .col-md-2
+                                  select#min_player.form-control(name='min_player', disabled='disabled')
+                                    option(value='select') Select
+                                    option(value='1') 1
+                                    option(value='2') 2
+                                    option(value='3') 3
+                                    option(value='4') 4
+                                    option(value='5') 5
+                                    option(value='6') 6
+                              // Select Basic
+                              .form-group
+                                label.col-md-4.control-label(for='max_player') Max Player
+                                .col-md-2
+                                  select#max_player.form-control(name='max_player', disabled='disabled')
+                                    option(value='select') Select
+                                    option(value='1') 1
+                                    option(value='2') 2
+                                    option(value='3') 3
+                                    option(value='4') 4
+                                    option(value='5') 5
+                                    option(value='6') 6
+                    // Accordion one end
+                    // Accordion two start
+                    .panel.panel-default
+                      // Accordion two end
+                      // Accordion three start
+                      #headingTwo.panel-heading(style='background-color:#AAAAAA;', role='tab', data-toggle='collapse', data-parent='accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo', data-trigger='hover')
+                        h4.panel-title
+                          a.collapsed(role='button', data-toggle='collapse', data-parent='accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+                            | Game Configuration
+                      #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
+                        .panel-body
+                          form.form-horizontal
+                            fieldset
+                              // Multiple Radios (inline)
+                              .form-group
+                                label.col-md-4.control-label(for='game_config_orientation') Orientation
+                                .col-md-4
+                                  label.radio-inline(for='game_config_orientation-0')
+                                    input#game_config_orientation-0(name='game_config_orientation', value='Portrait', checked='checked', type='radio', disabled='disabled')
+                                    | 									  Portrait
+                                  label.radio-inline(for='game_config_orientation-1')
+                                    input#game_config_orientation-1(name='game_config_orientation', value='Landscape', type='radio', disabled='disabled')
+                                    | 									  Landscape
+                              // Multiple Checkboxes (inline)
+                              .form-group
+                                label.col-md-4.control-label(for='Game_config_mode') Games Mode
+                                .col-md-4
+                                  label.checkbox-inline(for='Game_config_mode-0')
+                                    input#Game_config_mode-0(name='Game_config_mode', value='Friends', type='checkbox', disabled='disabled')
+                                    | 									  Friends
+                                  label.checkbox-inline(for='Game_config_mode-1')
+                                    input#Game_config_mode-1(name='Game_config_mode', value='Random', type='checkbox', disabled='disabled')
+                                    | 									  Random
+                                  label.checkbox-inline(for='Game_config_mode-2')
+                                    input#Game_config_mode-2(name='Game_config_mode', value='Pass & Play', type='checkbox', disabled='disabled')
+                                    | 									  Pass & Play
+                                  label.checkbox-inline(for='Game_config_mode-3')
+                                    input#Game_config_mode-3(name='Game_config_mode', value='Bot', type='checkbox', disabled='disabled')
+                                    | 									  Bot
+                              // Multiple Checkboxes (inline)
+                              .form-group
+                                label.col-md-4.control-label(for='game_config_label') Difficulty Label
+                                .col-md-4
+                                  label.checkbox-inline(for='game_config_label-0')
+                                    input#game_config_label-0(name='game_config_label', value='Easy', type='checkbox', disabled='disabled')
+                                    | 									  Easy
+                                  label.checkbox-inline(for='game_config_label-1')
+                                    input#game_config_label-1(name='game_config_label', value='Medium', type='checkbox', disabled='disabled')
+                                    | 									  Medium
+                                  label.checkbox-inline(for='game_config_label-2')
+                                    input#game_config_label-2(name='game_config_label', value='Hard', type='checkbox', disabled='disabled')
+                                    | 									  Hard
+                    // Accordion two end
+                    // Accordion three start
+                    // Accordion three end
+                    // Accordion four start
+                    .panel.panel-default
+                      #headingFour.panel-heading(style='background-color:#AAAAAA;', role='tab', data-toggle='collapse', data-parent='accordion', href='#collapseFour', aria-expanded='false', aria-controls='collapseFour')
+                        h4.panel-title
+                          a.collapsed(role='button', data-toggle='collapse', data-parent='accordion', href='#collapseFour', aria-expanded='false', aria-controls='collapseFour')
+                            | Advance Settings
+                      #collapseFour.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFour')
+                        .panel-body
+                          form.form-horizontal
+                            fieldset
+                              // Select Basic
+                              .form-group
+                                label.col-md-4.control-label(for='selectbasic') Min Gems to Unlock
+                                .col-md-2
+                                  select#selectbasic.form-control(name='selectbasic', disabled='disabled')
+                                    option(value='select') Select
+                                    option(value='1') 1
+                                    option(value='2') 2
+                                    option(value='3') 3
+                                    option(value='4') 4
+                                    option(value='5') 5
+                                    option(value='6') 6
+                              // Select Basic
+                              // Multiple Radios (inline)
+                              .form-group
+                                label.col-md-4.control-label(for='adv_settings_status') Status
+                                .col-md-4
+                                  label.radio-inline(for='adv_settings_status-0')
+                                    input#adv_settings_status-0(name='adv_settings_status', value='Testing', checked='checked', type='radio', disabled='disabled')
+                                    | 												  Testing
+                                  label.radio-inline(for='adv_settings_status-1')
+                                    input#adv_settings_status-1(name='adv_settings_status', value='Live', type='radio', disabled='disabled')
+                                    | 												  Live
+                          .text-right
+                            a.btn.btn-danger(href='#')
+                              i.fa.fa-trash
+                              |  Delete
+                    br
+                    // Accordion four end
+                  // Accordion with four forms end
+      // /.content
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015 
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // jQuery UI 1.11.4
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+    // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+    script.
+      $.widget.bridge('uibutton', $.ui.button);
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // Slimscroll
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    // AdminLTE dashboard demo (This is only for demo purposes)
+    // AdminLTE for demo purposes
+    script(src='dist/js/demo.js')
+    script.
+      $(document).ready(
+      function(){
+      $('input:file').change(
+      function(){
+      if ($(this).val()) {
+      $('input:submit').attr('disabled',false);
+      // or, as has been pointed out elsewhere:
+      // $('input:submit').removeAttr('disabled');
+      }
+      }
+      );
+      });
+    script.
+      function chooseFile() {
+      document.getElementById("fileInput").click();
+      }

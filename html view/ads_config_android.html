@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PocketPlay | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<meta name="author" content="harihar mishra, harihar@dinzylabs.com">
+	<meta name="google" content="pocketplay dashboard">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="bootstrap/css/custom.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+	<link rel="shortcut icon" href="dist/img/favicon.ico">
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>P</b>Play</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>PocketPlay</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="index.html" title=LOGOUT>
+                  <i class="fa fa-sign-out fa-lg" ></i>
+                  <strong class="hidden-xs">Logout</strong>
+                </a>
+                
+              </li>
+              <!-- Control Sidebar Toggle Button -->
+              <li>
+                <a href="#" data-toggle="control-sidebar"></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+       <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="dist/img/ppmascot.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p>Admin Console</p>
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+          <!-- import sidebar -->
+         <nav id="sidebarqa"> </nav>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+       
+		<br>
+
+        <!-- Main content -->
+        <section class="content">
+         <div class="box-header">   <!--main cintainer start-->
+		<div class="row">   <!--main cintainer start-->
+		  <div class="panel panel-primary">
+		  <div class="panel-heading">
+
+                                   <h3 class="panel-title"><img src="dist/img/android.png" alt="Smiley face" height="30" width="30">&nbsp Advertisement Configuration
+	                                  <div class="btn-group pull-right" style="margin-top: 6px;">
+									  <a class="btn btn-info btn-sm openall" style="margin-top: -6px; margin-right: 3px;" ><i class="fa fa-edit"></i>Edit</a>
+                              <a href="#" class="btn btn-success btn-sm" style="margin-top: -6px;"><i class="fa fa-save"></i>Save</a>
+													</div>
+													</h3>
+												   </div>
+<form  class="form-horizontal">														
+<div class="panel-body">
+<div class="col-md-6">
+													
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<!-- Accordion one start-->
+  <div class="panel panel-default" >
+  
+    <div style="background-color:#D9EDF7;cursor:grab;" class="panel-heading" role="tab" id="headingOne" role="button" data-toggle="collapse" data-parent="accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <h4 class="panel-title">
+           <img src="dist/img/admob.png" alt="Smiley face" height="30" width="30">&nbsp Admob Interstitial        
+      </h4>
+	  
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+                                      <div class="form-group">
+										  <label class="control-label col-sm-3" style="color:#0000FF;" for="ad_platform">Ad Key</label>  
+										  <div class="col-md-6">
+										  <input id="admob_platform" name="default-coins" placeholder="Enter AdMob Interstitial key" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+										<div class="form-group">
+										  <label class="control-label col-sm-3" style="color:#0000FF;" for="ad_platform">Priority</label>  
+										  <div class="col-md-6">
+										  <input id="admob_platform" name="default-coins" placeholder="Enter show Ads priority" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+      </div>
+    </div>
+</div>
+
+<!--accordion one end -->
+<!--accordion two start-->
+<div class="panel panel-default" >
+  
+    <div style="background-color:#D9EDF7;cursor:grab;" class="panel-heading" role="tab" id="headingOne" role="button" data-toggle="collapse" data-parent="accordion" href="#collapsetwo" aria-expanded="true" aria-controls="collapsetwo">
+      <h4 class="panel-title">
+           <img src="dist/img/admob.png" alt="Smiley face" height="30" width="30">&nbsp Admob Banner
+      </h4>
+	  
+    </div>
+    <div id="collapsetwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingtwo">
+      <div class="panel-body">
+                                       <div class="form-group">
+										  <label class="control-label col-sm-3" style="color:#0000FF;" for="ad_platform">Ad Key</label>  
+										  <div class="col-md-6">
+										  <input id="admob_platform" name="default-coins" placeholder="Enter AdMob Banner key" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+										
+												
+
+      </div>
+    </div>
+</div>
+<!--accordion two start-->
+<div class="panel panel-default" >
+  
+    <div style="background-color:#D9EDF7;cursor:grab;" class="panel-heading" role="tab" id="headingfive" role="button" data-toggle="collapse" data-parent="accordion" href="#collapsefive" aria-expanded="true" aria-controls="collapsefive">
+      <h4 class="panel-title">
+           <img src="dist/img/settings.png" alt="Smiley face" height="30" width="30">&nbsp Other Settings
+      </h4>
+	  
+    </div>
+    <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingtwo">
+      <div class="panel-body">
+                                     	<div class="form-group">
+										  <label class="control-label col-sm-4" style="color:#0000FF;" for="ad_platform">Interstitial time Interval</label>  
+										  <div class="col-md-6">
+										 <input id="time" name="default-coins" placeholder="Enter time in seconds" class="form-control input-sm"  type="text" size="6" maxlength="6">
+											
+										  </div>
+										</div>
+										<div class="form-group">
+										  <label class="control-label col-sm-4" style="color:#0000FF;" for="ad_platform">Rewarded video Coins</label>  
+										  <div class="col-md-6">
+										 <input id="fe-rvc" name="default-coins" placeholder="Enter time in seconds" class="form-control input-sm"  type="text" size="6" maxlength="6">
+											
+										  </div>
+										</div>
+												
+
+      </div>
+    </div>
+</div>
+<!-- Accordion two end-->
+
+</div>	
+			 							
+                  
+					
+					</div>
+					<div class="col-md-6">
+				<!-- Accordion four start-->
+  <div class="panel panel-default" >
+  
+    <div style="background-color:#D9EDF7;cursor:grab;" class="panel-heading" role="tab" id="headingfour" role="button" data-toggle="collapse" data-parent="accordion" href="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
+      <h4 class="panel-title">
+           <img src="dist/img/adslocation.png" alt="Smiley face" height="30" width="30">&nbsp Ad Location
+      </h4>
+	  
+    </div>
+    <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+      <div class="panel-body">
+                                       <div class="form-group">
+										  <label class="control-label col-md-3" style="color:#0000FF;" for="ad_platform">Hit Locations</label>  
+										  <div class="col-md-8">
+										  <input id="admob_platform" name="default-coins" placeholder="Enter comma separated locations" class="form-control input-md"  type="text">
+											
+										  </div>
+										</div>
+										<!-- Multiple Checkboxes (inline) -->
+								<div class="form-group">
+								  <label class="col-md-3 control-label" style="color:#0000FF;" for="Interstitial">Interstitial</label>
+								  <div class="col-md-9">
+									<label class="checkbox-inline" for="Interstitial-0">
+									  <input name="Interstitial" id="Interstitial-0" value="Friends" type="checkbox">
+									  Bootup
+									</label>
+									<label class="checkbox-inline" for="Interstitial-1">
+									  <input name="Interstitial" id="Interstitial-1" value="Random" type="checkbox">
+									  Game Finished
+									</label>
+									<label class="checkbox-inline" for="Interstitial-2">
+									  <input name="Interstitial" id="Interstitial-2" value="Pass &amp; Play" type="checkbox">
+									  Back from Game
+									</label>
+									<br>
+									
+									<label class="checkbox-inline" for="Interstitial-3">
+									  <input name="Interstitial" id="Interstitial-3" value="Bot" type="checkbox">
+									  Back from user profile
+									</label>
+								  </div>
+								</div>
+								<!-- Multiple Checkboxes (inline) -->
+								<div class="form-group">
+								  <label class="col-md-3 control-label" style="color:#0000FF;" for="Interstitial">Banner</label>
+								  <div class="col-md-9">
+									<label class="checkbox-inline" for="Interstitial-0">
+									  <input name="Interstitial" id="Interstitial-0" value="Friends" type="checkbox">
+									  Matches
+									</label>
+									<label class="checkbox-inline" for="Interstitial-1">
+									  <input name="Interstitial" id="Interstitial-1" value="Random" type="checkbox">
+									  Games
+									</label>
+									<label class="checkbox-inline" for="Interstitial-2">
+									  <input name="Interstitial" id="Interstitial-2" value="Pass &amp; Play" type="checkbox">
+									  Profile
+									</label>
+									
+									<label class="checkbox-inline" for="Interstitial-3">
+									  <input name="Interstitial" id="Interstitial-3" value="Bot" type="checkbox">
+									  In game
+									</label>
+								  </div>
+								</div>
+									
+      </div>
+    </div>
+</div>
+
+	<!-- Accordion four end-->
+	<!-- Accordion three start-->
+						 <div class="panel panel-default" style="margin-top: -15px;">
+							<div style="background-color:#D9EDF7;cursor:grab;" class="panel-heading" role="tab" id="headingthree" class="collapsed" role="button" data-toggle="collapse" data-parent="accordion" href="#collapsethree" aria-expanded="false" aria-controls="collapsethree" data-trigger="hover">
+							  <h4 class="panel-title">
+								  <img src="dist/img/chartboost.png" alt="Smiley face" height="30" width="30">&nbsp Chartboost
+							  </h4>
+							</div>
+							<div id="collapsethree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingthree">
+							  <div class="panel-body">
+										<div class="form-group">
+										  <label class="control-label col-sm-3" style="color:#0000FF;" for="key">Secret Key</label>  
+										  <div class="col-md-6">
+										  <input id="admob_key" name="default-coins" placeholder="Enter ChartBoost secret key" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+										<div class="form-group">
+										  <label class="control-label col-sm-3" style="color:#0000FF;" for="key">App Key</label>  
+										  <div class="col-md-6">
+										  <input id="admob_key" name="default-coins" placeholder="Enter ChartBoost App key" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>
+										<div class="form-group">
+										  <label class="control-label col-sm-3" style="color:#0000FF;" for="priority">Priority</label>  
+										  <div class="col-md-6">
+										  <input id="admob_priority" name="default-coins" placeholder="Enter show Ads priority" class="form-control input-sm"  type="text">
+											
+										  </div>
+										</div>				
+							  </div>
+							</div>
+						</div>
+						<!-- Accordion three end-->
+
+					</div>
+					
+					  </div>
+					  </form>
+                            </div>		
+                                  </div>		
+                                         </div>
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2014-2015 <a href="http://pocketplay.com">Pocket Play (<i class="fa fa-trademark"></i>)</a>.</strong> All rights reserved.
+      </footer>
+    </div><!-- ./wrapper -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- jvectormap -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	<!-- Sidebar -->
+	<script src="dist/js/sidebar.js"></script>
+    <!-- FastClick -->
+    <script src="plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+		<script>
+	$(document).ready(
+    function(){
+        $('input:file').change(
+            function(){
+                if ($(this).val()) {
+                    $('input:submit').attr('disabled',false);
+                    // or, as has been pointed out elsewhere:
+                    // $('input:submit').removeAttr('disabled'); 
+                } 
+            }
+            );
+    });
+	</script>
+	<script>
+	$('.closeall').click(function(){
+  $('.panel-collapse.in')
+    .collapse('hide');
+});
+$('.openall').click(function(){
+  $('.panel-collapse:not(".in")')
+    .collapse('show');
+});
+	</script>
+	<script>
+		$(document).ready(function () {
+			var fe_id = 'adsConfiguration' + '_fe';
+			$('#' + fe_id).addClass('active');
+			var fe_id2 = 'ads_config_android' + '_fe';
+			$('#' + fe_id2).addClass('active');
+		});
+	</script>
+	<script>
+	$(document).ready(function(){
+    $('[id^=time]').keypress(validateNumber);
+	$('[id^=fe-rvc]').keypress(validateNumber);
+});
+
+function validateNumber(event) {
+    var key = window.event ? event.keyCode : event.which;
+
+    if (event.keyCode === 8 || event.keyCode === 46
+        || event.keyCode === 37 || event.keyCode === 39) {
+        return true;
+    }
+    else if ( key < 48 || key > 57 ) {
+        return false;
+    }
+    else return true;
+};
+	</script>
+  </body>
+</html>

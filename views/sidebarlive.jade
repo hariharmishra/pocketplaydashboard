@@ -1,0 +1,80 @@
+//
+   Created by harihar on 09-May-16.
+ul.sidebar-menu
+    li.header MAIN NAVIGATION
+    li#all_games_live_fe.treeview
+        a(href='/all_games_live')
+            i.fa.fa-gamepad
+            span Games
+    li#analytics_fe.treeview
+        a(href='')
+            i.fa.fa-bar-chart
+            span Analytics
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+            li
+                a(href='/comingsoon')
+                    i.fa.fa-circle-o
+                    |  Overview
+            li
+                a(href='/comingsoon')
+                    i.fa.fa-circle-o
+                    |  Installs
+            li
+                a(href='/comingsoon')
+                    i.fa.fa-circle-o
+                    |  Sessions
+            li
+                a(href='/comingsoon')
+                    i.fa.fa-circle-o
+                    |  Game
+            li
+                a(href='/comingsoon')
+                    i.fa.fa-circle-o
+                    |  User Analytics
+    li#in_app_fe.treeview
+        a(href='/in_app')
+            i.fa.fa-cart-plus
+            span  In-App
+    li#Promotions_fe.treeview
+        a(href='')
+            i.fa.fa-trophy
+            span Promotions
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+            // <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Promotions</a></li>
+            li#dailydeals_fe
+                a(href='/dailydeals')
+                    i.fa.fa-circle-o
+                    |  Daily Deals
+            li#appoftheday_fe
+                a(href='/appoftheday')
+                    i.fa.fa-circle-o
+                    |  App of the day
+            li#informative_fe
+                a(href='/informative')
+                    i.fa.fa-circle-o
+                    |  General Info
+    li#test_user_fe.treeview
+        a(href='/test_user')
+            i.fa.fa-user-secret
+            span Test User
+    li#config_fe.treeview
+        a(href='/config')
+            i.fa.fa-cogs
+            span Configuration
+    li#adsconfiguration_fe.treeview
+        a(href='')
+            i.fa.fa-adn
+            span Ads Configuration
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+            li#ads_config_ios_fe
+                a(href='/ads_config_ios')
+                    i.fa.fa-circle-o
+                    |  iOS
+            li#ads_config_android_fe
+                a(href='/ads_config_android')
+                    i.fa.fa-circle-o
+                    |  Android
+

@@ -1,0 +1,170 @@
+<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!--Font Awesome (added because you use icons in your prepend/append)-->
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="bootstrap-iso">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form method="POST" name="notificationEntry" id ="notificationEntryId" action="createNotification" enctype="multipart/form-data">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="title">
+                            Title
+       <span class="asteriskField">
+        *
+       </span>
+                        </label>
+                        <input class="form-control" id="title" name="title" placeholder="Notification Title" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="message">
+                            Message
+       <span class="asteriskField">
+        *
+       </span>
+                        </label>
+                        <textarea class="form-control" cols="40" id="message" name="message" placeholder="Notification message" rows="10"></textarea>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="startdate">
+                            Start Date
+       <span class="asteriskField">
+        *
+       </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar">
+                                </i>
+                            </div>
+                            <input class="form-control" id="startdate" name="startdate" placeholder="DD/MM/YYYY" type="date"/>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label " for="url">
+                            URL
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-globe">
+                                </i>
+                            </div>
+                            <input class="form-control" id="url" name="storeurl" placeholder="Store url" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="coins">
+                            Coins
+       <span class="asteriskField">
+        *
+       </span>
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-money">
+                                </i>
+                            </div>
+                            <input class="form-control" id="coins" name="coins" placeholder="coins" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="os">
+                            Select O.S.
+       <span class="asteriskField">
+        *
+       </span>
+                        </label>
+                        <select class="select form-control" id="os" name="os">
+                            <option value="Android">
+                                Android
+                            </option>
+                            <option value="ios">
+                                ios
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField">
+                            Countries
+       <span class="asteriskField">
+        *
+       </span>
+                        </label>
+                        <div class=" ">
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="countries" type="checkbox" value="USA"/>
+                                    USA
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="countries" type="checkbox" value="Canada"/>
+                                    Canada
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="countries" type="checkbox" value="Australia"/>
+                                    Australia
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="countries" type="checkbox" value="Africa"/>
+                                    Africa
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="countries" type="checkbox" value="China"/>
+                                    China
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="countries" type="checkbox" value="India"/>
+                                    India
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="countries" type="checkbox" value="Europe"/>
+                                    Europe
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label class="checkbox">
+                                    <input name="countries" type="checkbox" value="Russia"/>
+                                    Russia
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label " for="bannerImage">
+                            Upload Banner Image
+                        </label>
+                            <div>
+                                <input type="file" id="bannerImage" name ="bannerImage" size="1000" />
+                            </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div>
+                            <button class="btn btn-primary " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

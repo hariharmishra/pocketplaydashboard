@@ -1,0 +1,240 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | User Dashboard
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    meta(name='author', content='harihar mishra, harihar@dinzylabs.com')
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='bootstrap/css/custom.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    link(rel='stylesheet', href='plugins/iCheck/flat/blue.css')
+    link(rel='stylesheet', href='plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='/all_games')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              li
+                a(href='/logout', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+            //import sidebar
+          include ../sidebar
+      -var config = configuration;
+        // /.sidebar
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              // main cintainer start
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    | Configuration
+                    .btn-group.pull-right
+                      a.btn.btn-success.btn-sm(onclick='return validateForm();', style='margin-top: -6px;')
+                        i.fa.fa-save
+                        |  Save
+                .panel-body
+                  .panel.panel-default
+                    .panel-heading
+                      h3.panel-title
+                        | Configuration Version:-
+                        a(style='color:#FE801C;')  #{config.version}
+                    form.form-horizontal(name ='configForm', id='configForm' ,method='post',action='updateconfig',enctype='multipart/form-data')
+                      .panel-body
+                        .panel.panel-info
+                          .panel-heading
+                            h3.panel-title
+                              | Coins
+                          | 										   &nbsp
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Default Coins (Register)
+                            .col-md-3
+                              input.form-control.input-sm(name='default_coins_user',id='default_coins_user', placeholder='Default coins for registered user', type='text', size='6', maxlength='6')
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Default Coins (Guest)
+                            .col-md-3
+                              input.form-control.input-sm(name='default_coins_guest',id='default_coins_guest', placeholder='Default coins for guest user', type='text', size='6', maxlength='6')
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Referral Bonus
+                            .col-md-3
+                              input.form-control.input-sm(name='referral_bonus', id='referral_bonus', placeholder='Referral Bonus', type='text' , size='5', maxlength='5')
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Facebook Like
+                            .col-md-3
+                              input.form-control.input-sm(name='fb_like_bonus', id='fb_like_bonus',placeholder='Default coins on FB like', type='text', size='6', maxlength='6')
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Min Recharge Bal
+                            .col-md-3
+                              input.form-control.input-sm(name='min_recharge_bal', id='min_recharge_bal',placeholder='Minimum Recharge Balance', type='text', size='6', maxlength='6')
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Rewarded Video Coins
+                            .col-md-3
+                              input.form-control.input-sm(name='rewarded_video_coins', id='rewarded_video_coins',placeholder='Rewarded Video Coins', type='text', size='10', maxlength='10')
+                        .panel.panel-info
+                          .panel-heading
+                            h3.panel-title
+                              | Paytm Balance
+                          | 										   &nbsp
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Default Balance(Register)
+                            .col-md-3
+                              input.form-control.input-sm(name='paytm_balance_register', id='paytm_balance_register' ,placeholder='Initial balance for registered user', type='text', size='3', maxlength='3')
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Default Balance(guest)
+                            .col-md-3
+                              input.form-control.input-sm(name='paytm_balance_guest', id='paytm_balance_guest' ,placeholder='Initial balance for guest', type='text' , size='3', maxlength='3')
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Bonus/Refer
+                            .col-md-3
+                              input.form-control.input-sm(name='paytm_referral',id='paytm_referral', placeholder='Cashback on each referral', type='text', size='3', maxlength='3')
+                        .panel.panel-info
+                          .panel-heading
+                            h3.panel-title
+                              | Register Mode
+                          | 										   &nbsp&nbsp&nbsp
+                          .form-group
+                            label.control-label.col-sm-2(style='color:#0000FF;') Default Login As
+                            .col-md-3
+                              label.radio-inline
+                                input(name='default_login',id='default_login_register', value='register', checked='checked', type='radio')
+                                | 									  Register
+                              label.radio-inline
+                                input(name='default_login',id='default_login_guest', value='guest', type='radio')
+                                | 									 Guest
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    .control-sidebar-bg
+    // ./wrapper
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // jQuery UI 1.11.4
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+    // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+    script.
+      $.widget.bridge('uibutton', $.ui.button);
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // Bootstrap WYSIHTML5
+    script(src='plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')
+    // Slimscroll
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    script(src='dist/js/demo.js')
+    script.
+        $(document).ready(function(){
+          $('[id^=default_coins_user]').keypress(validateNumber);
+          $('[id^=default_coins_guest]').keypress(validateNumber);
+          $('[id^=referral_bonus]').keypress(validateNumber);
+          $('[id^=fb_like_bonus]').keypress(validateNumber);
+          $('[id^=paytm_balance]').keypress(validateNumber);
+          $('[id^=guest_paytm_balance]').keypress(validateNumber);
+          $('[id^=paytm_referral]').keypress(validateNumber);
+          $('[id^=paytm_balance_register]').keypress(validateNumber);
+          $('[id^=paytm_balance_guest]').keypress(validateNumber);
+          $('[id^=min_recharge_bal]').keypress(validateNumber);
+          $('[id^=rewarded_video_coins]').keypress(validateNumber);
+          setConfigurationData();
+        });
+
+        function setConfigurationData(){
+
+          document.getElementById('default_coins_user').value = #{config.registered_user_default_coins};
+          document.getElementById('default_coins_guest').value = #{config.guest_user_default_coins} ;
+          document.getElementById('referral_bonus').value = #{config.referral_bonus} ;
+          document.getElementById('fb_like_bonus').value = #{config.fb_like_bonus};
+          document.getElementById('paytm_referral').value =  #{config.paytm.referral_bonus};
+          document.getElementById('paytm_balance_register').value =  #{config.paytm.registered_user_balance};
+          document.getElementById('paytm_balance_guest').value =  #{config.paytm.guest_user_balance};
+          document.getElementById('min_recharge_bal').value = #{config.paytm.min_recharge_bal};
+          document.getElementById('rewarded_video_coins').value = #{config.rewarded_video_coins};
+          var default_login = '#{config.default_login}';
+          if (default_login == 'register') {
+            document.getElementById('default_login_register').checked = 'checked';
+            document.getElementById('default_login_guest').checked = '';
+          }
+          else {
+            document.getElementById('default_login_guest').checked = 'checked';
+            document.getElementById('default_login_register').checked = '';
+          }
+        }
+
+        function validateNumber(event) {
+               var key = window.event ? event.keyCode : event.which; 
+              if (event.keyCode === 8 || event.keyCode === 46 
+                  || event.keyCode === 37 || event.keyCode === 39) { 
+                return true; 
+              }
+              else if ( key < 48 || key > 57 ) {
+                     return false;
+               } 
+              else return true; 
+        }
+
+        function validateForm() {
+          var domElements = [];
+          var allFieldsEmpty = true;
+          domElements = document.forms["configForm"].getElementsByTagName("input");
+          document.getElementById('configForm').submit();
+        }
+    script.
+      $(document).ready(function () {
+        var fe_id = 'config' + '_fe';
+        $('#' + fe_id).addClass('active');
+      });
+

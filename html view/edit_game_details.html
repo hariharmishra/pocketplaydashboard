@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PocketPlay | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+	   <!-- custom -->
+    <link rel="stylesheet" href="bootstrap/css/custom.css">
+	<link rel="shortcut icon" href="dist/img/favicon.ico">
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>P</b>Play</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>PocketPlay</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+
+              <li>
+                <a href="index.html" title=LOGOUT>
+                  <i class="fa fa-sign-out fa-lg" ></i>
+                  <strong class="hidden-xs">Logout</strong>
+                </a>
+                
+              </li>
+              <!-- Control Sidebar Toggle Button -->
+              <li>
+                <a href="#" data-toggle="control-sidebar"></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="dist/img/ppmascot.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p>Admin Console</p>
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+          <!-- import sidebar -->
+         <nav id="sidebarqa"> </nav>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+       
+		<br>
+
+        <!-- Main content -->
+        <section class="content">
+         <div class="box-header">   <!--main cintainer start-->
+		<div class="row">   <!--main cintainer start-->
+		  <div class="panel panel-primary" >
+													 <div class="panel-heading">
+                                    <h3 class="panel-title">Edit Game details
+	                                  <div class="btn-group pull-right">
+                              <a visibility: hidden; href="#" class="btn btn-success btn-sm" style="margin-top: -6px;"><i class="fa fa-rocket"></i> Publish</a>
+													</div>
+													</h3>
+												   </div>
+													
+<div class="panel-body">
+	
+<div class="panel panel-primary">
+   <div class="panel-heading">
+      <h3 class="panel-title">Resources
+	
+	</h3>
+   </div>
+   
+   <div class = "panel-body">
+<div  class="row-fluid-5">
+
+							<div class="span2" style="text-align:center;">
+							
+							   <h3>GameIcon</h3>
+
+
+							   
+							<form action="#" method="post" enctype="multipart/form-data" title="Click to Select File" id="gameicon-form">						
+												
+													<label  for="gameicon" >
+														<img id="gameiconpreview" src="dist/img/icon.jpg" style="height:150px; width:150px;" class="img-thumbnail" alt="Responsive image"/>
+															<i style="visibility: hidden;" ><input type="file" accept=".png, .jpeg, .jpg"  onchange="showMyImage(this, 'gameiconpreview')" name="gameicon" id="gameicon" ></i>
+																<input type="submit"  name="submit" value="Upload" class="btn btn-success " disabled />
+																</label>						
+							</form>
+							
+							
+							</div>
+									<div class="span2"style="text-align:center;">
+									
+									   <h3>Square Icon</h3>
+									 <form action="#" method="post" enctype="multipart/form-data" id="squareicon-form">						
+																		<label  for="squareicon" >
+																		  <img id="squareiconpreview" src="dist/img/placeholder.jpg"  style="height:150px; width:150px;" class="img-thumbnail" alt="Responsive image">
+																		  <i style="visibility: hidden;"><input type="file" accept=".png, .jpg, .jpeg" onchange="showMyImage(this, 'squareiconpreview')" name="squareicon" id="squareicon"></i>
+																		<input type="submit"  name="submit" value="Upload" class="btn btn-success " disabled />
+																		</label>									
+									</form>
+									
+									</div>
+											<div class="span2" style="text-align: center">
+											
+											 <h3>GameBanner</h3>
+											<form action="#" method="post" enctype="multipart/form-data"id="gamebanner-form" >						
+																				<label  for="gamebanner" >
+																				  <img id="gamebannerpreview" src="dist/img/promo2.png"  style="height:150px; width:250px;" class="img-thumbnail" alt="Responsive image">
+																				<i style="visibility: hidden;"><input type="file" accept=".png, .jpg, .jpeg" onchange="showMyImage(this, 'gamebannerpreview')" name="gamebannerpreview" id="gamebanner" ></i>
+																				<input type="submit"  name="submit" value="Upload" class="btn btn-success " disabled />
+																				</label>
+																				
+																			</form>
+										
+											</div>
+
+							<div class="span2"style="text-align: center" >
+						
+							  <h3>Assets & Script </h3>
+						<form action="#" method="post" enctype="multipart/form-data" id="assetsscript-form">						
+													<label>
+														<img src="dist/img/fileexist.png"  style="height:150px; width:150px;"  class="img-thumbnail" alt="Responsive image"/>
+															<i style="visibility: hidden;"><input type="file" accept=".zip, .rar"  name="assetsscript" id="assetsscript" ></i>
+																<input type="submit"  name="submit" value="Upload" class="btn btn-success " disabled />
+																</label>								
+							</form>
+							</div>
+							
+									<div class="span2" style="text-align: center">
+								
+									 <h3>Only Assets</h3>
+									 <form action="#" method="post" enctype="multipart/form-data" id="onlyassets-form">						
+																		<label  for="onlyassets" >
+																		  <img src="dist/img/fileexist.png"  style="height:150px; width:150px;"  class="img-thumbnail" alt="Responsive image">
+																		  <i style="visibility: hidden;"><input type="file" accept=".zip, .rar" name="onlyassets" id="onlyassets" ></i>
+																		<input type="submit"  name="submit" value="Upload" class="btn btn-success " disabled />
+																		</label>									
+									</form>
+								
+									
+									</div>
+</div> 
+
+   </div>
+</div>
+ <form class="form-horizontal">
+ <div class="panel panel-primary">
+   <div class="panel-heading">
+      <h3 class="panel-title">Game Settings
+	<div class="btn-group pull-right">
+        <a href="#" class="btn btn-success btn-sm" style="margin-top: -6px;" title="Click to upload resources"><i class="fa fa-floppy-o"></i> Save</a>
+    </div>
+	</h3>
+   </div>
+<div class="panel-body">
+<!-- Accordion with four forms-->          
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<!-- Accordion one start-->
+
+  <div class="panel panel-default" >
+    <div style="background-color:#D9EDF7;" class="panel-heading" role="tab" id="headingOne" role="button" data-toggle="collapse" data-parent="accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Game Details
+        </a>
+      </h4>
+	  
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+												
+													<fieldset>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-4 control-label" for="Display Name">Display Name</label>  
+													  <div class="col-md-3">
+													  <input id="Display Name" name="Display Name" placeholder="Enter Game Display Name" class="form-control input-md" required="" type="text">
+														
+													  </div>
+													</div>
+
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-4 control-label" for="Lua File Name">Lua File Name</label>  
+													  <div class="col-md-3">
+													  <input id="Lua File Name" name="Lua File Name" placeholder="Enter Lua File Name" class="form-control input-md" required="" type="text">
+														
+													  </div>
+													</div>
+
+													<!-- Select Basic -->
+													<div class="form-group">
+													  <label class="col-md-4 control-label" for="min_player">Min Player</label>
+													  <div class="col-md-2">
+														<select id="min_player" name="min_player" class="form-control">
+														    <option value="select">Select</option>
+														  <option value="1">1</option>
+														  <option value="2">2</option>
+														  <option value="3">3</option>
+														  <option value="4">4</option>
+														  <option value="5">5</option>
+														  <option value="6">6</option>
+														</select>
+													  </div>
+													</div>
+
+													<!-- Select Basic -->
+													<div class="form-group">
+													  <label class="col-md-4 control-label" for="max_player">Max Player</label>
+													  <div class="col-md-2">
+														<select id="max_player" name="max_player" class="form-control">
+														  <option value="select">Select</option>
+														  <option value="1">1</option>
+														  <option value="2">2</option>
+														  <option value="3">3</option>
+														  <option value="4">4</option>
+														  <option value="5">5</option>
+														  <option value="6">6</option>
+														</select>
+													  </div>
+													</div>
+
+													</fieldset>
+													
+										
+
+      </div>
+    </div>
+</div>
+<!-- Accordion one end-->
+
+<!-- Accordion two start-->
+						 <div class="panel panel-default">
+						 <!-- Accordion two end-->
+						 <!-- Accordion three start-->
+							<div style="background-color:#D9EDF7;" class="panel-heading" role="tab" id="headingTwo" class="collapsed" role="button" data-toggle="collapse" data-parent="accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-trigger="hover">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								  Game Configuration
+								</a>
+							  </h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							  <div class="panel-body">
+								
+								<fieldset>
+								<!-- Multiple Radios (inline) -->
+								<div class="form-group">
+								  <label class="col-md-4 control-label" for="game_config_orientation">Orientation</label>
+								  <div class="col-md-4"> 
+									<label class="radio-inline" for="game_config_orientation-0">
+									  <input name="game_config_orientation" id="game_config_orientation-0" value="Portrait" checked="checked" type="radio">
+									  Portrait
+									</label> 
+									<label class="radio-inline" for="game_config_orientation-1">
+									  <input name="game_config_orientation" id="game_config_orientation-1" value="Landscape" type="radio">
+									  Landscape
+									</label>
+								  </div>
+								</div>
+
+								<!-- Multiple Checkboxes (inline) -->
+								<div class="form-group">
+								  <label class="col-md-4 control-label" for="Game_config_mode">Games Mode</label>
+								  <div class="col-md-4">
+									<label class="checkbox-inline" for="Game_config_mode-0">
+									  <input name="Game_config_mode" id="Game_config_mode-0" value="Friends" type="checkbox">
+									  Friends
+									</label>
+									<label class="checkbox-inline" for="Game_config_mode-1">
+									  <input name="Game_config_mode" id="Game_config_mode-1" value="Random" type="checkbox">
+									  Random
+									</label>
+									<label class="checkbox-inline" for="Game_config_mode-2">
+									  <input name="Game_config_mode" id="Game_config_mode-2" value="Pass &amp; Play" type="checkbox">
+									  Pass &amp; Play
+									</label>
+									<label class="checkbox-inline" for="Game_config_mode-3">
+									  <input name="Game_config_mode" id="Game_config_mode-3" value="Bot" type="checkbox">
+									  Bot
+									</label>
+								  </div>
+								</div>
+
+								<!-- Multiple Checkboxes (inline) -->
+								<div class="form-group">
+								  <label class="col-md-4 control-label" for="game_config_label">Difficulty Label</label>
+								  <div class="col-md-4">
+									<label class="checkbox-inline" for="game_config_label-0">
+									  <input name="game_config_label" id="game_config_label-0" value="Easy" type="checkbox">
+									  Easy
+									</label>
+									<label class="checkbox-inline" for="game_config_label-1">
+									  <input name="game_config_label" id="game_config_label-1" value="Medium" type="checkbox">
+									  Medium
+									</label>
+									<label class="checkbox-inline" for="game_config_label-2">
+									  <input name="game_config_label" id="game_config_label-2" value="Hard" type="checkbox">
+									  Hard
+									</label>
+								  </div>
+								</div>
+								<div class="form-group">
+											  <label class="col-md-4 control-label" for="game_category">Game Category</label>
+											  <div class="col-md-2">
+												<select id="game_category" name="game_category" class="form-control">
+												  <option value="select">Select</option>
+												  <option value="1">None</option>
+												  <option value="2">Turn Based</option>
+												  <option value="3">Casual</option>
+												  <option value="4">Challenging Mode</option>
+												</select>
+											  </div>
+											</div>
+											<!-- Select Basic -->
+										<div class="form-group">
+										  <label class="col-md-4 control-label" for="bet_amount">Bet Amount</label>  
+										  <div class="col-md-2">
+										  <input id="bet_amount" name="bet_amount" placeholder="Enter Bet Amount" class="form-control input-md" required="" type="input"   size="50" maxlength="50" title="Enter Comma Seperated Value" />
+											
+										  </div>
+										</div>
+										<!-- Select Basic -->
+										<div class="form-group">
+										  <label class="col-md-4 control-label" for="random_turn_time">Random Turn Time</label>  
+										  <div class="col-md-2">
+										  <input id="random_turn_time" name="random_turn_time" placeholder="Enter Time in Seconds" class="form-control input-md" required="" type="input"   size="10" maxlength="10" title="Enter Time in Seconds" />
+											
+										  </div>
+										</div>
+										<!-- Select Basic -->
+										<div class="form-group">
+										  <label class="col-md-4 control-label" for="friendly_table_time">Friendly Table Time</label>  
+										  <div class="col-md-2">
+										  <input id="friendly_table_time" name="friendly_table_time" placeholder="Enter Time in Seconds" class="form-control input-md" required="" type="input"   size="10" maxlength="10" title="Enter Time in Seconds" />
+											
+										  </div>
+										</div>
+										<!-- Select Basic -->
+										<div class="form-group">
+										  <label class="col-md-4 control-label" for="friendly_bonus_table_time">Friendly Bonus Table Time</label>  
+										  <div class="col-md-2">
+										  <input id="friendly_bonus_table_time" name="friendly_bonus_table_time" placeholder="Enter Time in Seconds" class="form-control input-md" required="" type="input"   size="10" maxlength="10" title="Enter Time in Seconds" />
+											
+										  </div>
+										</div>
+
+								</fieldset>
+							
+							  </div>
+							</div>
+						</div>
+
+
+  <!-- Accordion three end-->
+    <!-- Accordion four start-->
+<div class="panel panel-default">
+    <div style="background-color:#D9EDF7;" class="panel-heading" role="tab" id="headingFour" class="collapsed" role="button" data-toggle="collapse" data-parent="accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Advance Settings
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+											
+											<fieldset>
+											<!-- Select Basic -->
+										<div class="form-group">
+										  <label class="col-md-4 control-label" for="coins_to_unlock">Coins to Unlock</label>  
+										  <div class="col-md-2">
+										  <input id="coins_to_unlock" name="coins_to_unlock" placeholder="Enter Coins" class="form-control input-md" required="" type="input"   size="10" maxlength="10"  />
+											
+										  </div>
+										</div>
+											<!-- Select Basic -->
+										
+
+											<!-- Multiple Checkboxes (inline) -->
+								<div class="form-group">
+								  <label class="col-md-4 control-label" for="is_active">Is Active</label>
+								  <div class="col-md-4">
+									<label class="checkbox-inline" for="is_active-0">
+									  <input name="is_active" id="is_active-0" value="Easy" type="checkbox" style="margin-top: -4px; margin-left: -18px;">
+
+									</label>									
+								  </div>
+								</div>
+
+											</fieldset>
+											
+							   <div class="text-right"><a href="#" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a></div>
+
+      </div>
+    </div>
+ 
+  </div><br>
+</div>
+   <!-- Accordion four end-->
+</div>
+</div>
+</form>
+<!-- Accordion with four forms end-->
+             </div>
+			 							
+                    </div>
+                            </div>		
+                            </div>		
+                            </div>
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2014-2015 <a href="http://pocketplay.com">Pocket Play (<i class="fa fa-trademark"></i>)</a>.</strong> All rights reserved.
+      </footer>
+  <!-- jQuery 2.1.4 -->
+    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	<!-- Sidebar -->
+	<script src="dist/js/sidebar.js"></script>
+    <!-- FastClick -->
+    <script src="plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+	
+	<script>
+	 function showMyImage(fileInput, imageId) {
+        var files = fileInput.files;
+        for (var i = 0; i < files.length; i++) {           
+            var file = files[i];
+            var imageType = /image.*/;     
+            if (!file.type.match(imageType)) {
+                continue;
+            }           
+            var img=document.getElementById(imageId);            
+            img.file = file;    
+            var reader = new FileReader();
+            reader.onload = (function(aImg) { 
+                return function(e) { 
+                    aImg.src = e.target.result; 
+                }; 
+            })(img);
+            reader.readAsDataURL(file);
+        }    
+    }
+	</script>
+		<script>
+	$(document).ready(
+    function(){
+        $('input:file').change(
+            function(){
+                if ($('#gameicon').val()) {
+                    $('#gameicon-form input:submit').attr('disabled',false);
+                }
+				if ($('#squareicon').val()) {
+                    $('#squareicon-form input:submit').attr('disabled',false);
+                }
+				if ($('#gamebanner').val()) {
+                    $('#gamebanner-form input:submit').attr('disabled',false);
+                }
+				if ($('#assetsscript').val()) {
+                    $('#assetsscript-form input:submit').attr('disabled',false);
+                }
+				if ($('#onlyassets').val()) {
+                    $('#onlyassets-form input:submit').attr('disabled',false);
+                }
+            }
+            );
+    });
+	</script>
+	<script>
+	$(document).ready(function(){
+    $('[id^=bet_amount]').keypress(validateNumber);
+	$('[id^=friendly_bonus_table_time]').keypress(validateNumber);
+	$('[id^=friendly_table_time]').keypress(validateNumber);
+	$('[id^=random_turn_time]').keypress(validateNumber);
+	$('[id^=coins_to_unlock]').keypress(validateNumber);
+});
+
+function validateNumber(event) {
+    var key = window.event ? event.keyCode : event.which;
+
+    if (event.keyCode === 8 || event.keyCode === 46
+        || event.keyCode === 37 || event.keyCode === 39) {
+        return true;
+    }
+    else if ( key < 48 || key > 57 ) {
+        return false;
+    }
+    else return true;
+};
+	</script>
+	<script>
+		$(document).ready(function () {
+			var fe_id = 'all_games' + '_fe';
+			$('#' + fe_id).addClass('active');
+		});
+	</script>
+  </body>
+</html>

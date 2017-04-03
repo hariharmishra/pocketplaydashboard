@@ -1,0 +1,455 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | Dashboard
+    // Tell the browser to be responsive to screen width
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    // Bootstrap 3.3.5
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    // Ionicons
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    // daterange picker
+    link(rel='stylesheet', href='plugins/daterangepicker/daterangepicker-bs3.css')
+    // iCheck for checkboxes and radio inputs
+    link(rel='stylesheet', href='plugins/iCheck/all.css')
+    // Bootstrap Color Picker
+    link(rel='stylesheet', href='plugins/colorpicker/bootstrap-colorpicker.min.css')
+    // Bootstrap time Picker
+    link(rel='stylesheet', href='plugins/timepicker/bootstrap-timepicker.min.css')
+    // Select2
+    link(rel='stylesheet', href='plugins/select2/select2.min.css')
+    // Theme style
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    //
+      AdminLTE Skins. Choose a skin from the css/skins
+      folder instead of downloading all of them to reduce the load.
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    // custom
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+    link(rel='stylesheet', href='bootstrap/css/custom.css')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='#')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              // Messages: style can be found in dropdown.less
+              // Notifications: style can be found in dropdown.less
+              // Tasks: style can be found in dropdown.less
+              // User Account: style can be found in dropdown.less
+              li
+                a(href='/logout', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+          //import sidebar
+          include ../sidebar
+      // Content Wrapper. Contains page content
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              // main cintainer start
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    | Add New Information
+                .panel-body
+                  .panel.panel-info
+                    .panel-heading.clearfix
+                      h4.panel-title.pull-left(style='padding-top: 7.5px;') Details
+                      .btn-group.pull-right
+                        a.btn.btn-danger.btn-sm(href='#', style='margin-right: 4px;')
+                          i.fa.fa-trash
+                          |  Delete
+                        a.btn.btn-success.btn-sm(href='#', style='margin-right: 4px;')
+                          i.fa.fa-floppy-o
+                          |  Publish
+                        a.btn.btn-success.btn-sm(href='#', style='margin-right: 4px;')
+                          i.fa.fa-check-circle-o
+                          |  Test
+                        a.btn.btn-info.btn-sm(id='save-btn' , onclick="submitForm()")
+                          i.fa.fa-floppy-o
+                          |  Save
+                    .panel-body
+                      .row
+                        form(id='form-id', action='createNewNotification' ,method='post' ,enctype='multipart/form-data')
+                          .col-md-3
+                            .box.box-primary
+                              br
+                              .row(style='text-align:center;')
+                                label
+                                  img#promo_ginfo_addnew.img-thumbnail(src='dist/img/ImageComingSoonSmiley.gif', style='height:320px; width:200px;', alt='Responsive image')
+                                  i(style='visibility: hidden;')
+                                    input(type='file', accept='.png, .jpeg, .jpg', onchange="showMyImage(this, 'promo_ginfo_addnew')", name='promo_ginfo_addnew')
+                          .col-md-9
+                            .box.box-primary
+                              .box-body
+                                // Date range
+                                .form-group
+                                  label.control-label(for='title') Title
+                                  div
+                                    input.form-control.input-md(id='title', name='title', placeholder='Enter Information title',required='', type='text')
+                                .form-group
+                                  label.control-label(for='os') Operating Sytem
+                                  div
+                                    input.form-control.input-md(id='os',name='os', placeholder='deviceOS',disabled, required='', type='text')
+                                // Date and time range
+                                .form-group
+                                  label Date and time range:
+                                  .input-group
+                                    .input-group-addon
+                                      i.fa.fa-clock-o
+                                    input.form-control.pull-right(id='date', name='date' ,type='text')
+                                  // /.input group
+                                // feild Set With Legend
+                                .form-group
+                                  fieldset.scheduler-border
+                                    legend.scheduler-border Optional
+                                    label.col-md-2.control-label(for='url') URL:
+                                    .col-md-6
+                                      input.form-control.input-md(id='url', name='url', placeholder='Enter Info Url if Any', type='text')
+                                    br
+                                    br
+                                    label.col-md-2.control-label(for='redirectBtn') Button Text
+                                    .col-md-6
+                                      input.form-control.input-md(id='redirectBtn', name='redirectBtn', placeholder='Enter Info Button Text', type='text')
+                                // textarea
+                                .form-group
+                                  label Message
+                                  textarea.form-control(id='message' ,name='message', rows='3', placeholder='Enter ...')
+                                // /.form group
+                                .form-group
+                                  label Select Countries
+                                  br
+                                  select(id='MasterSelectBox', name='MasterSelectBox', multiple='', size='9', style='min-width: 250px;float:left;')
+                                    option(value='AF') Afghanistan
+                                    option(value='AU') Australia
+                                    option(value='BD') Bangladesh
+                                    option(value='BT') Bhutan
+                                    option(value='BW') Botswana
+                                    option(value='BR') Brazil
+                                    option(value='CN') China
+                                    option(value='CY') Cyprus
+                                    option(value='CZ') Czech Republic
+                                    option(value='DK') Denmark
+                                    option(value='DJ') Djibouti
+                                    option(value='DM') Dominica
+                                    option(value='DO') Dominican Republic
+                                    option(value='EC') Ecuador
+                                    option(value='EG') Egypt
+                                    option(value='SV') El Salvador
+                                    option(value='GQ') Equatorial Guinea
+                                    option(value='ER') Eritrea
+                                    option(value='EE') Estonia
+                                    option(value='ET') Ethiopia
+                                    option(value='FJ') Fiji
+                                    option(value='FI') Finland
+                                    option(value='FR') France
+                                    option(value='GF') French Guiana
+                                    option(value='PF') French Polynesia
+                                    option(value='TF') French Southern Territories
+                                    option(value='GA') Gabon
+                                    option(value='GM') Gambia
+                                    option(value='GE') Georgia
+                                    option(value='DE') Germany
+                                    option(value='GH') Ghana
+                                    option(value='GI') Gibraltar
+                                    option(value='GR') Greece
+                                    option(value='HK') Hong Kong
+                                    option(value='HU') Hungary
+                                    option(value='IS') Iceland
+                                    option(value='IN') India
+                                    option(value='ID') Indonesia
+                                    option(value='IR') Iran, Islamic Republic of
+                                    option(value='IQ') Iraq
+                                    option(value='IE') Ireland
+                                    option(value='IM') Isle of Man
+                                    option(value='IL') Israel
+                                    option(value='IT') Italy
+                                    option(value='JM') Jamaica
+                                    option(value='JP') Japan
+                                    option(value='JE') Jersey
+                                    option(value='JO') Jordan
+                                    option(value='KZ') Kazakhstan
+                                    option(value='KE') Kenya
+                                    option(value='KP') Korea, Democratic People's Republic of
+                                    option(value='KR') Korea, Republic of
+                                    option(value='MO') Macao
+                                    option(value='MY') Malaysia
+                                    option(value='MV') Maldives
+                                    option(value='MU') Mauritius
+                                    option(value='YT') Mayotte
+                                    option(value='MX') Mexico
+                                    option(value='NP') Nepal
+                                    option(value='NZ') New Zealand
+                                    option(value='NO') Norway
+                                    option(value='OM') Oman
+                                    option(value='PK') Pakistan
+                                    option(value='PH') Philippines
+                                    option(value='PL') Poland
+                                    option(value='PT') Portugal
+                                    option(value='QA') Qatar
+                                    option(value='RE') Réunion
+                                    option(value='RO') Romania
+                                    option(value='SG') Singapore
+                                    option(value='ES') Spain
+                                    option(value='LK') Sri Lanka
+                                    option(value='SD') Sudan
+                                    option(value='SE') Sweden
+                                    option(value='CH') Switzerland
+                                    option(value='TZ') Tanzania, United Republic of
+                                    option(value='TH') Thailand
+                                    option(value='TR') Turkey
+                                    option(value='UG') Uganda
+                                    option(value='UA') Ukraine
+                                    option(value='AE') United Arab Emirates
+                                    option(value='GB') United Kingdom
+                                    option(value='US') United States
+                                    option(value='ZW') Zimbabwe
+                                  div(style='float:left;margin:10px;')
+                                    i#btnAdd.btn.btn-success.btn-sm
+                                      i.fa.fa-plus-circle.fa-2x
+                                    br
+                                    i#btnRemove.btn.btn-danger.btn-sm(style='margin-top: 1px;')
+                                      i.fa.fa-minus-circle.fa-2x
+                                  select(id='PairedSelectBox',name='PairedSelectBox' , multiple='', size='9', style='min-width: 250px;float:left;')
+
+                  // Accordion with four forms end
+      // /.content
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015 
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    // Control Sidebar
+    // /.control-sidebar
+    //
+      Add the sidebar's background. This div must be placed
+      immediately after the control sidebar
+    .control-sidebar-bg
+    // ./wrapper
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // Select2
+    script(src='plugins/select2/select2.full.min.js')
+    // InputMask
+    script(src='plugins/input-mask/jquery.inputmask.js')
+    script(src='plugins/input-mask/jquery.inputmask.date.extensions.js')
+    script(src='plugins/input-mask/jquery.inputmask.extensions.js')
+    // date-range-picker
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js')
+    script(src='plugins/daterangepicker/daterangepicker.js')
+    // bootstrap color picker
+    script(src='plugins/colorpicker/bootstrap-colorpicker.min.js')
+    // bootstrap time picker
+    script(src='plugins/timepicker/bootstrap-timepicker.min.js')
+    // SlimScroll 1.3.0
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // iCheck 1.0.1
+    script(src='plugins/iCheck/icheck.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    // AdminLTE for demo purposes
+    script(src='dist/js/demo.js')
+    script(src='plugins/pairselect/pair-select.min.js')
+    script(src='plugins/pairselect/main.js')
+    // Page script
+    script.
+      $(function () {
+      //Initialize Select2 Elements
+      $(".select2").select2();
+      //Datemask dd/mm/yyyy
+      $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+      //Datemask2 mm/dd/yyyy
+      $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+      //Money Euro
+      $("[data-mask]").inputmask();
+      //Date range picker
+      $('#reservation').daterangepicker();
+      //Date range picker with time picker
+      $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+      //Date range as a button
+      $('#daterange-btn').daterangepicker(
+      {
+      ranges: {
+      'Today': [moment(), moment()],
+      'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+      'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+      'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+      'This Month': [moment().startOf('month'), moment().endOf('month')],
+      'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+      },
+      startDate: moment().subtract(29, 'days'),
+      endDate: moment()
+      },
+      function (start, end) {
+      $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+      );
+      //iCheck for checkbox and radio inputs
+      $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass: 'iradio_minimal-blue'
+      });
+      //Red color scheme for iCheck
+      $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass: 'iradio_minimal-red'
+      });
+      //Flat red color scheme for iCheck
+      $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+      });
+      //Colorpicker
+      $(".my-colorpicker1").colorpicker();
+      //color picker with addon
+      $(".my-colorpicker2").colorpicker();
+      //Timepicker
+      $(".timepicker").timepicker({
+      showInputs: false
+      });
+      });
+    script.
+      function showMyImage(fileInput, imageId) {
+      var files = fileInput.files;
+      for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+      var imageType = /image.*/;
+      if (!file.type.match(imageType)) {
+      continue;
+      }
+      var img=document.getElementById(imageId);
+      img.file = file;
+      var reader = new FileReader();
+      reader.onload = (function(aImg) {
+      return function(e) {
+      aImg.src = e.target.result;
+      };
+      })(img);
+      reader.readAsDataURL(file);
+      }
+      }
+    script.
+        function getParameterByName(name)
+        {
+          var url = window.location.href;
+          url = url.toLowerCase(); // This is just to avoid case sensitiveness
+          name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                  results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+
+        var os = getParameterByName('os');
+        var date = getParameterByName('date');
+        document.getElementById("os").value = os;
+        document.getElementById("date").value = date;
+
+
+        function validateForm()
+        {
+            var os = document.getElementById('os').value;
+            var title = document.getElementById('title').value;
+            var datetime = document.getElementById('date').value;
+            var selectedCountries = document.getElementById('PairedSelectBox');
+            //for(var i=0 ;i < selectedCountries.length;i++){
+            //  alert(selectedCountries.options[i].text);
+            //}
+
+            if(title == '' ) {
+                alert("Error: Title cannot be null");
+                return false;
+            }
+            else if(os != 'android' && os!= 'ios' && os!='universal')
+            {
+                alert("Error: Invalid Operating System");
+                return false;
+            }
+
+            else if(!new Date(datetime) || datetime == null)
+            {
+                alert("Error: Invalid date");
+                return false;
+            }
+            else if(selectedCountries.length <=0)
+            {
+                alert("Error: No country selected for promotion");
+                return false;
+            }
+
+            return true;
+        }
+
+        function submitForm() {
+
+            var form = document.getElementById("form-id");
+
+            var isValid =  validateForm();
+            if (isValid) {
+                form.submit();
+            }
+
+        }
+    script.
+      $(document).ready(function () {
+        var fe_id = 'promotions' + '_fe';
+        $('#' + fe_id).addClass('active');
+        var fe_id2 = 'informative' + '_fe';
+        $('#' + fe_id2).addClass('active');
+      });
+
+
+

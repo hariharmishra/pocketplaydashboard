@@ -1,0 +1,19 @@
+{
+    "config": {
+    "target": "http://google.co.in",
+        "phases": [
+        {"duration": 20 , "arrivalRate": 1}
+    ]
+},
+    "scenarios": [
+    {
+        "flow": [
+            {"get":
+            {
+                "url": "/search?q=aa",
+            }
+            }
+        ]
+    }
+]
+}

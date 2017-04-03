@@ -1,0 +1,20 @@
+{
+  "config": {
+      "target": "http://web.pocketplay.com",
+      "phases": [
+        {"duration": 20, "arrivalRate": 5}
+      ]
+  },
+  "scenarios": [
+    {
+      "flow": [
+        {"post":
+  {
+    "url": "/fetchUserInfo",
+    "json" : {"userid1": "575a9255659d17be712dcc67", "userid2": "575a9778dc7b068d738cf57c"}
+  }
+}
+      ]
+    }
+  ]
+}

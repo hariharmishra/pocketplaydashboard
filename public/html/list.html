@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PocketPlay | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="../../plugins/iCheck/all.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="../../plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="../../bootstrap/css/custom.css">
+	<link rel="shortcut icon" href="../../dist/img/favicon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>P</b>Play</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>PocketPlay</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              
+              <!-- Notifications: style can be found in dropdown.less -->
+             
+              <!-- Tasks: style can be found in dropdown.less -->
+              
+              <!-- User Account: style can be found in dropdown.less -->
+              <li>
+                <a href="../..index.html" title=LOGOUT>
+                  <i class="fa fa-sign-out fa-lg" ></i>
+                  <strong class="hidden-xs">Logout</strong>
+                </a>
+                
+              </li>
+              <!-- Control Sidebar Toggle Button -->
+              <li>
+                <a href="#" data-toggle="control-sidebar"></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="../../dist/img/ppmascot.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p>Admin Console</p>
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+          <!-- search form -->
+         
+          <!-- /.search form -->
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="treeview">
+              <a href="../../pages/games/all_games.html">
+                <i class="fa fa-gamepad"></i> <span>Games</span> </i>
+              </a>
+            </li>
+			 <li class="treeview">
+              <a href="">
+                <i class="fa fa-bar-chart"></i> <span>Analytics</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+			  <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-circle-o"></i> Overview</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Installs</a></li>
+				<li><a href="#"><i class="fa fa-circle-o"></i> Sessions</a></li>
+				<li><a href="#"><i class="fa fa-circle-o"></i> Game</a></li>
+				<li><a href="#"><i class="fa fa-circle-o"></i> User Analytics</a></li>
+              </ul>
+            </li>
+			<li class="active treeview">
+               <a href="promotions.html">
+                <i class="fa fa-trophy"></i> <span>Promotions</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+			  <ul class="treeview-menu">
+                <li class="active"><a href="../../pages/promotions/promotions.html"><i class="fa fa-circle-o"></i>Promotions</a></li>
+                <li><a href="../../pages/promotions/in_app.html"><i class="fa fa-circle-o"></i> IN App</a></li>
+				<li><a href="#"><i class="fa fa-circle-o"></i> App of the day</a></li>
+				<li><a href="#"><i class="fa fa-circle-o"></i> General Info</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+               <a href="../../pages/testuser/test_user.html">
+                <i class="fa fa-user-secret"></i> <span>Test User</span> </i>
+              </a>
+            </li>
+			<li class="treeview">
+                  <a href="../../pages/configuration/config.html">
+                <i class="fa fa-cogs"></i> <span>Configuration</span> </i>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+       
+		<br>
+
+        <!-- Main content -->
+        <section class="
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- popup -->
+       <div  id="element_to_pop_up" style="background-color:#fff; border-radius:15px;
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width:350px;
+    min-height: 80px;">
+    <a class="b-close" style="    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:10px;"><i class="fa fa-times"></i>
+	<a href="add_new_promotion.html" class="btn btn-info btn-lg "  title="Click to upload resources"><i class="fa fa-apple"></i> iOS</a>
+	<a href="add_new_promotion.html" class="btn btn-info btn-lg "  title="Click to upload resources"><i class="fa fa-android"></i> Android</a>
+	<a href="add_new_promotion.html" class="btn btn-info btn-lg "  title="Click to upload resources"><i class="fa fa-apple"></i> <i class="fa fa-android"></i>Both</a>
+</div> 
+<!--popup -->
+        <!-- Main content -->
+        <section class="content">
+         <div class="box-header">   <!--main cintainer start-->
+		<div class="row">   <!--main cintainer start-->
+		  <div class="panel panel-default">
+		  
+		<div class="panel-heading custom_class" style="background-color:#00C0EF;">
+<!-- Element to pop up -->
+					<strong style="color:#fff;">Promotions</strong>																																													
+                <i class="pull-right btn btn-info" id="my-button" style="color:#008548; margin-top: -8px;">                  
+                  <strong ><i class="fa fa-plus" ></i> Add New Promotion</strong>
+               </i>
+	     </div>
+												<form class="form-horizontal" >													
+												<div class="panel-body">		
+													 <div class="box box-primary">
+													 <br>
+													<div class="row" style="text-align:center;">
+													<div class="col-md-3">
+														<img src="../../dist/img/Placeholder.png" style="height:300px; width:250px;" class="img-thumbnail" alt="Responsive image"/>
+															<br><br>
+							</div>
+							<div class="col-md-9" >							
+							
+							
+													<fieldset>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="operating_system">OS:</label>  
+													  <div class="col-md-6">
+													  <input id="os" name="operating system" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">
+														
+													  </div>
+													</div>
+
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">Date:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">
+														
+													  </div>
+													</div>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">Coins:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">
+														
+													  </div>
+													</div>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">Countries:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">
+														
+
+													  </div>
+													</div>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">URL:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">										
+													  </div>
+													</div>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">Status:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">														
+													  </div>													  
+													</div>
+<div class="col-md-9 control-label" style="margin-left: 7px;"><a href="add_new_promotion.html" class="btn btn-danger"><i class="fa fa-pencil"></i> Edit</a></div>
+<br><br><br></div>
+													      </div>
+	                                                        </div>
+                                                                </div>
+													</fieldset>													
+													</form>
+													<form class="form-horizontal" >													
+												<div class="panel-body">		
+													 <div class="box box-primary">
+													 <br>
+													<div class="row" style="text-align:center;">
+													<div class="col-md-3">
+														<img src="../../dist/img/Placeholder.png" style="height:300px; width:250px;" class="img-thumbnail" alt="Responsive image"/>
+															<br><br>
+							</div>
+							<div class="col-md-9" >							
+							
+							
+													<fieldset>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="operating_system">OS:</label>  
+													  <div class="col-md-6">
+													  <input id="os" name="operating system" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">
+														
+													  </div>
+													</div>
+
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">Date:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">
+														
+													  </div>
+													</div>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">Coins:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">
+														
+													  </div>
+													</div>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">Countries:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">
+														
+
+													  </div>
+													</div>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">URL:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">										
+													  </div>
+													</div>
+													<!-- Text input-->
+													<div class="form-group">
+													  <label class="col-md-3 control-label" for="">Status:</label>  
+													  <div class="col-md-6">
+													  <input id="" name="" placeholder="" class="form-control input-md" required="" type="text" disabled="disabled">														
+													  </div>													  
+													</div>
+<div class="col-md-9 control-label" style="margin-left: 7px;"><a href="add_new_promotion.html" class="btn btn-danger"><i class="fa fa-pencil"></i> Edit</a></div>
+<br><br><br></div>
+													      </div>
+	                                                        </div>
+                                                                </div>
+													</fieldset>													
+													</form>
+													
+		
+			 
+			 							
+                    </div>
+                            </div>		
+                            </div>		
+                            </div>
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2014-2015 <a href="http://pocketplay.com">Pocket Play (<i class="fa fa-trademark"></i>)</a>.</strong> All rights reserved.
+      </footer>
+
+      <!-- Control Sidebar -->
+     <!-- /.control-sidebar -->
+      <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+      <div class="control-sidebar-bg"></div>
+    </div><!-- ./wrapper -->
+	
+	<!-- popup -->
+
+   <!-- jQuery 2.1.4 -->
+    <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <!-- Select2 -->
+    <script src="../../plugins/select2/select2.full.min.js"></script>
+    <!-- InputMask -->
+    <script src="../../plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="../../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="../../plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <!-- date-range-picker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+    <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="../../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <!-- bootstrap time picker -->
+    <script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="../../plugins/iCheck/icheck.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+	<script src="../../bootstrap/js/jquery.bpopup.js"></script>
+	<script src="../../bootstrap/js/jquery.bpopup.min.js"></script>
+    <!-- Page script -->
+	<script>
+	     ;(function($) {
+
+         // DOM Ready
+        $(function() {
+
+            // Binding a click event
+            // From jQuery v.1.7.0 use .on() instead of .bind()
+            $('#my-button').bind('click', function(e) {
+
+                // Prevents the default action to be triggered. 
+                e.preventDefault();
+
+                // Triggering bPopup when click event is fired
+                $('#element_to_pop_up').bPopup();
+
+            });
+
+        });
+
+    })(jQuery);
+
+
+	</script>
+   
+		
+  </body>
+</html>

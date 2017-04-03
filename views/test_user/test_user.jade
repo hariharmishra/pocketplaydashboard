@@ -1,0 +1,267 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title PocketPlay | Dashboard
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+    meta(name='author', content='harihar mishra, harihar@dinzylabs.com')
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    link(rel='stylesheet', href='dist/css/AdminLTE.min.css')
+    link(rel='stylesheet', href='dist/css/skins/_all-skins.min.css')
+    link(rel='stylesheet', href='plugins/iCheck/flat/blue.css')
+    // custom
+    link(rel='stylesheet', href='bootstrap/css/custom.css')
+    link(rel='shortcut icon', href='dist/img/favicon.ico')
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      header.main-header
+        // Logo
+        a.logo(href='/all_games')
+          // mini logo for sidebar mini 50x50 pixels
+          span.logo-mini
+            b P
+            | Play
+          // logo for regular state and mobile devices
+          span.logo-lg
+            b PocketPlay
+        // Header Navbar: style can be found in header.less
+        nav.navbar.navbar-static-top(role='navigation')
+          // Sidebar toggle button
+          a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+            span.sr-only Toggle navigation
+          .navbar-custom-menu
+            ul.nav.navbar-nav
+              li
+                a(href='/logout', title='LOGOUT')
+                  i.fa.fa-sign-out.fa-lg
+                  strong.hidden-xs Logout
+              // Control Sidebar Toggle Button
+              li
+                a(href='#', data-toggle='control-sidebar')
+      // Left side column. contains the logo and sidebar
+      aside.main-sidebar
+        // sidebar: style can be found in sidebar.less
+        section.sidebar
+          // Sidebar user panel
+          .user-panel
+            .pull-left.image
+              img.img-circle(src='dist/img/ppmascot.png', alt='User Image')
+            .pull-left.info
+              p Admin Console
+              a(href='#')
+                i.fa.fa-circle.text-success
+                |  Online
+          //import sidebar
+          include ../sidebar
+      .content-wrapper
+        // Content Header (Page header)
+        br
+        // Main content
+        section.content
+          .box-header
+            // main cintainer start
+            .row
+              .panel.panel-primary
+                .panel-heading
+                  h3.panel-title
+                    | Test Users
+                .panel-body
+                  .panel.panel-info
+                    .panel-heading
+                      h3.panel-title
+                        | Add New User
+                        .btn-group.pull-right
+                    .panel-body
+                      #accordion.panel-group(role='tablist', aria-multiselectable='true')
+                        // Accordion one start
+                        .panel.panel-default
+                          .panel-body
+                            form.form-horizontal(name='test_user_form' , id ='test_user_form' ,action='create_test_user', method='post' ,enctype='multipart/form-data')
+                              fieldset
+                                // Text input
+                                .form-group
+                                  label.col-md-4.control-label Name
+                                  .col-md-4
+                                    input#new_user_name.form-control.input-md(name='test_user_name', placeholder='Enter Test User Name', required='', type='text')
+                                .form-group
+                                  label.col-md-4.control-label Phone
+                                  .col-md-4
+                                    input#phone.form-control.input-md(name='phone', placeholder='Enter Test User Phone', required='', type='text')
+
+                                // Select Basic
+                                .form-group
+                                  label.col-md-4.control-label Operating System
+                                  .col-md-4
+                                    select#selectbasic.form-control(name='device_os')
+                                      option(value='select') Select
+                                        option(value='iOS') iOS
+                                        option(value='Android') Android
+                                // Text input
+                                .form-group
+                                  label.col-md-4.control-label Device ID
+                                  .col-md-4
+                                    input#device_id.form-control.input-md(name='device_udid', placeholder='Device ID', required='', type='text')
+
+                                .form-group
+                                  label.col-md-4.control-label Is Enabled
+                                  .col-md-4
+                                    label.checkbox-inline
+                                      input#is_active(name='is_enabled',value=false , checked=false , type='checkbox' , style='margin-top: -4px; margin-left: -18px;')
+
+                                // Button
+                                .form-group
+                                  label.col-md-4.control-label
+                                  .col-md-4
+                                    button#singlebutton.btn.btn-success(name='saveBtn' onclick='return saveTestUser();') Add New User
+                        i(style='text-align: center;')
+                          h4
+                            strong(style='margin-left:-60px;') TEST USERS
+                      // <div class="custom-scroll table-responsive" style="height:350px; overflow-y: scroll;">  -
+                      table.table.table-bordered(style='background-color:#E1E1E1;')
+                        thead(style='background-color:#D9EDF7;')
+                          tr
+                            th(style='text-align:center;') S.No
+                            th(style='text-align:center;') Name
+                            th(style='text-align:center;') Phone
+                            th(style='text-align:center;') Device OS
+                            th(style='text-align:center;') Device UDID
+                            th(style='width:150px;text-align:center;') IsEnabled
+                            th(style='width:150px; text-align:center;') Action
+
+                            -var testUserArray = testusers;
+
+                            -var counter = 0;
+                            -if(!testUserArray)
+                                    tbody
+                                      tr.blank_row
+                                        td(colspan='7', style='text-align:center;') No Test users available.
+
+                            -else
+                              each testuser in testUserArray
+                                    tbody
+                                      tr
+                                        td
+                                          | #{++counter}
+                                        td
+                                          | #{testuser.name}
+                                        td
+                                          | #{testuser.phone}
+                                        td
+                                          | #{testuser.device_os}
+                                        td
+                                          | #{testuser.device_udid}
+                                        td(style='text-align:center;')
+                                          label
+                                            input.checkbox(type='checkbox',id=counter +'_' +testuser.device_udid, name='checkbox',checked=testuser.is_enabled ,onclick='toggleTestUserActiveInactive(this.id)')
+                                        td(style='text-align:center;')
+                                          a(style='color:#E60000;', id=testuser.device_udid ,onclick="deleteTestUser(this.id,'testuser.is_enabled');" ,title='Delete this user.')
+                                            button.btn.button
+                                              i.fa.fa-trash-o(style='color:#E60000;')
+                                              |  Delete
+
+    // /.content
+    // /.content-wrapper
+    footer.main-footer
+      .pull-right.hidden-xs
+        b Version
+        |  1.0.0
+      strong
+        | Copyright © 2014-2015 
+        a(href='http://pocketplay.com')
+          | Pocket Play (
+          i.fa.fa-trademark
+          | )
+        | .
+      |  All rights reserved.
+    // jQuery 2.1.4
+    script(src='plugins/jQuery/jQuery-2.1.4.min.js')
+    // jQuery UI 1.11.4
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+    // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+    script.
+      $.widget.bridge('uibutton', $.ui.button);
+    // Bootstrap 3.3.5
+    script(src='bootstrap/js/bootstrap.min.js')
+    // Slimscroll
+    script(src='plugins/slimScroll/jquery.slimscroll.min.js')
+    // FastClick
+    script(src='plugins/fastclick/fastclick.min.js')
+    // AdminLTE App
+    script(src='dist/js/app.min.js')
+    script(src='dist/js/demo.js')
+    script.
+      function saveTestUser(){
+        if(document.getElementById('device_udid').value == '' ){
+          alert("Please enter device udid");
+          return false;
+        }
+
+        if (document.getElementById('phone').value == '') {
+          alert("Please enter phone ");
+          return false;
+        }
+
+        if (document.getElementById('device_os').value == '') {
+          alert("Please choose device os");
+          return false;
+        }
+
+        if (document.getElementById('test_user_name').value == '') {
+          document.getElementById('test_user_name').value = 'Test User';
+        }
+
+        document.getElementById('test_user_form').submit();
+      }
+
+      function deleteTestUser(deviceid) {
+        if (confirm("Are you sure you want to delete this Test User ?")) {
+          $.ajax({
+            type: 'POST',
+            url: '/delete_test_user',
+            data: JSON.stringify ({device_udid: deviceid}),
+            success: function (data) {
+              alert('Test user deleted Successfully !!!')
+              location.reload();
+            },
+            error: function (jqxhr) {
+              alert('error: ' + jqxhr.responseText);
+            },
+            contentType: "application/json",
+            dataType: 'json'
+          });
+        }
+      }
+
+      function toggleTestUserActiveInactive(id ) {
+        if (confirm("Are you sure you want to toggle status for this Test User ?")) {
+         
+          var deviceid = id.substring(2);
+          var newState = document.getElementById(id).checked;
+
+          $.ajax({
+            type: 'POST',
+            url: '/update_test_user',
+            data: JSON.stringify ({device_udid: deviceid , is_enabled :newState}),
+            success: function (data) {
+              alert('Test user status updated Successfully !!!');
+              location.reload();
+            },
+            error: function (jqxhr) {
+              alert('error: ' + jqxhr.responseText);
+            },
+            contentType: "application/json",
+            dataType: 'json'
+          });
+        }
+        else{
+          document.getElementById(id).checked = !document.getElementById(id).checked;
+        }
+      }
+    script.
+        $(document).ready(function () {
+          var fe_id = 'test_user' + '_fe';
+          $('#' + fe_id).addClass('active');
+        });
